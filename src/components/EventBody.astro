@@ -1,0 +1,13 @@
+---
+import Chips from './Chips.astro';
+import { bookById } from '../lib/data.mjs';
+const { ev } = Astro.props;
+const book = bookById.get(ev.bookId);
+---
+<p class="entry-year">{ev.yearLabel}</p>
+<span class={`book-badge b${book.order}`}>{book.title}</span>
+<h3>{ev.title}</h3>
+{ev.subtitle && <p class="entry-sub">{ev.subtitle}</p>}
+<p class="entry-summary">{ev.summary}</p>
+<Chips ev={ev} />
+{ev.note && <p class="entry-note">{ev.note}</p>}

@@ -1,0 +1,20 @@
+---
+import { characterById, conceptById, pageUrl } from '../lib/data.mjs';
+const { ev } = Astro.props;
+---
+{ev.characters.length > 0 && (
+  <div class="chip-row">
+    <span class="chip-label">人物</span>
+    {ev.characters.map((cid) => (
+      <a class="chip" href={pageUrl(`/characters/${cid}/`)}>{characterById.get(cid).name}</a>
+    ))}
+  </div>
+)}
+{ev.concepts.length > 0 && (
+  <div class="chip-row">
+    <span class="chip-label">概念</span>
+    {ev.concepts.map((cid) => (
+      <a class="chip" href={pageUrl(`/concepts/${cid}/`)}>{conceptById.get(cid).name}</a>
+    ))}
+  </div>
+)}

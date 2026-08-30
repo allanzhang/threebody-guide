@@ -994,41 +994,68 @@ git commit -m "feat: 首页（定位 hero + 三入口 + 三部曲导读 + 新手
 
 **Files:**
 - Create: `src/pages/timeline.astro`
+- Create: `src/components/Chips.astro`
+- Create: `src/components/EventBody.astro`
 
 **Interfaces:**
-- Consumes: `sortedEras/eraEvents/bookById/characterById/conceptById/pageUrl/imageUrl/eventImage/eraHero`（Task 3）、`Base`（Task 4）、占位图（Task 5）。
+- Consumes: `sortedEras/eraEvents/bookById/pageUrl/imageUrl/eventImage/eraHero`（Task 3）、`Base`（Task 4）、占位图（Task 5）。
 - Produces: `/timeline/` 纵向长卷：5 纪元章（全宽头图 + 主题色 + 导读）→ 章节内时间轴条目（所属书徽标 + 纪年 + 梗概 + 人物/概念 chip + 大事件全宽版）。
 
-- [ ] **Step 1: 写 src/pages/timeline.astro（完整代码）**
+> 说明：Astro frontmatter 是纯 TypeScript，不支持 JSX 片段。组件一律拆为独立 `.astro` 文件（Chips / EventBody），frontmatter 内只做数据装配。
+
+**Step 1: 写 src/components/Chips.astro（完整代码）**
+
+```astro
+---
+import { characterById, conceptById, pageUrl } from '../lib/data.mjs';
+const { ev } = Astro.props;
+---
+{ev.characters.length > 0 && (
+  <div class="chip-row">
+    <span class="chip-label">人物</span>
+    {ev.characters.map((cid) => (
+      <a class="chip" href={pageUrl(`/characters/${cid}/`)}>{characterById.get(cid).name}</a>
+    ))}
+  </div>
+)}
+{ev.concepts.length > 0 && (
+  <div class="chip-row">
+    <span class="chip-label">概念</span>
+    {ev.concepts.map((cid) => (
+      <a class="chip" href={pageUrl(`/concepts/${cid}/`)}>{conceptById.get(cid).name}</a>
+    ))}
+  </div>
+)}
+```
+
+**Step 2: 写 src/components/EventBody.astro（完整代码）**
+
+```astro
+---
+import Chips from './Chips.astro';
+import { bookById } from '../lib/data.mjs';
+const { ev } = Astro.props;
+const book = bookById.get(ev.bookId);
+---
+<p class="entry-year">{ev.yearLabel}</p>
+<span class={`book-badge b${book.order}`}>{book.title}</span>
+<h3>{ev.title}</h3>
+{ev.subtitle && <p class="entry-sub">{ev.subtitle}</p>}
+<p class="entry-summary">{ev.summary}</p>
+<Chips ev={ev} />
+{ev.note && <p class="entry-note">{ev.note}</p>}
+```
+
+**Step 3: 写 src/pages/timeline.astro（完整代码）**
 
 ```astro
 ---
 import Base from '../layouts/Base.astro';
+import EventBody from '../components/EventBody.astro';
 import {
-  sortedEras, eraEvents, bookById, characterById, conceptById,
+  sortedEras, eraEvents,
   pageUrl, imageUrl, eventImage, eraHero,
 } from '../lib/data.mjs';
-
-const Chips = ({ ev }) => (
-  <>
-    {ev.characters.length > 0 && (
-      <div class="chip-row">
-        <span class="chip-label">人物</span>
-        {ev.characters.map((cid) => (
-          <a class="chip" href={pageUrl(`/characters/${cid}/`)}>{characterById.get(cid).name}</a>
-        ))}
-      </div>
-    )}
-    {ev.concepts.length > 0 && (
-      <div class="chip-row">
-        <span class="chip-label">概念</span>
-        {ev.concepts.map((cid) => (
-          <a class="chip" href={pageUrl(`/concepts/${cid}/`)}>{conceptById.get(cid).name}</a>
-        ))}
-      </div>
-    )}
-  </>
-);
 ---
 <Base title="时间线 · 三体世界图鉴" description="按纪元年表顺着读完三体三部曲：红岸与危机 → 威慑 → 广播 → 掩体 → 银河与归零。">
   <h1 class="page-title">时间线</h1>
@@ -1046,34 +1073,21 @@ const Chips = ({ ev }) => (
           </div>
         </div>
         <div class="timeline">
-          {list.map((ev) => {
-            const book = bookById.get(ev.bookId);
-            const badge = <span class={`book-badge b${book.order}`}>{book.title}</span>;
-            const body = (
-              <div class="entry-body">
-                <p class="entry-year">{ev.yearLabel}</p>
-                {badge}
-                <h3>{ev.title}</h3>
-                {ev.subtitle && <p class="entry-sub">{ev.subtitle}</p>}
-                <p class="entry-summary">{ev.summary}</p>
-                <Chips ev={ev} />
-                {ev.note && <p class="entry-note">{ev.note}</p>}
-              </div>
-            );
-            return ev.isMajorEvent ? (
+          {list.map((ev) =>
+            ev.isMajorEvent ? (
               <article class="entry major" id={ev.id}>
                 <img class="event-img" src={imageUrl(eventImage(ev))} alt={ev.title} loading="lazy" />
-                {body}
+                <EventBody ev={ev} />
               </article>
             ) : (
               <article class="entry" id={ev.id}>
                 <div class="entry-grid-row">
                   <img class="event-img" src={imageUrl(eventImage(ev))} alt={ev.title} loading="lazy" />
-                  {body}
+                  <EventBody ev={ev} />
                 </div>
               </article>
-            );
-          })}
+            )
+          )}
         </div>
       </section>
     );
@@ -1081,19 +1095,17 @@ const Chips = ({ ev }) => (
 </Base>
 ```
 
-- [ ] **Step 2: 构建 + 视觉走查**
+- [ ] **Step 4: 构建 + 视觉走查**
 
 Run: `npm run build && npm run dev`
 检查（对照设计文档 4.2）：每章全宽头图 + heroTitle 大字可见、章主题色生效（时间轴脊/纪年/徽标换色）、条目左右分栏（图 420px + 文）、所属书徽标三种配色、大事件全宽条目、chip 可跳转、章内锚点 `id` 就位、375px 不破版。
 
-- [ ] **Step 3: Commit**
+- [ ] **Step 5: Commit**
 
 ```bash
-git add src/pages/timeline.astro
+git add src/pages/timeline.astro src/components/
 git commit -m "feat: 时间线页（纪年分章/所属书徽标/大事件全宽/人物概念互链）"
 ```
-
----
 
 ### Task 8: 概念册两页
 
