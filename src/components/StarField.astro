@@ -1,0 +1,9 @@
+---
+const { density = 150, speed = 0.6, className = 'starfield' } = Astro.props;
+---
+<canvas class={className} aria-hidden="true"></canvas>
+<script>
+  import { createStarfield } from '../lib/starfield.js';
+  const el = document.querySelector('canvas.starfield');
+  if (el) createStarfield(el, { density: {density}, speed: {speed} });
+</script>

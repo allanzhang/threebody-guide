@@ -1,35 +1,53 @@
 ---
 import Base from '../layouts/Base.astro';
+import StarField from '../components/StarField.astro';
 import Linkify from '../components/Linkify.astro';
-import { pageUrl, imageUrl, bookCover, books } from '../lib/data.mjs';
+import { pageUrl, imageUrl, bookCover, books, sceneById } from '../lib/data.mjs';
 
-const entries = [
-  { href: '/timeline/', title: '时间线', desc: '从红岸到归零，按纪年顺着读完整个故事' },
-  { href: '/concepts/', title: '概念册', desc: '黑暗森林、智子、二向箔……每条设定讲透设定与科学底子' },
-  { href: '/characters/', title: '人物墙', desc: '叶文洁、罗辑、章北海、程心……每个人的来路与抉择' },
+const droplet = sceneById.get('droplet-massacre');
+const doors = [
+  { href: '/timeline/', title: '时间线', desc: '从红岸到归零，顺着纪年重走整个故事', mark: '01' },
+  { href: '/concepts/', title: '概念册', desc: '黑暗森林、智子、二向箔——每条设定讲透设定与底子', mark: '02' },
+  { href: '/characters/', title: '人物墙', desc: '叶文洁、罗辑、章北海、程心——来路与抉择', mark: '03' },
 ];
 ---
 <Base title="三体世界图鉴 · 顺时间线读懂整个三体故事">
-  <section class="hero">
-    <h1>三体世界图鉴</h1>
-    <p class="hero-lead">从「不要回答」到宇宙归零——顺着时间线，读懂刘慈欣《三体》三部曲。</p>
+  <section class="hero-full">
+    <div class="hero-canvas"><StarField density={180} speed={0.8} /></div>
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="hero-kicker">刘慈欣《三体》三部曲 · 全站剧透</p>
+      <h1 class="hero-title">三体<span>世界图鉴</span></h1>
+      <p class="hero-lead">从「不要回答」到宇宙归零——顺着时间线，经历整个三体故事。</p>
+    </div>
   </section>
 
-  <section class="entry-grid">
-    {entries.map((e) => (
-      <a class="entry-card" href={pageUrl(e.href)}>
-        <h2>{e.title}</h2>
-        <p>{e.desc}</p>
+  <section class="doors">
+    {doors.map((d) => (
+      <a class="door" href={pageUrl(d.href)}>
+        <span class="door-mark">{d.mark}</span>
+        <h2>{d.title}</h2>
+        <p>{d.desc}</p>
       </a>
     ))}
   </section>
+
+  {droplet && (
+    <section class="scene-teaser">
+      <a href={pageUrl(`/scenes/${droplet.id}/`)}>
+        <p class="scene-teaser-kicker">最震撼的一幕</p>
+        <h2>{droplet.title}</h2>
+        <p>{droplet.tagline} —— 进入沉浸场景 →</p>
+      </a>
+    </section>
+  )}
 
   <section class="book-strip">
     <h2>三部曲</h2>
     <div class="book-cards">
       {books.sort((a, b) => a.order - b.order).map((b) => (
         <div class="book-card">
-          <img src={imageUrl(bookCover(b))} alt={b.title} loading="lazy" />
+          <img src={imageUrl(bookCover(b))} alt={b.title} loading="lazy" decoding="async" />
           <div>
             <h3>{b.title}</h3>
             {b.subtitle && <p>{b.subtitle}</p>}
@@ -38,14 +56,5 @@ const entries = [
         </div>
       ))}
     </div>
-  </section>
-
-  <section class="start-guide">
-    <h2>从哪开始读</h2>
-    <ol>
-      <li>先读<b>时间线</b>，建立三部曲的完整框架</li>
-      <li>遇到陌生概念，点进<b>概念册</b>看设定与科学底子</li>
-      <li>遇到人物，点进<b>人物墙</b>看他的故事与关键抉择</li>
-    </ol>
   </section>
 </Base>
