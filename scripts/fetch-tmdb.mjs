@@ -61,7 +61,7 @@ console.log(`演职员映射 ${mapped.length} 条 → 去重后 ${portraits.leng
 mkdirSync(join(ROOT, 'public', 'images'), { recursive: true });
 for (const p of portraits) {
   const dest = join(ROOT, 'public', 'images', `portrait-${p.id}.jpg`);
-  dl(`${IMG}/w500${p.path}`, dest);
+  dl(`${IMG}/original${p.path}`, dest); // original 原图，卡片内不放大 → 更清晰
 }
 // 头图：era-crisis 用剧集 backdrop；book-threebody 封面用剧集海报
 if (backdrop) dl(`${IMG}/w1280${backdrop}`, join(ROOT, 'public', 'images', 'era-hero-era-crisis.jpg'));
