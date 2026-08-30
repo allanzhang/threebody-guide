@@ -10,10 +10,23 @@ import {
   <h1 class="page-title">时间线</h1>
   <p class="page-lead">按纪元年表顺着读：红岸与危机 → 威慑纪元 → 广播纪元 → 掩体纪元 → 银河纪元与归零。每条标注所属书。</p>
 
+  <div class="tl-wrap">
+    <aside class="era-nav">
+      <p class="era-nav-title">纪元目录</p>
+      {sortedEras().map((era) => (
+        <a class="era-nav-item" href={`#era-${era.id}`}>
+          <span class="era-nav-name">{era.name}</span>
+          <span class="era-nav-years">{era.years}</span>
+        </a>
+      ))}
+    </aside>
+
+    <div class="tl-main">
   {sortedEras().map((era) => {
     const list = eraEvents(era.id);
     return (
       <section class="era" id={`era-${era.id}`} style={`--era:${era.color};--era-soft:${era.colorSoft}`}>
+        <span class="era-big-year" aria-hidden="true">{era.startYear}</span>
         <div class="era-hero" style={`background-image:url('${imageUrl(eraHero(era))}')`}>
           <div class="era-hero-inner">
             <p class="era-years">{era.years}</p>
@@ -41,4 +54,6 @@ import {
       </section>
     );
   })}
+    </div>
+  </div>
 </Base>

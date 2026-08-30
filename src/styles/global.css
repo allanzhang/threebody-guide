@@ -98,7 +98,27 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 .page-lead { text-align: center; color: var(--ink-dim); max-width: 720px; margin: 0 auto 48px; }
 
 /* ===== 时间线页 ===== */
-.era { margin-bottom: 96px; }
+.tl-wrap { display: grid; grid-template-columns: 220px 1fr; gap: 28px; align-items: start; }
+.era-nav {
+  position: sticky; top: 76px;
+  border-left: 2px solid var(--line); padding-left: 16px;
+}
+.era-nav-title {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.22em;
+  color: var(--ink-dim); margin-bottom: 14px;
+}
+.era-nav-item { display: block; padding: 9px 0; border-bottom: 1px dashed var(--line); }
+.era-nav-name { display: block; color: var(--ink-dim); font-size: 14px; transition: color 0.15s; }
+.era-nav-item:hover .era-nav-name { color: var(--accent-strong); }
+.era-nav-years { display: block; font-family: var(--mono); font-size: 11px; color: var(--ink-dim); opacity: 0.7; margin-top: 2px; }
+.era { position: relative; margin-bottom: 96px; }
+.era-big-year {
+  position: absolute; right: -6px; top: 140px; z-index: 0; pointer-events: none;
+  font-family: var(--mono); font-weight: 700; line-height: 1;
+  font-size: clamp(120px, 15vw, 230px);
+  color: transparent; -webkit-text-stroke: 1px var(--era, var(--accent));
+  opacity: 0.16;
+}
 .era-hero {
   position: relative; height: 62vh; min-height: 380px;
   background-size: cover; background-position: center;
@@ -207,6 +227,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 
 /* ===== 响应式 ===== */
 @media (max-width: 900px) {
+  .tl-wrap { grid-template-columns: 1fr; }
+  .era-nav { display: none; }
   .entry-grid, .book-cards, .card-grid { grid-template-columns: 1fr; }
   .entry-grid-row { grid-template-columns: 1fr; }
   .entry.major { margin-left: 0; }
