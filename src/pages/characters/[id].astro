@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import { characters, characterById, eventById, conceptById, pageUrl, imageUrl, charPortrait } from '../../lib/data.mjs';
+
+export function getStaticPaths() {
+  return characters.map((c) => ({ params: { id: c.id } }));
+}
+
+const { id } = Astro.params;
+const c = characterById.get(id);
+---
+<Base title={`${c ? c.name : '未找到'} · 人物墙 · 三体世界图鉴`}>
+  {c && (
+    <article class="detail">
+      <header>
+        <p class="crumb"><a href={pageUrl('/characters/')}>人物墙</a></p>
+        <div class="char-head">
+          <img src={imageUrl(charPortrait(c))} alt={c.name} />
+          <div>
+            <h1>{c.name}</h1>
+            <p class="tagline">{c.tagline}</p>
+          </div>
+        </div>
+      </header>
+      <section class="block">
+        <h2>他是谁</h2>
+        <p>{c.who}</p>
+      </section>
+      <section class="block">
+        <h2>他的作用</h2>
+        <p>{c.role}</p>
+      </section>
+      <section class="block">
+        <h2>他的故事线</h2>
+        <p>{c.storyline}</p>
+      </section>
+      {c.choices && (
+        <section class="block science">
+          <h2>关键抉择</h2>
+          <p>{c.choices}</p>
+        </section>
+      )}
+      <footer class="detail-links">
+        {c.events.length > 0 && (
+          <div>
+            <h3>相关事件</h3>
+            {c.events.map((eid) => <a class="chip" href={pageUrl(`/timeline/#${eid}`)}>{eventById.get(eid).title}</a>)}
+          </div>
+        )}
+        {c.concepts.length > 0 && (
+          <div>
+            <h3>相关概念</h3>
+            {c.concepts.map((cid) => <a class="chip" href={pageUrl(`/concepts/${cid}/`)}>{conceptById.get(cid).name}</a>)}
+          </div>
+        )}
+      </footer>
+    </article>
+  )}
+</Base>

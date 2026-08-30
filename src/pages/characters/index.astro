@@ -1,0 +1,24 @@
+---
+import Base from '../../layouts/Base.astro';
+import { characterGroups, pageUrl, imageUrl, charPortrait } from '../../lib/data.mjs';
+---
+<Base title="人物墙 · 三体世界图鉴" description="叶文洁、罗辑、章北海、程心、云天明……三体世界里每个人的来路、作用与关键抉择。">
+  <h1 class="page-title">人物墙</h1>
+  <p class="page-lead">每个人都背负着一个时代的抉择。点进去，看他的故事线。</p>
+  {characterGroups().map((g) => (
+    <section class="char-group">
+      <h2>{g.title}</h2>
+      <div class="card-grid">
+        {g.items.map((c) => (
+          <a class={`char-card${c.isCore ? ' core' : ''}`} href={pageUrl(`/characters/${c.id}/`)}>
+            <img src={imageUrl(charPortrait(c))} alt={c.name} loading="lazy" />
+            <div class="char-meta">
+              <h3>{c.name}</h3>
+              <p>{c.tagline}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+</Base>
