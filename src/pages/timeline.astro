@@ -4,7 +4,7 @@ import EventBody from '../components/EventBody.astro';
 import Linkify from '../components/Linkify.astro';
 import {
   sortedEras, eraEvents,
-  pageUrl, imageUrl, eventImage, eraHero,
+  pageUrl, imageUrl, eventImage, eraHero, sceneForEvent,
 } from '../lib/data.mjs';
 ---
 <Base title="时间线 · 三体世界图鉴" description="按纪元年表顺着读完三体三部曲：红岸与危机 → 威慑 → 广播 → 掩体 → 银河与归零。">
@@ -38,14 +38,27 @@ import {
         <div class="timeline">
           {list.map((ev) =>
             ev.isMajorEvent ? (
-              <article class="entry major" id={ev.id}>
-                <img class="event-img" src={imageUrl(eventImage(ev))} alt={ev.title} loading="lazy" />
-                <EventBody ev={ev} />
-              </article>
+              (() => {
+                const scene = sceneForEvent(ev.id);
+                return (
+                  <article class="entry major" id={ev.id}>
+                    <div class="event-media">
+                      <img class="event-img" src={imageUrl(eventImage(ev))} alt={ev.title} loading="lazy" decoding="async" />
+                      {scene && (
+                        <a class="scene-enter" href={pageUrl(`/scenes/${scene.id}/`)}>
+                          <span class="scene-enter-title">{scene.title}</span>
+                          <span class="scene-enter-hint">进入沉浸场景 →</span>
+                        </a>
+                      )}
+                    </div>
+                    <EventBody ev={ev} />
+                  </article>
+                );
+              })()
             ) : (
               <article class="entry" id={ev.id}>
                 <div class="entry-grid-row">
-                  <img class="event-img" src={imageUrl(eventImage(ev))} alt={ev.title} loading="lazy" />
+                  <img class="event-img" src={imageUrl(eventImage(ev))} alt={ev.title} loading="lazy" decoding="async" />
                   <EventBody ev={ev} />
                 </div>
               </article>

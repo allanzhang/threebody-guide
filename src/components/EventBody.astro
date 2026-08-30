@@ -11,6 +11,12 @@ const book = bookById.get(ev.bookId);
 {ev.subtitle && <p class="entry-sub">{ev.subtitle}</p>}
 <p class="entry-summary"><Linkify text={ev.summary} /></p>
 <Chips ev={ev} />
+{ev.turning && (
+  <div class="insight turning">
+    <h4>关键转折</h4>
+    <p><Linkify text={ev.turning} /></p>
+  </div>
+)}
 {ev.details && (
   <div class="entry-details">
     <h4>细节与伏笔</h4>
