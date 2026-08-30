@@ -1,9 +1,14 @@
 ---
 const { density = 150, speed = 0.6, className = 'starfield' } = Astro.props;
 ---
-<canvas class={className} aria-hidden="true"></canvas>
+<canvas class={className} data-density={density} data-speed={speed} aria-hidden="true"></canvas>
 <script>
   import { createStarfield } from '../lib/starfield.js';
   const el = document.querySelector('canvas.starfield');
-  if (el) createStarfield(el, { density: {density}, speed: {speed} });
+  if (el) {
+    createStarfield(el, {
+      density: Number(el.dataset.density) || 150,
+      speed: Number(el.dataset.speed) || 0.6,
+    });
+  }
 </script>
