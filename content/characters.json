@@ -29,7 +29,7 @@
       "eto",
       "trisolaran-civilization"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-ye-wenjie.jpg"
   },
   {
     "id": "wang-miao",
@@ -58,7 +58,7 @@
       "dehydration",
       "scientific-boundary"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-wang-miao.jpg"
   },
   {
     "id": "shi-qiang",
@@ -81,7 +81,7 @@
     "concepts": [
       "nanofiber"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-shi-qiang.jpg"
   },
   {
     "id": "shen-yufei",
@@ -102,7 +102,7 @@
       "eto",
       "scientific-boundary"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-shen-yufei.jpg"
   },
   {
     "id": "luo-ji",
@@ -184,7 +184,7 @@
     "concepts": [
       "eto"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-pan-han.jpg"
   },
   {
     "id": "chang-weisi",
@@ -203,7 +203,7 @@
       "crisis-era-begins"
     ],
     "concepts": [],
-    "portrait": ""
+    "portrait": "/images/portrait-chang-weisi.jpg"
   },
   {
     "id": "yang-dong",
@@ -222,7 +222,7 @@
     "concepts": [
       "scientific-boundary"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-yang-dong.jpg"
   },
   {
     "id": "zhang-beihai",
@@ -329,7 +329,7 @@
     "concepts": [
       "droplet"
     ],
-    "portrait": ""
+    "portrait": "/images/portrait-ding-yi.jpg"
   },
   {
     "id": "zhuang-yan",
