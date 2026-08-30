@@ -55,8 +55,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   padding: 28px 24px 40px; text-align: center;
   color: var(--ink-dim); font-size: 13px; line-height: 1.8;
 }
-.site-footer .site-url { margin-bottom: 6px; }
-.site-footer .site-url a { color: var(--accent-strong); text-decoration: underline; }
 
 /* ===== 首页 ===== */
 .hero { padding: 72px 0 56px; text-align: center; }
