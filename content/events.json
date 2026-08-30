@@ -455,7 +455,7 @@
     "bookId": "dark-forest",
     "eraId": "era-crisis",
     "yearLabel": "危机纪元 205 年",
-    "order": 23,
+    "order": 25,
     "isMajorEvent": false,
     "summary": "罗辑中止田园生活，向宇宙发出了第一次「广播」：一条包含 187J3X1 恒星坐标的信息，宣称若恒星被摧毁，就证明他的理论。他用自己的生命做赌注——若理论错误，他一无所获；若正确，他握住了威慑宇宙的钥匙。",
     "characters": [
@@ -474,7 +474,7 @@
     "bookId": "dark-forest",
     "eraId": "era-crisis",
     "yearLabel": "危机纪元 205 年",
-    "order": 24,
+    "order": 26,
     "isMajorEvent": true,
     "summary": "数年后，天文观测证实：187J3X1 恒星被摧毁了——被某个更高级的文明瞬间清理。黑暗森林法则得到实证：暴露坐标的文明，会像森林中的火光一样吸引猎人的子弹。罗辑的疯狂实验，成功了。",
     "characters": [
@@ -494,7 +494,7 @@
     "bookId": "dark-forest",
     "eraId": "era-crisis",
     "yearLabel": "危机纪元 208 年",
-    "order": 25,
+    "order": 27,
     "isMajorEvent": false,
     "summary": "三体世界的第一艘探测器「水滴」抵达太阳系。它光滑、完美，被视为和平象征，人类舰队国际隆重迎接。丁仪近距离检查时察觉异常，大史也嗅到危险——这绝不是礼物，而是警告。",
     "characters": [
@@ -514,7 +514,7 @@
     "bookId": "dark-forest",
     "eraId": "era-crisis",
     "yearLabel": "危机纪元 208 年",
-    "order": 26,
+    "order": 28,
     "isMajorEvent": true,
     "summary": "水滴骤然发动：以不可思议的速度与强度，像子弹贯穿纸片一样摧毁人类舰队。两千艘恒星级战舰组成的联合舰队在几分钟内几乎全灭，地球太空力量荡然无存。人类第一次见识三体科技碾压级的实力。",
     "characters": [
@@ -533,7 +533,7 @@
     "bookId": "dark-forest",
     "eraId": "era-crisis",
     "yearLabel": "危机纪元 208 年",
-    "order": 27,
+    "order": 29,
     "isMajorEvent": true,
     "summary": "末日战役前，章北海劫持恒星级战舰「自然选择号」叛逃，率舰向深空驶去。他的远见被证实无比正确：人类注定无法在太阳系赢得这场战争，逃亡是文明延续的唯一出路。自然选择号成为「星舰地球」的起点。",
     "characters": [
@@ -580,6 +580,305 @@
     "concepts": [
       "deterrence",
       "sword-holder"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "ladder-plan",
+    "title": "阶梯计划：把大脑送向三体",
+    "subtitle": "最疯狂的赌注",
+    "bookId": "deaths-end",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 4 年",
+    "order": 23,
+    "isMajorEvent": false,
+    "summary": "行星防御理事会战略情报局（PIA）提出疯狂设想：与其用探测器追赶三体舰队，不如直接把人送到三体内部。受限于载荷，阶梯计划最终改为发射一颗冷冻人脑，用核弹阶梯加速把它射向三体舰队。绝症末期的云天明，成为这次近乎自杀式任务的执行者。",
+    "characters": [
+      "yun-tianming",
+      "cheng-xin"
+    ],
+    "concepts": [
+      "ladder-plan"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "yun-tianming-chengxin",
+    "title": "云天明与程心：一颗星星的告别",
+    "subtitle": "爱以最残酷的方式纠缠",
+    "bookId": "deaths-end",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 4 年",
+    "order": 24,
+    "isMajorEvent": false,
+    "summary": "程心的大学同学云天明身患绝症，用一笔意外之财买下恒星 DX3906 的产权，匿名送给自己暗恋多年的程心。程心在不知情中把他推荐进阶梯计划——手术取出云天明大脑的那一刻，她才知道那颗星是云天明送的。爱与牺牲，从第一天起就绑在一起。",
+    "characters": [
+      "yun-tianming",
+      "cheng-xin"
+    ],
+    "concepts": [
+      "ladder-plan"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "cheng-xin-awake",
+    "title": "程心苏醒与执剑人竞选",
+    "subtitle": "第二任执剑人",
+    "bookId": "deaths-end",
+    "eraId": "era-deterrence",
+    "yearLabel": "威慑纪元 61 年",
+    "order": 3,
+    "isMajorEvent": false,
+    "summary": "威慑纪元 61 年，冬眠多年的程心被唤醒：人类决定更换执剑人——罗辑已独自执剑五十四年，人类却恐惧他、不感谢他。程心以极高得票率当选新一任执剑人，人们相信，她不会按下毁灭的开关。",
+    "characters": [
+      "cheng-xin",
+      "luo-ji"
+    ],
+    "concepts": [
+      "sword-holder",
+      "deterrence"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "deterrence-failure",
+    "title": "威慑失败：程心放下开关",
+    "subtitle": "人类最黑暗的一天",
+    "bookId": "deaths-end",
+    "eraId": "era-broadcast",
+    "yearLabel": "威慑纪元 62 年",
+    "order": 1,
+    "isMajorEvent": true,
+    "summary": "执剑人交接进行的瞬间，三体舰队发动全面进攻。智子在水星轨道展开水滴与太阳遮挡，三体的威胁凌驾于人类之上；而新任执剑人程心，在必须按下引力波广播开关的决定性时刻，放下了它——她做不到让两个世界同归于尽。威慑失败，三体全面控制地球，广播纪元开始。",
+    "characters": [
+      "cheng-xin",
+      "luo-ji"
+    ],
+    "concepts": [
+      "deterrence",
+      "sword-holder"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "broadcast-of-coordinates",
+    "title": "引力波广播：坐标终于暴露",
+    "subtitle": "人类最后的反击",
+    "bookId": "deaths-end",
+    "eraId": "era-broadcast",
+    "yearLabel": "广播纪元",
+    "order": 2,
+    "isMajorEvent": true,
+    "summary": "人类被三体控制后，深空中的星舰成为最后的希望。万有引力号与蓝色空间号在追击与逃亡的纠缠中得知威慑失败，舰员们做出决定：启动引力波天线，向宇宙广播三体世界的坐标。黑暗森林的猎枪，第一次对准了三体。",
+    "characters": [
+      "guan-yifan"
+    ],
+    "concepts": [
+      "gravity-broadcast"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "trisolaris-destroyed",
+    "title": "三体母星覆灭：黑暗森林的猎枪",
+    "subtitle": "暴露坐标的代价",
+    "bookId": "deaths-end",
+    "eraId": "era-broadcast",
+    "yearLabel": "广播纪元 · 数年后",
+    "order": 3,
+    "isMajorEvent": true,
+    "summary": "广播发出数年后的某一天，三体母星被一道来自宇宙深处的打击摧毁——某个高级文明用一颗光粒终结了三体世界。黑暗森林法则以最残酷的方式应验：暴露坐标的文明，终将被清理。三体残余舰队向深空逃逸，而地球仍留在太阳系里，等待着属于它的下一枪。",
+    "characters": [],
+    "concepts": [
+      "dark-forest"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "fairy-tales",
+    "title": "云天明童话：藏在故事里的情报",
+    "subtitle": "三个童话，三条生路",
+    "bookId": "deaths-end",
+    "eraId": "era-broadcast",
+    "yearLabel": "广播纪元",
+    "order": 4,
+    "isMajorEvent": false,
+    "summary": "三体文明截获并复活了云天明的大脑，将他接入三体世界。威慑失败后，云天明以童话形式向人类传递三个关键情报：曲率驱动的原理、光速飞船的可能性、以及把太阳系变成黑域（低光速区）的「安全声明」方案。听懂这组童话的人，才有可能在三体之后活下来。",
+    "characters": [
+      "yun-tianming"
+    ],
+    "concepts": [
+      "curvature-drive",
+      "lightspeed-ship",
+      "black-domain"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "shelter-era-begins",
+    "title": "掩体纪元：躲进行星的阴影",
+    "subtitle": "太阳系文明的栖息地",
+    "bookId": "deaths-end",
+    "eraId": "era-shelter",
+    "yearLabel": "掩体纪元元年",
+    "order": 1,
+    "isMajorEvent": false,
+    "summary": "人类无法逃离太阳系，只能选择「掩体计划」：在木星、土星等巨行星的背阳面建造太空城，用巨行星庞大的身躯挡住可能到来的黑暗森林打击。两百余年里，人类在阴影中建设起太阳系文明最后的城邦。",
+    "characters": [],
+    "concepts": [
+      "shelter-plan"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "singer-two-dimensional",
+    "title": "歌者的二向箔：太阳系二维化",
+    "subtitle": "一张展开的白纸",
+    "bookId": "deaths-end",
+    "eraId": "era-shelter",
+    "yearLabel": "掩体纪元",
+    "order": 2,
+    "isMajorEvent": true,
+    "summary": "宇宙深处的歌者文明在例行清理中发现了太阳系，随手掷出一张「二向箔」——它让三维空间向二维跌落，像一张无限展开的白纸。太阳系从太阳开始被压平，地球、太空城、掩体计划，一切都被摊成一幅没有厚度的画。",
+    "characters": [
+      "ge-zhe"
+    ],
+    "concepts": [
+      "two-dimensional-foil",
+      "dimensional-reduction",
+      "singer"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "cheng-xin-escape",
+    "title": "星环号：逃出二维化",
+    "subtitle": "人类最后的飞船",
+    "bookId": "deaths-end",
+    "eraId": "era-shelter",
+    "yearLabel": "掩体纪元",
+    "order": 3,
+    "isMajorEvent": false,
+    "summary": "二向箔展开前，程心和艾AA 登上了曲率驱动原型飞船「星环号」——三体曾锁死人类的光速研究，而云天明童话里的秘密，让人类偷偷造出了它。星环号以接近光速逃离太阳系，身后，太阳系正被二维化吞没成一幅壮美的画。",
+    "characters": [
+      "cheng-xin",
+      "ai-aa"
+    ],
+    "concepts": [
+      "curvature-drive",
+      "lightspeed-ship"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "roji-final-stand",
+    "title": "罗辑的留守：地球文明博物馆",
+    "subtitle": "孩子们，走好，我要进到画里去",
+    "bookId": "deaths-end",
+    "eraId": "era-shelter",
+    "yearLabel": "掩体纪元",
+    "order": 4,
+    "isMajorEvent": false,
+    "summary": "威慑失败后，罗辑成为抵抗运动的精神符号；他又在冥王星守护起「地球文明博物馆」，把人类文明的记忆一点点运往那里。二维化抵达太阳系边缘时，他把星环号留给程心，自己留在冥王星上，与太阳系一起变成二维的画。",
+    "characters": [
+      "luo-ji",
+      "cheng-xin"
+    ],
+    "concepts": [],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "galaxy-era-meeting",
+    "title": "蓝色星球：程心与云天明重逢",
+    "subtitle": "跨越千万年的约定",
+    "bookId": "deaths-end",
+    "eraId": "era-galaxy",
+    "yearLabel": "银河纪元",
+    "order": 1,
+    "isMajorEvent": false,
+    "summary": "星环号抵达云天明当年送的那颗星——DX3906，蓝色星球。云天明等候在这里，与程心重逢；此后他与艾AA 留在这颗蓝星上，程心则与关一帆走向更深的星空。跨越千百年的约定，在恒星的光里落下句点。",
+    "characters": [
+      "yun-tianming",
+      "cheng-xin",
+      "ai-aa",
+      "guan-yifan"
+    ],
+    "concepts": [],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "returner-return",
+    "title": "归零者与回归运动",
+    "subtitle": "要不要给宇宙重来的机会",
+    "bookId": "deaths-end",
+    "eraId": "era-galaxy",
+    "yearLabel": "银河纪元",
+    "order": 2,
+    "isMajorEvent": false,
+    "summary": "宇宙的物质总量似乎在减少，因为不断有文明把质量藏进小宇宙。归零者发起「回归运动」，呼吁所有文明交还质量，让宇宙能够坍缩、归零、重新开始。这是比任何文明都宏大的选择。",
+    "characters": [
+      "cheng-xin",
+      "guan-yifan"
+    ],
+    "concepts": [
+      "return-to-zero",
+      "returner"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "mini-universe",
+    "title": "小宇宙与生态球",
+    "subtitle": "一滴水里的文明",
+    "bookId": "deaths-end",
+    "eraId": "era-galaxy",
+    "yearLabel": "银河纪元",
+    "order": 3,
+    "isMajorEvent": false,
+    "summary": "程心和关一帆在星海间漂流，住进云天明留下的一个小宇宙——一个自成一体的私人空间。他们在里面保存了一个小小的生态球：一汪水、一株小草，作为人类文明存在过的证据。还回大宇宙，小宇宙就消失；不还，宇宙就永远缺一点质量。",
+    "characters": [
+      "cheng-xin",
+      "guan-yifan"
+    ],
+    "concepts": [
+      "mini-universe",
+      "return-to-zero"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "universe-restart",
+    "title": "宇宙的最后：归零与重生",
+    "subtitle": "新的宇宙会记得我们吗",
+    "bookId": "deaths-end",
+    "eraId": "era-galaxy",
+    "yearLabel": "宇宙末日",
+    "order": 4,
+    "isMajorEvent": true,
+    "summary": "归零者宣告：大宇宙将在漫长的坍缩后归零，然后重新爆发——新的宇宙将诞生。程心与关一帆手中握着最后的选择：是否把生态球（那一汪水）归还大宇宙，为宇宙的重生尽一份力；还是让人类文明以最微小的形态继续存在。归零的钟声，等待每一个文明作答。",
+    "characters": [
+      "cheng-xin",
+      "guan-yifan"
+    ],
+    "concepts": [
+      "return-to-zero",
+      "mini-universe"
     ],
     "image": "",
     "note": ""

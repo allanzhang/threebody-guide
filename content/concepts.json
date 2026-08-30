@@ -261,7 +261,8 @@
     "science": "这是刘慈欣对「费米悖论」给出的文学解答之一：宇宙为何如此寂静？因为暴露的文明都已被清理。其思想框架植根于博弈论与生存竞争逻辑，属于科幻设定而非科学结论。",
     "events": [
       "curse-broadcast",
-      "dark-forest-confirmed"
+      "dark-forest-confirmed",
+      "trisolaris-destroyed"
     ],
     "characters": [
       "luo-ji"
@@ -270,7 +271,8 @@
       "cosmic-sociology",
       "suspect-chain",
       "tech-explosion",
-      "deterrence"
+      "deterrence",
+      "dimensional-reduction"
     ]
   },
   {
@@ -348,7 +350,8 @@
     "inBook": "以引力波向宇宙广播文明坐标的技术，是第一部「太阳放大器」恒星级广播的升级版。威慑结构里，罗辑手握的就是引力波广播的开关——只要按下，三体世界坐标暴露，两个文明同归于尽。",
     "science": "引力波真实存在（2015 年 LIGO 首次直接探测）；「用引力波天线向宇宙广播坐标」是科幻设想，现实中引力波无法定向携带如此信息。",
     "events": [
-      "luo-ji-deterrence"
+      "luo-ji-deterrence",
+      "broadcast-of-coordinates"
     ],
     "characters": [
       "luo-ji"
@@ -366,7 +369,9 @@
     "science": "「威慑平衡」借用了现实中的核威慑理论（相互确保摧毁 MAD），是核威慑逻辑的星际放大版。",
     "events": [
       "luo-ji-deterrence",
-      "deterrence-era-peace"
+      "deterrence-era-peace",
+      "cheng-xin-awake",
+      "deterrence-failure"
     ],
     "characters": [
       "luo-ji"
@@ -386,7 +391,9 @@
     "science": "「执剑人」是核威慑中「按按钮的人」的文学化身：威慑的脆弱性在于它依赖单个人的意志。",
     "events": [
       "luo-ji-deterrence",
-      "deterrence-era-peace"
+      "deterrence-era-peace",
+      "cheng-xin-awake",
+      "deterrence-failure"
     ],
     "characters": [
       "luo-ji"
@@ -428,5 +435,183 @@
     "events": [],
     "characters": [],
     "related": []
+  },
+  {
+    "id": "curvature-drive",
+    "name": "曲率驱动",
+    "tagline": "让空间推着飞船走",
+    "group": "tech",
+    "inBook": "光速飞船的关键技术：飞船通过改变后方空间的曲率，让空间本身「推着」飞船前进——不是飞船在空间里飞，而是空间带着飞船走。三体曾锁死人类的光速科技，云天明童话把原理传回地球，人类才偷偷造出星环号。",
+    "science": "「曲率驱动」借用广义相对论中时空可弯曲的真实概念，在数学上存在「曲率推进」（Alcubierre 引擎）的科幻构想，目前没有可行性实验支持。",
+    "events": [
+      "fairy-tales",
+      "cheng-xin-escape"
+    ],
+    "characters": [],
+    "related": [
+      "lightspeed-ship"
+    ]
+  },
+  {
+    "id": "lightspeed-ship",
+    "name": "光速飞船",
+    "tagline": "逃出宇宙牢笼的钥匙",
+    "group": "tech",
+    "inBook": "以曲率驱动实现接近光速航行的飞船。三体封锁了人类光速物理一百多年，云天明童话与人类残余研究共同催生了星环号——人类终于有了逃出太阳系的船，却只够带走几个人。",
+    "science": "现实中光速是宇宙速度上限（相对论），超光速与接近光速航行均为科幻构想。",
+    "events": [
+      "fairy-tales",
+      "cheng-xin-escape"
+    ],
+    "characters": [
+      "guan-yifan"
+    ],
+    "related": [
+      "curvature-drive"
+    ]
+  },
+  {
+    "id": "black-domain",
+    "name": "黑域",
+    "tagline": "把自己装进保险柜",
+    "group": "tech",
+    "inBook": "把太阳系整体变成低光速区：光速被压到低于逃逸速度，外部攻击无法进入，太阳系成为自囚的「宇宙保险柜」，同时向宇宙发布「安全声明」。这是人类三种逃生方案中技术难度最高、也最决绝的一种——相当于主动告别整个宇宙。最终人类未能执行。",
+    "science": "「降低光速/制造低光速区」是科幻设定；现实中改变光速（真空光速）不可行，宇宙常数不可修改。",
+    "events": [
+      "fairy-tales"
+    ],
+    "characters": [],
+    "related": []
+  },
+  {
+    "id": "two-dimensional-foil",
+    "name": "二向箔",
+    "tagline": "一张要命的白纸",
+    "group": "tech",
+    "inBook": "高级文明使用的清理工具：一张薄如白纸的「箔」，能让周围的三维空间向二维跌落。二维化从接触点开始无限展开，把太阳、行星、一切物质压成一幅没有厚度的画。歌者文明正是用它清理了太阳系。",
+    "science": "「降维」借用几何学概念（二维没有高度），但物理上不存在把三维空间整体压成二维的机制，属于纯科幻设定。",
+    "events": [
+      "singer-two-dimensional"
+    ],
+    "characters": [],
+    "related": [
+      "dimensional-reduction",
+      "singer"
+    ]
+  },
+  {
+    "id": "dimensional-reduction",
+    "name": "降维打击",
+    "tagline": "比毁灭更彻底的抹除",
+    "group": "law",
+    "inBook": "高维文明对低维文明的终极打击方式：把一片空间从三维降到二维。物质不消失，但失去了「厚度」，文明的存在形式被彻底改变。降维打击的成本低到「像扔一张废纸」，却足以终结一个星系——黑暗森林法则最极端的执行手段。",
+    "science": "人类目前只认识三维空间（物理学的空间维度概念真实存在），「降维作为武器」纯属科幻想象。",
+    "events": [
+      "singer-two-dimensional"
+    ],
+    "characters": [],
+    "related": [
+      "two-dimensional-foil",
+      "dark-forest"
+    ]
+  },
+  {
+    "id": "return-to-zero",
+    "name": "宇宙归零",
+    "tagline": "让一切重新开始",
+    "group": "law",
+    "inBook": "大宇宙的宿命式结局：物质与质量足够时，宇宙会在引力作用下坍缩、归零，然后重新爆发为新的宇宙。归零者以此为由发起回归运动，呼吁每个文明交还小宇宙里的质量，让大宇宙有重启的可能。",
+    "science": "「大坍缩—大反弹」是宇宙学中真实存在的假说之一（当前主流更倾向「热寂」）；「文明归还质量」是小说在此基础上的人文演绎。",
+    "events": [
+      "returner-return",
+      "mini-universe",
+      "universe-restart"
+    ],
+    "characters": [],
+    "related": [
+      "returner",
+      "mini-universe"
+    ]
+  },
+  {
+    "id": "ladder-plan",
+    "name": "阶梯计划",
+    "tagline": "把一颗大脑送上星际赌桌",
+    "group": "tech",
+    "inBook": "行星防御理事会战略情报局（PIA）的计划：用核弹阶梯加速，向三体舰队发射一颗冷冻人脑，赌三体先进的科技能够读取、甚至复活这颗大脑，从而从内部获取三体情报。云天明的大脑就是这枚筹码。",
+    "science": "「用核弹阶梯加速探测器」有现实研究的影子（猎户座计划构想），但发射活体大脑是科幻设定。",
+    "events": [
+      "ladder-plan",
+      "yun-tianming-chengxin"
+    ],
+    "characters": [
+      "cheng-xin",
+      "yun-tianming"
+    ],
+    "related": []
+  },
+  {
+    "id": "shelter-plan",
+    "name": "掩体计划",
+    "tagline": "躲进巨行星的阴影",
+    "group": "org",
+    "inBook": "人类应对黑暗森林打击的工程方案：在木星、土星等巨行星背阳面建造太空城群，利用巨行星挡住可能的打击，让文明在阴影中继续存在。掩体纪元的两百多年里，人类就活在这样一排「宇宙盾牌」的背后。",
+    "science": "「利用天体遮挡」是现实的工程与军事思维，规模上属科幻想象。",
+    "events": [
+      "shelter-era-begins"
+    ],
+    "characters": [],
+    "related": []
+  },
+  {
+    "id": "singer",
+    "name": "歌者文明",
+    "tagline": "宇宙深处的清理员",
+    "group": "org",
+    "inBook": "游荡在宇宙深处的清理者文明。他们像森林中持枪的猎人，例行检查暴露的坐标并按需清理——清理手段可以是一颗光粒，也可以是一张二向箔。太阳系，只是歌者随手画掉的一个条目。",
+    "science": "「清理者文明」是黑暗森林法则的具象化，属于科幻设定。",
+    "events": [
+      "singer-two-dimensional"
+    ],
+    "characters": [
+      "ge-zhe"
+    ],
+    "related": [
+      "two-dimensional-foil"
+    ]
+  },
+  {
+    "id": "returner",
+    "name": "归零者",
+    "tagline": "为宇宙续命的文明",
+    "group": "org",
+    "inBook": "发起「回归运动」的神秘高级文明。他们宣告宇宙将归零重生，并呼吁所有文明交还藏进小宇宙的质量——不为任何具体文明的存亡，只为让大宇宙拥有重来一次的机会。",
+    "science": "「回归运动」为科幻设定，其动机置于宇宙尺度的「文明共同体」想象之上。",
+    "events": [
+      "returner-return"
+    ],
+    "characters": [],
+    "related": [
+      "return-to-zero"
+    ]
+  },
+  {
+    "id": "mini-universe",
+    "name": "小宇宙",
+    "tagline": "文明的最后一间房",
+    "group": "org",
+    "inBook": "高级文明在大宇宙之外开辟的私有空间：自成一体的微型宇宙，可以把物质与生命保存进去，脱离大宇宙的坍缩。人类最后的幸存者程心与关一帆，就在云天明留下的一个小宇宙里，等待大宇宙的归零与重启。",
+    "science": "「私人宇宙/口袋宇宙」是科幻中的常见设定，无现实对应。",
+    "events": [
+      "mini-universe",
+      "universe-restart"
+    ],
+    "characters": [
+      "cheng-xin",
+      "guan-yifan"
+    ],
+    "related": [
+      "return-to-zero"
+    ]
   }
 ]

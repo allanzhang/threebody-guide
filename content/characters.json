@@ -125,7 +125,10 @@
       "curse-broadcast",
       "dark-forest-confirmed",
       "luo-ji-deterrence",
-      "deterrence-era-peace"
+      "deterrence-era-peace",
+      "cheng-xin-awake",
+      "deterrence-failure",
+      "roji-final-stand"
     ],
     "concepts": [
       "cosmic-sociology",
@@ -334,6 +337,118 @@
       "luo-ji-idyll"
     ],
     "concepts": [],
+    "portrait": ""
+  },
+  {
+    "id": "cheng-xin",
+    "name": "程心",
+    "alias": "",
+    "tagline": "执剑人 / 人类的最后守望者",
+    "group": "face",
+    "isCore": true,
+    "who": "与云天明是大学同学，一名从冬眠中醒来、被命运反复推上风口浪尖的普通人。她善良、柔软，相信爱与和平——也正因如此，她成为威慑纪元末期的执剑人，并在三体进攻时放下了毁灭的开关。",
+    "role": "她是《死神永生》的绝对主角，也是人类两次关键抉择的执行者：威慑纪元放下的开关带来威慑失败，掩体纪元的选择让人类失去最后的逃亡机会。她不是恶人，却用「善良」两次葬送了人类——刘慈欣借她追问：爱与和平，在宇宙中用得起吗？",
+    "storyline": "危机纪元：送别云天明 → 冬眠 → 威慑纪元 61 年被选为执剑人 → 62 年威慑失败 → 掩体纪元乘星环号逃离太阳系 → 银河纪元抵达蓝色星球 → 最终与关一帆住进小宇宙，等待归零。",
+    "choices": "第一次，她放下引力波广播的开关——因为她说服不了自己毁灭两个世界，威慑在十分钟内崩溃；第二次，她否决维德的光速飞船计划——人类的和平幻觉压倒了对宇宙的清醒，太阳系随之失去最后的逃生之路。",
+    "events": [
+      "ladder-plan",
+      "yun-tianming-chengxin",
+      "cheng-xin-awake",
+      "deterrence-failure",
+      "cheng-xin-escape",
+      "roji-final-stand",
+      "galaxy-era-meeting",
+      "returner-return",
+      "mini-universe",
+      "universe-restart"
+    ],
+    "concepts": [
+      "ladder-plan",
+      "mini-universe"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "yun-tianming",
+    "name": "云天明",
+    "alias": "",
+    "tagline": "阶梯计划的执行者 / 藏在童话里的救世主",
+    "group": "face",
+    "isCore": true,
+    "who": "程心的大学同学，身患绝症的天才。他把一颗恒星买下来送给暗恋的程心，又把大脑捐给阶梯计划，成为第一个「活生生」进入三体世界的人类。",
+    "role": "他是全书最深的情报员：在三体文明内部生活多年后，用三个童话把曲率驱动、光速飞船与黑域的情报传回地球——人类最后的逃生路线，全部来自他。他爱得不声不响，也救得无声无息。",
+    "storyline": "危机纪元：买星、捐脑 → 被三体截获复活 → 广播纪元以童话传递情报 → 银河纪元在蓝色星球与程心重逢。",
+    "choices": "在绝症与暗恋之间，他选择把大脑交给阶梯计划——以最孤独的方式，完成对程心与人类文明最深远的守护。",
+    "events": [
+      "ladder-plan",
+      "yun-tianming-chengxin",
+      "fairy-tales",
+      "galaxy-era-meeting"
+    ],
+    "concepts": [
+      "ladder-plan"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "ai-aa",
+    "name": "艾AA",
+    "alias": "",
+    "tagline": "星环集团总裁助手 / 程心的同行者",
+    "group": "support",
+    "isCore": false,
+    "who": "程心的助手与挚友，精明、活泼、行动力极强。她全程陪伴程心经历执剑人当选、威慑失败与太阳系二维化，最终与程心一起乘星环号逃出太阳系。",
+    "role": "她是全书少有的「活得轻快」的普通人：在一次次末日级事件里，用行动力把程心从崩溃边缘拉回来，也是人类逃亡之路上的可靠旅伴。",
+    "storyline": "协助程心经营星环集团 → 威慑失败 → 与程心乘星环号逃离 → 抵达蓝色星球，此后与云天明留驻蓝星。",
+    "choices": "",
+    "events": [
+      "cheng-xin-escape",
+      "galaxy-era-meeting"
+    ],
+    "concepts": [],
+    "portrait": ""
+  },
+  {
+    "id": "guan-yifan",
+    "name": "关一帆",
+    "alias": "",
+    "tagline": "万有引力号科学家 / 小宇宙的同行者",
+    "group": "support",
+    "isCore": false,
+    "who": "万有引力号上的随舰科学家，研究宇宙学与曲率。他在追捕自然选择号的长航中见证并参与了三体坐标的广播，后来在蓝色星球与程心相遇、相恋。",
+    "role": "他是「星舰地球」科学侧的缩影：在人类文明最深的深空里，仍然在追问宇宙的真相。他与程心一起住进小宇宙，成为人类文明最后的两位见证者之一。",
+    "storyline": "随万有引力号参与引力波广播 → 漂流深空 → 抵达蓝色星球与程心相遇 → 与程心进入小宇宙，等待归零。",
+    "choices": "",
+    "events": [
+      "broadcast-of-coordinates",
+      "galaxy-era-meeting",
+      "returner-return",
+      "mini-universe",
+      "universe-restart"
+    ],
+    "concepts": [
+      "lightspeed-ship",
+      "mini-universe"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "ge-zhe",
+    "name": "歌者",
+    "alias": "",
+    "tagline": "歌者文明清理员 / 掷出二向箔的手",
+    "group": "eto",
+    "isCore": false,
+    "who": "歌者文明中的一名清理员（歌者），在例行清理中发现了太阳系，随手掷出二向箔，终结了太阳系文明。",
+    "role": "他是「黑暗森林」最冰冷一面的具象：清理一个文明，对歌者来说只是一次例行作业；他甚至没有名字，只有「歌者」这个职能代号。",
+    "storyline": "发现太阳系坐标 → 掷出二向箔 → 太阳系二维化。",
+    "choices": "",
+    "events": [
+      "singer-two-dimensional"
+    ],
+    "concepts": [
+      "singer"
+    ],
     "portrait": ""
   }
 ]

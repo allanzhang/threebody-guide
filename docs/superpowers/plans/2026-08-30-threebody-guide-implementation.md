@@ -1500,14 +1500,16 @@ git commit -m "feat: 内容批次2《黑暗森林》灌入（12事件/10概念/6
 
 **模板与校验流程同 Task 10。**
 
+> 审校修正（2026-08-30）：① 章北海未打思想钢印——钢印族为希恩斯私下改命题后被打上「人类必败」的约五万太空军，章北海是「野生钢印族」（已修正 Task 11 内容）；② 云天明线发生于危机纪元 4 年，归入危机纪元而非威慑纪元；③ 罗辑结局为冥王星「地球文明博物馆」守墓并与太阳系一同二维化，非黑域计划（黑域计划为未执行的安全声明方案）。
+
 **本批清单：**
 
 《死神永生》事件（bookId=`deaths-end`；era 分布见列）：
 
 | id | 标题 | era | major |
 |---|---|---|---|
-| ladder-plan | 阶梯计划：云天明的大脑 | deterrence | |
-| yun-tianming-chengxin | 云天明与程心 | deterrence | |
+| ladder-plan | 阶梯计划：云天明的大脑 | crisis | |
+| yun-tianming-chengxin | 云天明与程心：一颗星星的告别 | crisis | |
 | cheng-xin-awake | 程心苏醒与执剑人竞选 | deterrence | |
 | deterrence-failure | 威慑失败：程心放下开关 | broadcast | ★ |
 | broadcast-of-coordinates | 引力波广播：坐标暴露 | broadcast | ★ |
@@ -1516,7 +1518,7 @@ git commit -m "feat: 内容批次2《黑暗森林》灌入（12事件/10概念/6
 | shelter-era-begins | 掩体纪元：太阳系太空城 | shelter | |
 | singer-two-dimensional | 歌者的二向箔：太阳系二维化 | shelter | ★ |
 | cheng-xin-escape | 程心与艾AA 逃离太阳系 | shelter | |
-| black-domain-roji | 罗辑的黑域与留守 | shelter | |
+| roji-final-stand | 罗辑的留守：地球文明博物馆 | shelter | |
 | galaxy-era-meeting | 银河纪元：程心与云天明相会 | galaxy | |
 | returner-return | 归零者与回归运动 | galaxy | |
 | mini-universe | 小宇宙与生态球 | galaxy | |
