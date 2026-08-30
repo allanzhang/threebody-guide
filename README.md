@@ -33,12 +33,12 @@
 
 Vercel / Cloudflare Pages / GitHub Pages 均可：构建命令 `npm run build`，输出目录 `dist/`；子路径部署设置环境变量 `BASE_PATH`（如 `/threebody/`）。
 
-## M2 打磨状态（进行中）
+## M2 打磨状态（已完成）
 
 - [x] SEO 基础：favicon / og / canonical / 逐页 description / robots.txt / sitemap.xml（64 URL，构建时生成）
 - [x] 时间线可用性：sticky 纪元侧栏目录 + 描边纪年大字装饰层
 - [x] 移动端 375px 渲染核验（Chrome headless 视口截图 5 页通过；真机手感复测待部署后）
-- [ ] 纪年口径校准（纪元切分公历年份以原著复核）
-- [ ] 中英对照标注（annotate-terms 幂等管线）
-- [ ] 概念册 40 条全量深度扩写
-- [ ] 腾讯剧照真实图片接入（需素材；portrait/event 同名替换机制已就绪）
+- [x] 纪年口径校准：统一纪年体系 + 公历锚点（危机元年 2007 / 威慑元年 2215 / 广播 2276 / 掩体 2279 / 银河 2346）
+- [x] 中英对照标注：45 词条单趟最长匹配、显式幂等、污染扫描门禁（140+ 字段）
+- [x] 概念册 40 条全量深度扩写（机制/隐喻/剧情作用层）
+- [x] 真实图片接入机制：portrait / image 覆写 + 同名替换；validator self-test 已含图片文件缺失门禁（腾讯剧照素材待提供）

@@ -107,7 +107,12 @@ if (process.argv.includes('--self-test')) {
   const broken2 = makeData();
   broken2.events[0].characters = [];
   if (validate(broken2).length === 0) { console.error('✗ self-test 失败：双向不对称未被捕获'); process.exit(1); }
-  console.log('✓ self-test 通过：非法引用与不对称均能被捕获');
+  // 用例3：图片覆写文件不存在必须被捕获（portrait / event.image 同名替换机制的门禁）
+  const broken3 = makeData();
+  broken3.characters[0].portrait = '/images/does-not-exist.svg';
+  broken3.events[0].image = '/images/does-not-exist.svg';
+  if (validate(broken3).length < 2) { console.error('✗ self-test 失败：图片文件缺失未被捕获'); process.exit(1); }
+  console.log('✓ self-test 通过：非法引用/不对称/图片文件缺失均能被捕获');
   process.exit(0);
 }
 
