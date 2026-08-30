@@ -312,11 +312,11 @@ function validate(data) {
   }
 
   // 双向链接对称检查（双向各扫一遍）
-  const checkSym = (listA, fieldA, idSetA, listB, fieldB, label) => {
-    const oneWay = (from, fA, idsA, to, fB) => {
+  const checkSym = (listA, fieldA, listB, fieldB, idSetB, idSetA, label) => {
+    const oneWay = (from, fA, to, fB, ids) => {
       for (const a of from) {
         for (const id of a[fA] || []) {
-          if (!idsA.has(id)) continue; // 存在性已查
+          if (!ids.has(id)) continue; // 存在性已查
           const b = to.find((x) => x.id === id);
           if (b && !(b[fB] || []).includes(a.id)) {
             errors.push(`双向链接不对称(${label}): ${a.id} 引用了 ${id}，但 ${b.id} 反向缺失`);
@@ -324,13 +324,13 @@ function validate(data) {
         }
       }
     };
-    oneWay(listA, fieldA, idSetA, listB, fieldB);
-    oneWay(listB, fieldB, idSetB, listA, fieldA);
+    oneWay(listA, fieldA, listB, fieldB, idSetB);
+    oneWay(listB, fieldB, listA, fieldA, idSetA);
   };
-  checkSym(events, 'characters', charIds, characters, 'events', '事件↔人物');
-  checkSym(events, 'concepts', conceptIds, concepts, 'events', '事件↔概念');
-  checkSym(characters, 'concepts', conceptIds, concepts, 'characters', '人物↔概念');
-  checkSym(concepts, 'related', conceptIds, concepts, 'related', '概念↔概念');
+  checkSym(events, 'characters', characters, 'events', charIds, eventIds, '事件↔人物');
+  checkSym(events, 'concepts', concepts, 'events', conceptIds, eventIds, '事件↔概念');
+  checkSym(characters, 'concepts', concepts, 'characters', conceptIds, charIds, '人物↔概念');
+  checkSym(concepts, 'related', concepts, 'related', conceptIds, conceptIds, '概念↔概念');
 
   return errors;
 }
