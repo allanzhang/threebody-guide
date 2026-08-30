@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Linkify from '../../components/Linkify.astro';
 import { characters, characterById, eventById, conceptById, pageUrl, imageUrl, charPortrait } from '../../lib/data.mjs';
 
 export function getStaticPaths() {
@@ -24,15 +25,15 @@ const c = characterById.get(id);
       </header>
       <section class="block">
         <h2>他是谁</h2>
-        <p>{c.who}</p>
+        <p><Linkify text={c.who} exclude={[c.name]} /></p>
       </section>
       <section class="block">
         <h2>他的作用</h2>
-        <p>{c.role}</p>
+        <p><Linkify text={c.role} exclude={[c.name]} /></p>
       </section>
       <section class="block">
         <h2>他的故事线</h2>
-        <p>{c.storyline}</p>
+        <p><Linkify text={c.storyline} exclude={[c.name]} /></p>
       </section>
       {c.choices && (
         <section class="block science">

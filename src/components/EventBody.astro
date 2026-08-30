@@ -1,5 +1,6 @@
 ---
 import Chips from './Chips.astro';
+import Linkify from './Linkify.astro';
 import { bookById } from '../lib/data.mjs';
 const { ev } = Astro.props;
 const book = bookById.get(ev.bookId);
@@ -8,12 +9,12 @@ const book = bookById.get(ev.bookId);
 <span class={`book-badge b${book.order}`}>{book.title}</span>
 <h3>{ev.title}</h3>
 {ev.subtitle && <p class="entry-sub">{ev.subtitle}</p>}
-<p class="entry-summary">{ev.summary}</p>
+<p class="entry-summary"><Linkify text={ev.summary} /></p>
 <Chips ev={ev} />
 {ev.details && (
   <div class="entry-details">
     <h4>细节与伏笔</h4>
-    {ev.details.split('\n').map((line) => <p>{line}</p>)}
+    {ev.details.split('\n').map((line) => <p><Linkify text={line} /></p>)}
   </div>
 )}
 {ev.note && <p class="entry-note">{ev.note}</p>}

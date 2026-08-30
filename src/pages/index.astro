@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Linkify from '../components/Linkify.astro';
 import { pageUrl, imageUrl, bookCover, books } from '../lib/data.mjs';
 
 const entries = [
@@ -32,7 +33,7 @@ const entries = [
           <div>
             <h3>{b.title}</h3>
             {b.subtitle && <p>{b.subtitle}</p>}
-            <p>{b.intro}</p>
+            <p><Linkify text={b.intro} /></p>
           </div>
         </div>
       ))}

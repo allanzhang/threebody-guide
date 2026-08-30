@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import EventBody from '../components/EventBody.astro';
+import Linkify from '../components/Linkify.astro';
 import {
   sortedEras, eraEvents,
   pageUrl, imageUrl, eventImage, eraHero,
@@ -31,7 +32,7 @@ import {
           <div class="era-hero-inner">
             <p class="era-years">{era.years}</p>
             <h2>{era.name}</h2>
-            <p class="era-intro">{era.intro}</p>
+            <p class="era-intro"><Linkify text={era.intro} /></p>
           </div>
         </div>
         <div class="timeline">

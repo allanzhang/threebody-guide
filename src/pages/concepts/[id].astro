@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Linkify from '../../components/Linkify.astro';
 import { concepts, conceptById, characterById, eventById, pageUrl } from '../../lib/data.mjs';
 
 export function getStaticPaths() {
@@ -20,16 +21,16 @@ const groupTitles = { law: '法则与理论', tech: '科技与器物', org: '组
       </header>
       <section class="block">
         <h2>书里怎么讲</h2>
-        <p>{c.inBook}</p>
+        <p><Linkify text={c.inBook} exclude={[c.name]} /></p>
       </section>
       <section class="block science">
         <h2>科学底子</h2>
-        <p>{c.science}</p>
+        <p><Linkify text={c.science} exclude={[c.name]} /></p>
       </section>
       {c.details && (
         <section class="block details">
           <h2>细节与伏笔</h2>
-          {c.details.split('\n').map((line) => <p>{line}</p>)}
+          {c.details.split('\n').map((line) => <p><Linkify text={line} exclude={[c.name]} /></p>)}
         </section>
       )}
       <footer class="detail-links">

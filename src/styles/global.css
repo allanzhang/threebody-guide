@@ -183,6 +183,12 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--ink);
 }
 .chip:hover { border-color: var(--accent); color: var(--accent-strong); }
+.inline-link {
+  color: var(--accent-strong);
+  border-bottom: 1px dotted rgba(216, 196, 138, 0.55);
+  transition: border-bottom-color 0.15s;
+}
+.inline-link:hover { border-bottom-color: var(--accent); }
 
 /* ===== 概念册 / 人物墙通用卡片网格 ===== */
 .concept-group, .char-group { margin-bottom: 72px; }

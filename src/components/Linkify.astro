@@ -1,0 +1,33 @@
+---
+// 正文实体自动内联链接：概念名/人物名 → 详情页（长词优先，防止部分匹配）
+import { concepts, characters, pageUrl } from '../lib/data.mjs';
+const { text = '', exclude = [] } = Astro.props;
+const EXCLUDE = new Set(exclude);
+
+const ENTITIES = [
+  ...concepts.filter((c) => !EXCLUDE.has(c.name)).map((c) => ({ name: c.name, url: pageUrl(`/concepts/${c.id}/`) })),
+  ...characters.filter((c) => !EXCLUDE.has(c.name)).map((c) => ({ name: c.name, url: pageUrl(`/characters/${c.id}/`) })),
+].sort((a, b) => b.name.length - a.name.length || a.name.localeCompare(b.name));
+
+const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+function linkify(t) {
+  let out = '';
+  let i = 0;
+  while (i < t.length) {
+    let hit = null;
+    for (const e of ENTITIES) {
+      if (t.startsWith(e.name, i)) { hit = e; break; }
+    }
+    if (hit) {
+      out += `<a class="inline-link" href="${hit.url}">${esc(hit.name)}</a>`;
+      i += hit.name.length;
+      continue;
+    }
+    out += esc(t[i]);
+    i++;
+  }
+  return out;
+}
+---
+<Fragment set:html={linkify(text)} />
