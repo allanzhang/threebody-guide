@@ -41,6 +41,11 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   transition: color 0.15s;
 }
 .site-nav nav a:hover { color: var(--accent-strong); }
+.site-nav nav a.active { color: var(--accent-strong); }
+.site-nav nav a.active::after {
+  content: ''; display: block; height: 2px;
+  background: var(--accent); margin-top: 3px; border-radius: 1px;
+}
 
 /* ===== 页脚 ===== */
 .site-footer {
