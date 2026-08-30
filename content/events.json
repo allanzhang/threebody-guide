@@ -326,7 +326,8 @@
     ],
     "concepts": [
       "cosmic-sociology",
-      "face-wall-plan"
+      "face-wall-plan",
+      "hibernation"
     ],
     "image": "",
     "note": ""
@@ -389,7 +390,8 @@
       "tyler"
     ],
     "concepts": [
-      "face-wall-plan"
+      "face-wall-plan",
+      "wall-breaker"
     ],
     "image": "",
     "note": ""
@@ -408,7 +410,9 @@
       "luo-ji",
       "zhuang-yan"
     ],
-    "concepts": [],
+    "concepts": [
+      "hibernation"
+    ],
     "image": "",
     "note": ""
   },
@@ -444,7 +448,10 @@
     "characters": [
       "zhang-beihai"
     ],
-    "concepts": [],
+    "concepts": [
+      "exodus-thought",
+      "hibernation"
+    ],
     "image": "",
     "note": ""
   },
@@ -482,7 +489,8 @@
     ],
     "concepts": [
       "dark-forest",
-      "suspect-chain"
+      "suspect-chain",
+      "dark-forest-strike"
     ],
     "image": "",
     "note": ""
@@ -539,7 +547,9 @@
     "characters": [
       "zhang-beihai"
     ],
-    "concepts": [],
+    "concepts": [
+      "exodus-thought"
+    ],
     "image": "",
     "note": ""
   },
@@ -559,7 +569,8 @@
     "concepts": [
       "deterrence",
       "sword-holder",
-      "gravity-broadcast"
+      "gravity-broadcast",
+      "snow-project"
     ],
     "image": "",
     "note": ""
@@ -640,7 +651,8 @@
     ],
     "concepts": [
       "sword-holder",
-      "deterrence"
+      "deterrence",
+      "hibernation"
     ],
     "image": "",
     "note": ""
@@ -697,7 +709,9 @@
     "summary": "广播发出数年后的某一天，三体母星被一道来自宇宙深处的打击摧毁——某个高级文明用一颗光粒终结了三体世界。黑暗森林法则以最残酷的方式应验：暴露坐标的文明，终将被清理。三体残余舰队向深空逃逸，而地球仍留在太阳系里，等待着属于它的下一枪。",
     "characters": [],
     "concepts": [
-      "dark-forest"
+      "dark-forest",
+      "light-particle",
+      "dark-forest-strike"
     ],
     "image": "",
     "note": ""
@@ -756,7 +770,8 @@
     "concepts": [
       "two-dimensional-foil",
       "dimensional-reduction",
-      "singer"
+      "singer",
+      "dark-forest-strike"
     ],
     "image": "",
     "note": ""

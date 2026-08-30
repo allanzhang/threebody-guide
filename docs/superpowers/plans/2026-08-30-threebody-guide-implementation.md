@@ -1539,6 +1539,12 @@ git commit -m "feat: 内容批次2《黑暗森林》灌入（12事件/10概念/6
 | returner | 归零者 | org |
 | mini-universe | 小宇宙 | org |
 | shelter-plan | 掩体计划 | org |
+| snow-project | 雪地工程（罗辑面壁预警/威慑体系） | tech |
+| wall-breaker | 破壁人 | org |
+| light-particle | 光粒 | tech |
+| exodus-thought | 逃亡主义 | law |
+| hibernation | 冬眠 | tech |
+| dark-forest-strike | 黑暗森林打击 | law |
 
 《死神永生》人物：
 

@@ -272,7 +272,9 @@
       "suspect-chain",
       "tech-explosion",
       "deterrence",
-      "dimensional-reduction"
+      "dimensional-reduction",
+      "light-particle",
+      "dark-forest-strike"
     ]
   },
   {
@@ -357,7 +359,8 @@
       "luo-ji"
     ],
     "related": [
-      "deterrence"
+      "deterrence",
+      "snow-project"
     ]
   },
   {
@@ -379,7 +382,8 @@
     "related": [
       "dark-forest",
       "sword-holder",
-      "gravity-broadcast"
+      "gravity-broadcast",
+      "snow-project"
     ]
   },
   {
@@ -422,7 +426,8 @@
       "tyler"
     ],
     "related": [
-      "thought-stamp"
+      "thought-stamp",
+      "wall-breaker"
     ]
   },
   {
@@ -496,7 +501,8 @@
     "characters": [],
     "related": [
       "dimensional-reduction",
-      "singer"
+      "singer",
+      "dark-forest-strike"
     ]
   },
   {
@@ -512,7 +518,8 @@
     "characters": [],
     "related": [
       "two-dimensional-foil",
-      "dark-forest"
+      "dark-forest",
+      "dark-forest-strike"
     ]
   },
   {
@@ -612,6 +619,116 @@
     ],
     "related": [
       "return-to-zero"
+    ]
+  },
+  {
+    "id": "snow-project",
+    "name": "雪地工程",
+    "tagline": "在太阳系铺一片雪地",
+    "group": "tech",
+    "inBook": "罗辑作为面壁者推进的巨型工程：在太阳系外围布设大量核弹，引爆后形成覆盖广袤太空的尘埃云——如同在宇宙中铺开一片「雪地」。公开的用途是监测三体舰队：任何物体穿过尘埃云都会留下轨迹，舰队的一举一动将无所遁形。而它真正的秘密藏在「遮蔽太阳」上：尘埃云让太阳无法再被用作放大电波广播坐标的工具。配合引力波天线与「摇篮」系统（监测罗辑生命体征，罗辑死亡即向宇宙广播三体坐标），罗辑把「向宇宙发信」的开关牢牢握在自己手里——威慑的根基，早在他被选中为面壁者时就已开始布局。",
+    "science": "用尘埃云遮挡与监测天体借用了真实天文观测中「尘埃遮蔽星光」的原理；「用核爆制造星际尘埃云」是科幻尺度的工程想象；「摇篮」死手系统则是现实核威慑「死手系统」的文学化身。",
+    "events": [
+      "luo-ji-deterrence"
+    ],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "deterrence",
+      "gravity-broadcast"
+    ]
+  },
+  {
+    "id": "wall-breaker",
+    "name": "破壁人",
+    "tagline": "看穿面壁者的眼睛",
+    "group": "org",
+    "inBook": "三体世界为泰勒、雷迪亚兹、希恩斯三位面壁者分别指定的破解者。破壁人往往是最了解面壁者本人的人——希恩斯的破壁人正是他的妻子山杉惠子——他们的任务是识破面壁者的真实意图并公之于众，让计划失效。三位面壁者的计划先后被破壁人揭穿；唯独罗辑没有破壁人——三体读不懂他，也找不到能读懂他的人。",
+    "science": "破壁人是纯文学设定，其逻辑基础是「面壁者以欺骗对抗透明监视」的思想实验：在一个能监视一切、却读不了心的宇宙里，欺骗成为最后的武器与最后的破绽。",
+    "events": [
+      "wall-breakers"
+    ],
+    "characters": [
+      "hines",
+      "rey-diaz",
+      "tyler"
+    ],
+    "related": [
+      "face-wall-plan"
+    ]
+  },
+  {
+    "id": "light-particle",
+    "name": "光粒",
+    "tagline": "一颗终结恒星的光点",
+    "group": "tech",
+    "inBook": "高等文明清理暴露文明的一种武器：以接近光速飞行的微小物体，命中恒星核心后瞬间引爆恒星，摧毁整个行星系。三体母星正是被一颗光粒摧毁的。它让黑暗森林打击的「高效、廉价、几乎不可防御」暴露无遗——清理一个文明，只需要一颗小小的光粒。",
+    "science": "物体接近光速时动能急剧增大（相对论效应）是真实物理，「用高速物体摧毁恒星」是在此基础上的极端科幻放大。",
+    "events": [
+      "trisolaris-destroyed"
+    ],
+    "characters": [],
+    "related": [
+      "dark-forest"
+    ]
+  },
+  {
+    "id": "exodus-thought",
+    "name": "逃亡主义",
+    "tagline": "人类的两条路之一",
+    "group": "law",
+    "inBook": "三体危机下人类内部的思想路线之争：一方主张「逃亡主义」——人类打不赢三体，唯一出路是建造星际飞船离开太阳系，让文明在深空中延续；另一方坚信人类必胜，视逃亡为背叛与懦弱。联合国一度通过法令禁止逃亡研究。章北海是逃亡主义的极端执行者——他用自己的「叛逃」，把人类文明的种子带出了太阳系。",
+    "science": "「文明逃亡」是经典科幻母题；其争议核心（是否放弃母星、如何对待留下的人）在现实政治哲学中亦无标准答案。",
+    "events": [
+      "zhang-beihai-future",
+      "zhang-beihai-escape"
+    ],
+    "characters": [
+      "zhang-beihai"
+    ],
+    "related": []
+  },
+  {
+    "id": "hibernation",
+    "name": "冬眠",
+    "tagline": "跨越世纪的睡眠",
+    "group": "tech",
+    "inBook": "三体危机时代发展出的生物学技术：人体进入低温深眠，生理近乎停止，可跨越数十年乃至数百年后苏醒。罗辑、章北海、希恩斯、程心都依靠冬眠「增援未来」——冬眠既是面壁者布局的道具，也是一部「时代电梯」：躺下时世界还是熟悉的模样，醒来时已沧海桑田。",
+    "science": "真实医学界存在低温休眠研究（手术中的治疗性低体温、深空航行的冬眠设想），跨世纪的深度冬眠仍属科幻。",
+    "events": [
+      "luo-ji-facewall",
+      "luo-ji-idyll",
+      "zhang-beihai-future",
+      "cheng-xin-awake"
+    ],
+    "characters": [
+      "luo-ji",
+      "cheng-xin",
+      "zhang-beihai",
+      "hines"
+    ],
+    "related": []
+  },
+  {
+    "id": "dark-forest-strike",
+    "name": "黑暗森林打击",
+    "tagline": "暴露坐标的代价",
+    "group": "law",
+    "inBook": "黑暗森林法则的执行环节：任何暴露出坐标的文明，都可能收到来自高等文明的毁灭性打击——可能是光粒（引爆恒星），也可能是二向箔（把一片空间降维）。对清理者而言，打击只是例行作业，甚至不知道被清理者的名字。三体母星与太阳系，先后成为黑暗森林打击的注脚。",
+    "science": "基于「费米悖论」的文学假设：宇宙的寂静，也许是因为暴露者都已被清理。属科幻设定而非科学结论。",
+    "events": [
+      "dark-forest-confirmed",
+      "trisolaris-destroyed",
+      "singer-two-dimensional"
+    ],
+    "characters": [
+      "ge-zhe"
+    ],
+    "related": [
+      "dark-forest",
+      "dimensional-reduction",
+      "two-dimensional-foil"
     ]
   }
 ]

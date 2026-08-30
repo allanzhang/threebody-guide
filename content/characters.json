@@ -138,7 +138,9 @@
       "gravity-broadcast",
       "deterrence",
       "sword-holder",
-      "face-wall-plan"
+      "face-wall-plan",
+      "snow-project",
+      "hibernation"
     ],
     "portrait": ""
   },
@@ -237,7 +239,10 @@
       "zhang-beihai-future",
       "zhang-beihai-escape"
     ],
-    "concepts": [],
+    "concepts": [
+      "exodus-thought",
+      "hibernation"
+    ],
     "portrait": ""
   },
   {
@@ -258,7 +263,9 @@
     ],
     "concepts": [
       "thought-stamp",
-      "face-wall-plan"
+      "face-wall-plan",
+      "wall-breaker",
+      "hibernation"
     ],
     "portrait": ""
   },
@@ -278,7 +285,8 @@
       "wall-breakers"
     ],
     "concepts": [
-      "face-wall-plan"
+      "face-wall-plan",
+      "wall-breaker"
     ],
     "portrait": ""
   },
@@ -298,7 +306,8 @@
       "wall-breakers"
     ],
     "concepts": [
-      "face-wall-plan"
+      "face-wall-plan",
+      "wall-breaker"
     ],
     "portrait": ""
   },
@@ -364,7 +373,8 @@
     ],
     "concepts": [
       "ladder-plan",
-      "mini-universe"
+      "mini-universe",
+      "hibernation"
     ],
     "portrait": ""
   },
@@ -447,7 +457,8 @@
       "singer-two-dimensional"
     ],
     "concepts": [
-      "singer"
+      "singer",
+      "dark-forest-strike"
     ],
     "portrait": ""
   }
