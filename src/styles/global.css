@@ -303,6 +303,66 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 .detail-links { border-top: 1px solid var(--line); padding-top: 24px; }
 .detail-links h3 { font-size: 14px; color: var(--ink-dim); margin: 14px 0 10px; }
 
+/* ===== 时间线：大事件场景入口 ===== */
+.event-media { position: relative; }
+.scene-enter {
+  position: absolute; right: 18px; top: 18px; z-index: 2;
+  display: flex; flex-direction: column; align-items: flex-end; gap: 2px;
+  padding: 10px 16px; border-radius: var(--radius);
+  background: rgba(8,12,20,0.82); border: 1px solid rgba(127,168,216,0.55);
+  box-shadow: 0 0 22px rgba(90,140,210,0.28);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.scene-enter:hover { border-color: rgba(170,205,245,0.9); box-shadow: 0 0 30px rgba(110,160,230,0.45); }
+.scene-enter-title { font-family: var(--serif); font-size: 16px; color: #dfe9f2; letter-spacing: 0.1em; }
+.scene-enter-hint { font-family: var(--mono); font-size: 11px; letter-spacing: 0.28em; color: #7fa8d8; }
+
+/* ===== 解读块（关键转折 / 细思极恐 / 他的遗产） ===== */
+.insight {
+  margin: 16px 0; padding: 16px 20px; border-radius: var(--radius);
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(90deg, rgba(184,168,119,0.10) 0%, rgba(184,168,119,0.02) 78%);
+}
+.insight h4 {
+  font-family: var(--serif); font-size: 15px; color: var(--accent-strong);
+  letter-spacing: 0.14em; margin-bottom: 8px;
+}
+.insight p { font-size: 14px; color: var(--ink); line-height: 1.9; max-width: 860px; }
+.insight.turning { border-left-color: #7fa8d8; background: linear-gradient(90deg, rgba(90,140,210,0.12) 0%, rgba(90,140,210,0.02) 78%); }
+.insight.turning h4 { color: #9fc0e8; }
+
+/* ===== 大场面沉浸页 ===== */
+.scene-page { margin: -24px -24px 0; }
+.scene-stage {
+  position: relative; min-height: 92vh; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  border-bottom: 1px solid var(--line);
+}
+.scene-stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+#scene-stars { z-index: 0; }
+#scene-fg { z-index: 1; }
+.scene-stage-shade {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 46%, rgba(10,14,20,0.05) 0%, rgba(10,14,20,0.5) 76%, rgba(10,14,20,0.92) 100%);
+}
+.scene-stage-inner { position: relative; z-index: 3; padding: 100px 24px; }
+.scene-kicker {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.42em; color: #7fa8d8;
+}
+.scene-stage-title {
+  font-size: clamp(60px, 11vw, 150px); letter-spacing: 0.16em; font-weight: 600;
+  color: #eef4fb; text-shadow: 0 0 34px rgba(120,170,230,0.5);
+}
+.scene-stage-tagline {
+  margin-top: 20px; font-size: clamp(16px, 2.2vw, 22px);
+  color: var(--ink-dim); letter-spacing: 0.06em;
+}
+.scene-body { max-width: 900px; margin: 0 auto; padding: 72px 24px 80px; }
+.scene-body .block h2 { font-size: 26px; }
+.scene-body .block p { font-size: 16px; }
+.block.moment p { color: var(--ink); }
+.block.shock, .block.echo { border-left: 2px solid var(--accent); padding-left: 22px; }
+
 /* ===== 响应式 ===== */
 @media (max-width: 900px) {
   .tl-wrap { grid-template-columns: 1fr; }
