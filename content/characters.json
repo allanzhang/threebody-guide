@@ -75,7 +75,8 @@
       "wang-miao-countdown",
       "gu-zheng-operation",
       "luo-ji-car-crash",
-      "luo-ji-facewall"
+      "luo-ji-facewall",
+      "droplet-arrival"
     ],
     "concepts": [
       "nanofiber"
@@ -118,10 +119,23 @@
       "luo-ji-ye-wenjie",
       "luo-ji-car-crash",
       "luo-ji-facewall",
-      "crisis-era-begins"
+      "crisis-era-begins",
+      "face-wall-plan-launch",
+      "luo-ji-idyll",
+      "curse-broadcast",
+      "dark-forest-confirmed",
+      "luo-ji-deterrence",
+      "deterrence-era-peace"
     ],
     "concepts": [
-      "cosmic-sociology"
+      "cosmic-sociology",
+      "dark-forest",
+      "suspect-chain",
+      "tech-explosion",
+      "gravity-broadcast",
+      "deterrence",
+      "sword-holder",
+      "face-wall-plan"
     ],
     "portrait": ""
   },
@@ -203,6 +217,123 @@
     "concepts": [
       "scientific-boundary"
     ],
+    "portrait": ""
+  },
+  {
+    "id": "zhang-beihai",
+    "name": "章北海",
+    "alias": "",
+    "tagline": "增援未来的叛逃者 / 星舰地球之父",
+    "group": "face",
+    "isCore": true,
+    "who": "中国太空军高级军官，深谋远虑的职业军人。他没有被打过思想钢印，信念却比钢印更坚硬：早在全人类的胜利狂热之前，他就确信人类必败。他伪装成最坚定的必胜派，只为了争取到执行逃亡所需的一切。",
+    "role": "「增援未来」计划的执行者：以一己之力劫持自然选择号叛逃，为人类保存延续的火种。他是全书最接近「绝对理性」的角色——为全人类而背叛全人类。",
+    "storyline": "以必胜派形象崛起 → 增援未来（冬眠）→ 获任恒星级战舰指挥权 → 末日战役前劫持自然选择号叛逃 → 成为星舰地球的奠基人。",
+    "choices": "行星防御理事会相信人类必胜，他相信必败。他选择用「叛逃」换取文明的另一种可能——如果注定要输，就把种子带出太阳系。这份几乎不可能伪装的坚定，让他被后世称为「野生钢印族」。",
+    "events": [
+      "zhang-beihai-future",
+      "zhang-beihai-escape"
+    ],
+    "concepts": [],
+    "portrait": ""
+  },
+  {
+    "id": "hines",
+    "name": "希恩斯",
+    "alias": "",
+    "tagline": "脑科学家 / 思想钢印的发明者",
+    "group": "face",
+    "isCore": false,
+    "who": "英国脑科学家，面壁者之一。他提出用机器强化人类必胜信念的「思想钢印」计划，被否决后暗中保留机器，自己也被破壁人看穿。",
+    "role": "他是「欺骗的悖论」的体现：公开计划被识破，隐藏的机器却成为章北海叛逃的关键工具——面壁计划的遗产以意想不到的方式改变了历史。",
+    "storyline": "入选面壁者 → 提出思想钢印 → 计划被否决 → 被破壁人揭穿 → 暗中留下钢印机器。",
+    "choices": "",
+    "events": [
+      "face-wall-plan-launch",
+      "wall-breakers",
+      "thought-stamp"
+    ],
+    "concepts": [
+      "thought-stamp",
+      "face-wall-plan"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "rey-diaz",
+    "name": "雷迪亚兹",
+    "alias": "",
+    "tagline": "前总统 / 水星核弹威慑者",
+    "group": "face",
+    "isCore": false,
+    "who": "委内瑞拉前总统，面壁者。他计划在水星埋设大量核弹，一旦三体入侵就引爆使水星轨道改变、撞向太阳，以太阳系毁灭为要挟。",
+    "role": "他的计划是第三类「同归于尽」思路的早期版本——但被破壁人一句「你的计划会被三体利用」当场识破，最终死于自己国家的民众之手。",
+    "storyline": "入选面壁者 → 秘密制造水星核弹 → 被破壁人揭穿 → 计划破产。",
+    "choices": "",
+    "events": [
+      "face-wall-plan-launch",
+      "wall-breakers"
+    ],
+    "concepts": [
+      "face-wall-plan"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "tyler",
+    "name": "泰勒",
+    "alias": "",
+    "tagline": "前国防部长 / 量子幽灵舰队的设想者",
+    "group": "face",
+    "isCore": false,
+    "who": "美国前国防部长，面壁者。他设想用自杀式攻击组建「量子幽灵舰队」与三体同归于尽，被破壁人一语道破后绝望自杀。",
+    "role": "他是面壁计划悲剧性的注脚：用肉体与精神的双重牺牲试图换取胜利，却连「牺牲」本身都被三体看穿。",
+    "storyline": "入选面壁者 → 秘密组建敢死舰队 → 被破壁人揭穿 → 自杀。",
+    "choices": "",
+    "events": [
+      "face-wall-plan-launch",
+      "wall-breakers"
+    ],
+    "concepts": [
+      "face-wall-plan"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "ding-yi",
+    "name": "丁仪",
+    "alias": "",
+    "tagline": "物理学家 / 触摸水滴的人",
+    "group": "support",
+    "isCore": false,
+    "who": "资深物理学家，末日战役前受命近距离检查「水滴」。他敏锐地察觉到这枚探测器的异常——它的表面绝对光滑，意味着人类完全无法理解它的技术。",
+    "role": "他是「人类科学自信」的送葬人：用一句「毁灭你，与你有何相干」点破人类与三体之间的位差，随后在水滴的屠杀中随舰队覆灭。",
+    "storyline": "受邀检查水滴 → 察觉异常 → 末日战役中阵亡。",
+    "choices": "",
+    "events": [
+      "droplet-arrival",
+      "droplet-massacre"
+    ],
+    "concepts": [
+      "droplet"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "zhuang-yan",
+    "name": "庄颜",
+    "alias": "",
+    "tagline": "罗辑梦中的爱人",
+    "group": "support",
+    "isCore": false,
+    "who": "罗辑向联合国提出的「定制」爱人：按他梦中的形象找到的现实女性，与罗辑育有一女。她代表罗辑人性中最柔软的部分。",
+    "role": "她既是罗辑的慰藉，也是面壁者身份的枷锁：拥有她意味着罗辑必须为守护这种「平凡幸福」付出一切——这成为他后来威慑三体的隐秘动力。",
+    "storyline": "进入罗辑的居所 → 与其相爱成家 → 罗辑冬眠后分离。",
+    "choices": "",
+    "events": [
+      "luo-ji-idyll"
+    ],
+    "concepts": [],
     "portrait": ""
   }
 ]

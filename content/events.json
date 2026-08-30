@@ -325,7 +325,8 @@
       "shi-qiang"
     ],
     "concepts": [
-      "cosmic-sociology"
+      "cosmic-sociology",
+      "face-wall-plan"
     ],
     "image": "",
     "note": ""
@@ -344,7 +345,242 @@
       "chang-weisi",
       "luo-ji"
     ],
+    "concepts": [
+      "face-wall-plan"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "face-wall-plan-launch",
+    "title": "面壁计划详解",
+    "subtitle": "四位面壁者",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 1 年",
+    "order": 18,
+    "isMajorEvent": false,
+    "summary": "面壁计划正式运转：泰勒、雷迪亚兹、希恩斯、罗辑四位面壁者各自秘密制定反击方案。面壁计划的核心是利用智子无法读心的弱点——面壁者可以对全世界说谎，真实意图只藏在自己心里，以此迷惑三体文明。",
+    "characters": [
+      "luo-ji",
+      "hines",
+      "rey-diaz",
+      "tyler"
+    ],
+    "concepts": [
+      "face-wall-plan"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "wall-breakers",
+    "title": "破壁人降临",
+    "subtitle": "被看穿的计划",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 1 年",
+    "order": 19,
+    "isMajorEvent": false,
+    "summary": "三体方面为泰勒、雷迪亚兹、希恩斯三位面壁者分别安排了「破壁人」，任务是识破并公布面壁者的真实计划。三份计划先后被揭穿：泰勒的量子幽灵舰队、雷迪亚兹的水星核弹威慑、希恩斯的思想钢印，一一失效。只有罗辑，三体始终看不透。",
+    "characters": [
+      "hines",
+      "rey-diaz",
+      "tyler"
+    ],
+    "concepts": [
+      "face-wall-plan"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "luo-ji-idyll",
+    "title": "罗辑的世外桃源",
+    "subtitle": "梦中的爱人",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 1 年",
+    "order": 20,
+    "isMajorEvent": false,
+    "summary": "罗辑冬眠醒来后，向联合国要求了一处与世隔绝的居所，以及一个符合他梦中想象的爱人庄颜。他过起了不问世事的田园生活，在所有人眼里都是最不称职的面壁者。但这份「不作为」，本身就是他的伪装。",
+    "characters": [
+      "luo-ji",
+      "zhuang-yan"
+    ],
     "concepts": [],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "thought-stamp",
+    "title": "思想钢印",
+    "subtitle": "信念的蚀刻",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 3 年",
+    "order": 21,
+    "isMajorEvent": false,
+    "summary": "希恩斯与妻子山杉惠子推动「思想钢印」计划：用机器把信念直接写入大脑，为太空军印上必胜信念。听证会上计划被质疑后暂停公开使用，但希恩斯暗中保留机器，并把命题悄悄改成了「人类必败」——约五万太空军被打上钢印，组成潜伏的失败主义组织「钢印族」，为未来的逃亡主义埋下种子。",
+    "characters": [
+      "hines"
+    ],
+    "concepts": [
+      "thought-stamp"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "zhang-beihai-future",
+    "title": "章北海：增援未来",
+    "subtitle": "必胜派与逃亡者",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 3 年",
+    "order": 22,
+    "isMajorEvent": false,
+    "summary": "海军军官章北海以「必胜派」姿态在军界崛起：力主建造恒星级战舰、坚信人类必胜，人称最坚定的胜利主义者。实际上他心中早有铁一般的判断——人类必败。他是「野生钢印族」：没有被打过机器钢印，信念却比钢印更硬。他选择「增援未来」，把自己冬眠到决战时刻，去执行最后的逃亡。",
+    "characters": [
+      "zhang-beihai"
+    ],
+    "concepts": [],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "curse-broadcast",
+    "title": "罗辑的诅咒广播",
+    "subtitle": "向一颗恒星下咒",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 205 年",
+    "order": 23,
+    "isMajorEvent": false,
+    "summary": "罗辑中止田园生活，向宇宙发出了第一次「广播」：一条包含 187J3X1 恒星坐标的信息，宣称若恒星被摧毁，就证明他的理论。他用自己的生命做赌注——若理论错误，他一无所获；若正确，他握住了威慑宇宙的钥匙。",
+    "characters": [
+      "luo-ji"
+    ],
+    "concepts": [
+      "dark-forest"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "dark-forest-confirmed",
+    "title": "黑暗森林得到验证",
+    "subtitle": "187J3X1 的毁灭",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 205 年",
+    "order": 24,
+    "isMajorEvent": true,
+    "summary": "数年后，天文观测证实：187J3X1 恒星被摧毁了——被某个更高级的文明瞬间清理。黑暗森林法则得到实证：暴露坐标的文明，会像森林中的火光一样吸引猎人的子弹。罗辑的疯狂实验，成功了。",
+    "characters": [
+      "luo-ji"
+    ],
+    "concepts": [
+      "dark-forest",
+      "suspect-chain"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "droplet-arrival",
+    "title": "水滴抵达太阳系",
+    "subtitle": "来自三体的礼物",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 208 年",
+    "order": 25,
+    "isMajorEvent": false,
+    "summary": "三体世界的第一艘探测器「水滴」抵达太阳系。它光滑、完美，被视为和平象征，人类舰队国际隆重迎接。丁仪近距离检查时察觉异常，大史也嗅到危险——这绝不是礼物，而是警告。",
+    "characters": [
+      "ding-yi",
+      "shi-qiang"
+    ],
+    "concepts": [
+      "droplet"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "droplet-massacre",
+    "title": "末日战役：水滴屠灭舰队",
+    "subtitle": "两千艘舰队的覆灭",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 208 年",
+    "order": 26,
+    "isMajorEvent": true,
+    "summary": "水滴骤然发动：以不可思议的速度与强度，像子弹贯穿纸片一样摧毁人类舰队。两千艘恒星级战舰组成的联合舰队在几分钟内几乎全灭，地球太空力量荡然无存。人类第一次见识三体科技碾压级的实力。",
+    "characters": [
+      "ding-yi"
+    ],
+    "concepts": [
+      "droplet"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "zhang-beihai-escape",
+    "title": "自然选择号叛逃",
+    "subtitle": "把种子带出太阳系",
+    "bookId": "dark-forest",
+    "eraId": "era-crisis",
+    "yearLabel": "危机纪元 208 年",
+    "order": 27,
+    "isMajorEvent": true,
+    "summary": "末日战役前，章北海劫持恒星级战舰「自然选择号」叛逃，率舰向深空驶去。他的远见被证实无比正确：人类注定无法在太阳系赢得这场战争，逃亡是文明延续的唯一出路。自然选择号成为「星舰地球」的起点。",
+    "characters": [
+      "zhang-beihai"
+    ],
+    "concepts": [],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "luo-ji-deterrence",
+    "title": "执剑人：威慑建立",
+    "subtitle": "同归于尽的赌局",
+    "bookId": "dark-forest",
+    "eraId": "era-deterrence",
+    "yearLabel": "威慑纪元元年",
+    "order": 1,
+    "isMajorEvent": true,
+    "summary": "罗辑与三体智子直接对峙：他手中握着向宇宙广播三体坐标的引力波天线开关，宣布只要三体继续进逼，就启动广播、同归于尽。三体舰队在距太阳系两光年处转向——威慑成立，威慑纪元开始。",
+    "characters": [
+      "luo-ji"
+    ],
+    "concepts": [
+      "deterrence",
+      "sword-holder",
+      "gravity-broadcast"
+    ],
+    "image": "",
+    "note": ""
+  },
+  {
+    "id": "deterrence-era-peace",
+    "title": "六十二年和平",
+    "subtitle": "悬崖上的平衡",
+    "bookId": "dark-forest",
+    "eraId": "era-deterrence",
+    "yearLabel": "威慑纪元 1 – 62 年",
+    "order": 2,
+    "isMajorEvent": false,
+    "summary": "威慑纪元开启：三体与人类进入六十多年相互威慑下的和平。罗辑成为唯一的执剑人，孤身维持着脆弱的平衡——和平的根基，是一个随时准备按下毁灭开关的人。",
+    "characters": [
+      "luo-ji"
+    ],
+    "concepts": [
+      "deterrence",
+      "sword-holder"
+    ],
     "image": "",
     "note": ""
   }

@@ -53,7 +53,11 @@
       "ye-wenjie",
       "luo-ji"
     ],
-    "related": []
+    "related": [
+      "dark-forest",
+      "suspect-chain",
+      "tech-explosion"
+    ]
   },
   {
     "id": "red-coast",
@@ -215,8 +219,8 @@
     "events": [
       "trisolaran-reply",
       "eto-gathering",
-      "trisolaran-fleet-launch",
-      "eto-fall"
+      "eto-fall",
+      "trisolaran-fleet-launch"
     ],
     "characters": [
       "ye-wenjie",
@@ -247,5 +251,182 @@
       "eto",
       "sophon"
     ]
+  },
+  {
+    "id": "dark-forest",
+    "name": "黑暗森林法则",
+    "tagline": "宇宙就是一座黑暗森林",
+    "group": "law",
+    "inBook": "宇宙中每个文明都是带枪的猎人，像幽灵一样在黑暗中潜行：谁暴露坐标，谁就会被消灭。文明之间不存在善意与信任，唯一的安全生存法则就是隐藏自己、清理别人。187J3X1 恒星的毁灭实证了这条法则，罗辑用它逼退三体、建立威慑。",
+    "science": "这是刘慈欣对「费米悖论」给出的文学解答之一：宇宙为何如此寂静？因为暴露的文明都已被清理。其思想框架植根于博弈论与生存竞争逻辑，属于科幻设定而非科学结论。",
+    "events": [
+      "curse-broadcast",
+      "dark-forest-confirmed"
+    ],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "cosmic-sociology",
+      "suspect-chain",
+      "tech-explosion",
+      "deterrence"
+    ]
+  },
+  {
+    "id": "suspect-chain",
+    "name": "猜疑链",
+    "tagline": "无法建立的信任",
+    "group": "law",
+    "inBook": "任意两个文明之间都无法建立信任：我不知道你会不会打我，你不知道我会不会打你，彼此猜疑无限递归。既然无法确认对方的善意，唯一安全的选择就是先下手。猜疑链是黑暗森林法则的推导前提之一。",
+    "science": "「猜疑链」借用了博弈论中的信任困境与信息不对称思想，是科幻理论化表述。",
+    "events": [
+      "dark-forest-confirmed"
+    ],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "cosmic-sociology",
+      "dark-forest"
+    ]
+  },
+  {
+    "id": "tech-explosion",
+    "name": "技术爆炸",
+    "tagline": "弱小文明可能一夜变强",
+    "group": "law",
+    "inBook": "文明的技术发展并非线性，可能发生爆炸式跃迁：一个看似弱小的文明，可能在极短时间内追平甚至超越先进文明。因此，看到暴露坐标的文明，第一时间清理才是最保险的选择——等着它成长就是找死。",
+    "science": "「技术爆炸」与现实中科技发展的加速趋势（摩尔定律等）有相通之处，但小说将其推向极端作为星际政治法则。",
+    "events": [],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "cosmic-sociology",
+      "dark-forest"
+    ]
+  },
+  {
+    "id": "droplet",
+    "name": "水滴",
+    "tagline": "绝对光滑的死亡探测器",
+    "group": "tech",
+    "inBook": "三体人制造的强互作用力探测器：外形如一滴水银，表面绝对光滑、硬度近乎无限。它以之字形轨迹在几分钟内贯穿摧毁人类两千艘战舰，是人类与三体科技差距最直观的展示，也是「和平使者」面具下的死亡宣告。",
+    "science": "「强互作用力材料」为科幻设定：现实已知材料无法实现绝对光滑与近乎无限的强度，以强相互作用束缚物质属于文学想象。",
+    "events": [
+      "droplet-arrival",
+      "droplet-massacre"
+    ],
+    "characters": [
+      "ding-yi"
+    ],
+    "related": []
+  },
+  {
+    "id": "thought-stamp",
+    "name": "思想钢印",
+    "tagline": "蚀刻进大脑的信念",
+    "group": "tech",
+    "inBook": "希恩斯发明的机器：能把一条信念直接蚀刻进大脑，让人坚信不疑。公开用途是给太空军打上「人类必胜」钢印；希恩斯却暗中把命题改为「人类必败」，约五万太空军被打上钢印，组成潜伏的「钢印族」，在关键时刻成为人类逃亡与延续的种子。章北海没有打钢印，信念却与钢印族殊途同归，被称为「野生钢印族」。",
+    "science": "以机器改写信念的设定是科幻；现实中不存在直接植入信念的技术路线。",
+    "events": [
+      "thought-stamp"
+    ],
+    "characters": [
+      "hines"
+    ],
+    "related": [
+      "face-wall-plan"
+    ]
+  },
+  {
+    "id": "gravity-broadcast",
+    "name": "引力波广播",
+    "tagline": "暴露坐标的扳机",
+    "group": "tech",
+    "inBook": "以引力波向宇宙广播文明坐标的技术，是第一部「太阳放大器」恒星级广播的升级版。威慑结构里，罗辑手握的就是引力波广播的开关——只要按下，三体世界坐标暴露，两个文明同归于尽。",
+    "science": "引力波真实存在（2015 年 LIGO 首次直接探测）；「用引力波天线向宇宙广播坐标」是科幻设想，现实中引力波无法定向携带如此信息。",
+    "events": [
+      "luo-ji-deterrence"
+    ],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "deterrence"
+    ]
+  },
+  {
+    "id": "deterrence",
+    "name": "黑暗森林威慑",
+    "tagline": "同归于尽的平衡",
+    "group": "tech",
+    "inBook": "罗辑建立的对峙结构：人类掌握向宇宙广播三体坐标的开关，三体若入侵则同归于尽。威慑的平衡点完全落在「执剑人」的意志与冷酷程度之上——这也是《死神永生》里程心接班的悲剧伏笔。",
+    "science": "「威慑平衡」借用了现实中的核威慑理论（相互确保摧毁 MAD），是核威慑逻辑的星际放大版。",
+    "events": [
+      "luo-ji-deterrence",
+      "deterrence-era-peace"
+    ],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "dark-forest",
+      "sword-holder",
+      "gravity-broadcast"
+    ]
+  },
+  {
+    "id": "sword-holder",
+    "name": "执剑人",
+    "tagline": "握着毁灭开关的人",
+    "group": "tech",
+    "inBook": "握着威慑开关的人。威慑的可靠性不取决于武器，而取决于执剑人按下开关的决心。罗辑是唯一能让三体忌惮的执剑人——他孤身一人维系六十二年和平，也为后来权力交接的危机埋下伏笔。",
+    "science": "「执剑人」是核威慑中「按按钮的人」的文学化身：威慑的脆弱性在于它依赖单个人的意志。",
+    "events": [
+      "luo-ji-deterrence",
+      "deterrence-era-peace"
+    ],
+    "characters": [
+      "luo-ji"
+    ],
+    "related": [
+      "deterrence"
+    ]
+  },
+  {
+    "id": "face-wall-plan",
+    "name": "面壁计划",
+    "tagline": "用欺骗对抗监视",
+    "group": "org",
+    "inBook": "针对三体智子全方位监视设计的战略欺骗计划：四位面壁者只把真实意图藏在心里，用表面言行迷惑三体；面壁者的权力极大，可调动全人类资源，但必须独自承受全部的怀疑与孤独。",
+    "science": "「以欺骗对抗无孔不入的监视」的思想实验是科幻创作；现实中不存在能阅读思想的监视手段。",
+    "events": [
+      "luo-ji-facewall",
+      "crisis-era-begins",
+      "face-wall-plan-launch",
+      "wall-breakers"
+    ],
+    "characters": [
+      "luo-ji",
+      "hines",
+      "rey-diaz",
+      "tyler"
+    ],
+    "related": [
+      "thought-stamp"
+    ]
+  },
+  {
+    "id": "fleet-international",
+    "name": "地球舰队国际",
+    "tagline": "人类的太空长城",
+    "group": "org",
+    "inBook": "人类为应对三体舰队组建的联合太空力量：两千艘恒星级战舰、数十万官兵的太空舰队。末日战役中，这支号称人类文明最强武力的舰队被一枚水滴全灭，「地球舰队国际」随之名存实亡。",
+    "science": "「全球联合舰队」是现实航天与军事想象的混合设定。",
+    "events": [],
+    "characters": [],
+    "related": []
   }
 ]
