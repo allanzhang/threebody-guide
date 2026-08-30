@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/gen-sitemap.mjs",
     "preview": "astro preview",
     "validate": "node scripts/validate-content.mjs",
     "placeholders": "node scripts/gen-placeholders.mjs"

@@ -9,7 +9,7 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 const c = characterById.get(id);
 ---
-<Base title={`${c ? c.name : '未找到'} · 人物墙 · 三体世界图鉴`}>
+<Base title={`${c ? c.name : '未找到'} · 人物墙 · 三体世界图鉴`} description={c ? `${c.name}｜${c.tagline}。他的故事与关键抉择。三体世界图鉴人物墙` : '三体世界图鉴'}>
   {c && (
     <article class="detail">
       <header>

@@ -10,7 +10,7 @@ const { id } = Astro.params;
 const c = conceptById.get(id);
 const groupTitles = { law: '法则与理论', tech: '科技与器物', org: '组织与文明' };
 ---
-<Base title={`${c ? c.name : '未找到'} · 概念册 · 三体世界图鉴`}>
+<Base title={`${c ? c.name : '未找到'} · 概念册 · 三体世界图鉴`} description={c ? `${c.name}｜${c.tagline}。书里怎么讲 + 科学底子。三体世界图鉴概念册` : '三体世界图鉴'}>
   {c && (
     <article class="detail">
       <header>
