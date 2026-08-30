@@ -1,7 +1,50 @@
 ---
+import Base from '../layouts/Base.astro';
+import { pageUrl, imageUrl, bookCover, books } from '../lib/data.mjs';
+
+const entries = [
+  { href: '/timeline/', title: '时间线', desc: '从红岸到归零，按纪年顺着读完整个故事' },
+  { href: '/concepts/', title: '概念册', desc: '黑暗森林、智子、二向箔……每条设定讲透设定与科学底子' },
+  { href: '/characters/', title: '人物墙', desc: '叶文洁、罗辑、章北海、程心……每个人的来路与抉择' },
+];
 ---
-<!doctype html>
-<html lang="zh-CN">
-  <head><meta charset="utf-8" /><title>三体世界图鉴</title></head>
-  <body><h1>三体世界图鉴 · 建设中</h1></body>
-</html>
+<Base title="三体世界图鉴 · 顺时间线读懂整个三体故事">
+  <section class="hero">
+    <h1>三体世界图鉴</h1>
+    <p class="hero-lead">从「不要回答」到宇宙归零——顺着时间线，读懂刘慈欣《三体》三部曲。</p>
+  </section>
+
+  <section class="entry-grid">
+    {entries.map((e) => (
+      <a class="entry-card" href={pageUrl(e.href)}>
+        <h2>{e.title}</h2>
+        <p>{e.desc}</p>
+      </a>
+    ))}
+  </section>
+
+  <section class="book-strip">
+    <h2>三部曲</h2>
+    <div class="book-cards">
+      {books.sort((a, b) => a.order - b.order).map((b) => (
+        <div class="book-card">
+          <img src={imageUrl(bookCover(b))} alt={b.title} loading="lazy" />
+          <div>
+            <h3>{b.title}</h3>
+            {b.subtitle && <p>{b.subtitle}</p>}
+            <p>{b.intro}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="start-guide">
+    <h2>从哪开始读</h2>
+    <ol>
+      <li>先读<b>时间线</b>，建立三部曲的完整框架</li>
+      <li>遇到陌生概念，点进<b>概念册</b>看设定与科学底子</li>
+      <li>遇到人物，点进<b>人物墙</b>看他的故事与关键抉择</li>
+    </ol>
+  </section>
+</Base>
