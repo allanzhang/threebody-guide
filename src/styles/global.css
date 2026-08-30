@@ -248,6 +248,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
 }
 .block p { color: var(--ink-dim); font-size: 15px; max-width: 860px; }
 .block.science { border-left: 2px solid var(--accent); padding-left: 22px; }
+.entry-details, .block.details { margin: 14px 0 0; padding: 14px 18px; background: rgba(184,168,119,0.06); border: 1px dashed rgba(184,168,119,0.4); border-radius: var(--radius); }
+.entry-details h4, .block.details h2 { font-family: var(--serif); font-size: 15px; color: var(--accent-strong); margin-bottom: 8px; }
+.entry-details p, .block.details p { font-size: 13px; color: var(--ink-dim); line-height: 1.85; margin: 6px 0; }
 .detail-links { border-top: 1px solid var(--line); padding-top: 24px; }
 .detail-links h3 { font-size: 14px; color: var(--ink-dim); margin: 14px 0 10px; }
 

@@ -10,4 +10,10 @@ const book = bookById.get(ev.bookId);
 {ev.subtitle && <p class="entry-sub">{ev.subtitle}</p>}
 <p class="entry-summary">{ev.summary}</p>
 <Chips ev={ev} />
+{ev.details && (
+  <div class="entry-details">
+    <h4>细节与伏笔</h4>
+    {ev.details.split('\n').map((line) => <p>{line}</p>)}
+  </div>
+)}
 {ev.note && <p class="entry-note">{ev.note}</p>}
