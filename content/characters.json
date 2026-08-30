@@ -1,1 +1,208 @@
-[]
+[
+  {
+    "id": "ye-wenjie",
+    "name": "叶文洁",
+    "alias": "",
+    "tagline": "红岸的女儿 / 三体与人类的信使",
+    "group": "origin",
+    "isCore": true,
+    "who": "天体物理学家。文革中父亲被批斗致死，她在目睹人性之恶后对人类文明彻底失望。进入红岸基地后，她发现太阳放大器并向宇宙发出信号、继而回应了三体人——她是两个文明之间第一封信的书写者。",
+    "role": "三部曲的「原点」人物。她的一念之私让地球坐标暴露，把人类拖入与三体文明的生死博弈；她的宇宙社会学两公理，成为罗辑后来一切的起点。某种意义上，她既是悲剧的制造者，也是第一位真正「睁开眼睛看宇宙」的地球人。",
+    "storyline": "红岸基地发射信号 → 回应三体人 → 成为 ETO 统帅 → 古筝行动后被捕 → 在杨冬墓前向罗辑留下宇宙社会学。她的主线集中在第一部，但影响贯穿全书。",
+    "choices": "「不要回答」的警告她亲耳收到，却仍然回答了——因为对人类文明的失望盖过了对三体的恐惧。这个选择定义了整个三部曲的悲剧底色。",
+    "events": [
+      "red-coast-foundation",
+      "ye-wenjie-redcoast",
+      "solar-amplifier-launch",
+      "trisolaran-reply",
+      "eto-gathering",
+      "sophon-blockade",
+      "eto-fall",
+      "luo-ji-ye-wenjie"
+    ],
+    "concepts": [
+      "three-body-problem",
+      "cosmic-sociology",
+      "red-coast",
+      "solar-amplifier",
+      "sophon",
+      "eto",
+      "trisolaran-civilization"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "wang-miao",
+    "name": "汪淼",
+    "alias": "",
+    "tagline": "纳米科学家 / 被选中看见真相的人",
+    "group": "origin",
+    "isCore": false,
+    "who": "研究纳米材料「飞刃」的学者，性格谨慎务实。他被闯入生活的一系列怪事（倒计时、宇宙闪烁）卷入三体危机，成为读者进入三体世界的第一双眼睛。",
+    "role": "他是第一部的「叙事导游」：从对超自然现象的半信半疑，到亲眼见证宇宙闪烁、亲历古筝行动，最终确认三体文明的存在。他的手艺（飞刃）还在古筝行动中立下大功。",
+    "storyline": "被常伟思请来协助调查 → 加入科学边界 → 进入三体游戏 → 见证宇宙闪烁 → 古筝行动中提供飞刃。",
+    "choices": "",
+    "events": [
+      "wang-miao-countdown",
+      "three-body-game",
+      "scientists-deaths",
+      "sophon-blockade",
+      "universe-flicker"
+    ],
+    "concepts": [
+      "chaotic-era",
+      "sophon",
+      "three-body-game",
+      "human-column-computer",
+      "nanofiber",
+      "dehydration",
+      "scientific-boundary"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "shi-qiang",
+    "name": "史强",
+    "alias": "",
+    "tagline": "刑警队长 / 最接地气的守护者",
+    "group": "origin",
+    "isCore": false,
+    "who": "粗犷却敏锐的刑警，办案靠直觉与硬汉作风。他不理解高深物理，却总能在关键时刻用最朴素的方式保护关键人物——从保护汪淼到古筝行动，再到车祸现场救下罗辑。",
+    "role": "他是书里「人味」的锚点：“虫子从来没有被真正战胜过”，正是他说出这句提振精神的话。他的存在让高冷的科幻叙事保有地面温度。",
+    "storyline": "保护汪淼 → 参与古筝行动 → 现场救下遭暗杀的罗辑。",
+    "choices": "",
+    "events": [
+      "wang-miao-countdown",
+      "gu-zheng-operation",
+      "luo-ji-car-crash",
+      "luo-ji-facewall"
+    ],
+    "concepts": [
+      "nanofiber"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "shen-yufei",
+    "name": "申玉菲",
+    "alias": "",
+    "tagline": "物理学家 / 三体游戏引路人",
+    "group": "origin",
+    "isCore": false,
+    "who": "汪淼妻子杨冬的同事、物理学硕士，也是三体游戏的核心玩家与 ETO 成员。她冷静寡言，把汪淼引进三体游戏，也把他带进漩涡中心。",
+    "role": "她是 ETO「拯救派」的代表：把三体文明视作在乱纪元挣扎的受难者，希望以科学救赎它。她推动了第一部前半段的情节推进，也展示了 ETO 内部的复杂人心。",
+    "storyline": "引导汪淼进入三体游戏 → 在科学家自杀案中若隐若现 → ETO 覆灭前后走向终点。",
+    "choices": "",
+    "events": [
+      "eto-gathering",
+      "scientists-deaths"
+    ],
+    "concepts": [
+      "eto",
+      "scientific-boundary"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "luo-ji",
+    "name": "罗辑",
+    "alias": "",
+    "tagline": "面壁者 / 黑暗森林的领悟者",
+    "group": "face",
+    "isCore": true,
+    "who": "玩世不恭的学者，研究宇宙社会学，与叶文洁在杨冬墓前的一番对话改变了一生。他被任命为面壁者，也是唯一真正破解三体威胁的人——悟出黑暗森林法则，建立威慑。",
+    "role": "他是后两部的绝对主角：从被赶鸭子上架的面壁者，到以生命为赌注验证黑暗森林、再到以同归于尽威慑三体六十余年的执剑人。他的孤独、算计与责任，是三部曲最核心的人物弧光。",
+    "storyline": "与叶文洁对话 → 遇袭 → 成为面壁者 → 冬眠进入未来 → 在《黑暗森林》以诅咒验证法则、建立威慑 → 《死神永生》中老死于黑域。",
+    "choices": "在无人相信时，把枪口对准自己，以「同归于尽」的疯狂逼退三体舰队——他用「疯狂」救下一半人类，也用一生承担这个决定。",
+    "events": [
+      "luo-ji-ye-wenjie",
+      "luo-ji-car-crash",
+      "luo-ji-facewall",
+      "crisis-era-begins"
+    ],
+    "concepts": [
+      "cosmic-sociology"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "evans",
+    "name": "伊文斯",
+    "alias": "",
+    "tagline": "石油大亨之子 / ETO 的创立者",
+    "group": "eto",
+    "isCore": false,
+    "who": "极端环保主义者，对人类文明彻底绝望，倾尽家产在海上建造「第二红岸」与三体通信，创立 ETO。他是降临派的核心。",
+    "role": "他把叶文洁的「对人类失望」推向极端：不像叶文洁只想借三体「改善」人类，他希望三体直接降临、清洗人类。他的信息（三体通信记录）正是古筝行动要截获的目标。",
+    "storyline": "创立 ETO → 运营与三体人的通信 → 乘「审判日」号被古筝行动截杀。",
+    "choices": "",
+    "events": [
+      "eto-gathering",
+      "gu-zheng-operation",
+      "eto-fall"
+    ],
+    "concepts": [
+      "eto",
+      "trisolaran-civilization"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "pan-han",
+    "name": "潘寒",
+    "alias": "",
+    "tagline": "生物学家 / 降临派的执行者",
+    "group": "eto",
+    "isCore": false,
+    "who": "外表温文尔雅的生物学家，实际是 ETO 降临派的激进分子，负责清理内部异见者。他是科学家自杀案背后的推手之一。",
+    "role": "他代表 ETO 最冷酷的一面：为了「净化」人类，不惜除掉妨碍计划的科学家。他的存在让 ETO 的威胁感从组织层面落到具体的刀锋上。",
+    "storyline": "参与对科学家的猎杀 → ETO 集会被揭露 → 覆灭。",
+    "choices": "",
+    "events": [
+      "eto-gathering",
+      "eto-fall"
+    ],
+    "concepts": [
+      "eto"
+    ],
+    "portrait": ""
+  },
+  {
+    "id": "chang-weisi",
+    "name": "常伟思",
+    "alias": "",
+    "tagline": "将军 / 危机纪元的第一代守卫者",
+    "group": "support",
+    "isCore": false,
+    "who": "中国军方高级将领，危机纪元来临前就预感「大事将至」，力主调查诡异事件。他主持了应对三体危机的早期战略部署。",
+    "role": "他是人类应对危机的最早组织者：把汪淼、史强等关键人物串起来，也见证了面壁计划与三体舰队的真相。他是「人类英雄群像」的第一块基石。",
+    "storyline": "启动对科学家自杀案的调查 → 组织古筝行动相关部署 → 见证危机纪元开启。",
+    "choices": "",
+    "events": [
+      "wang-miao-countdown",
+      "trisolaran-fleet-launch",
+      "crisis-era-begins"
+    ],
+    "concepts": [],
+    "portrait": ""
+  },
+  {
+    "id": "yang-dong",
+    "name": "杨冬",
+    "alias": "",
+    "tagline": "物理学家 / 「物理学不存在了」",
+    "group": "support",
+    "isCore": false,
+    "who": "汪淼的妻子、叶文洁的女儿，顶尖物理学家。因对撞机实验的异常结果信念崩溃，留下「物理学不存在了」的遗言后自杀。",
+    "role": "她的死是整个故事的导火索：多起科学家自杀案引出汪淼的调查、科学边界与智子的真相。她也是叶文洁悲剧的延伸——母亲向宇宙的「回答」，间接摧毁了女儿对物理学的信仰。",
+    "storyline": "对撞实验异常 → 自杀 → 其遗言成为人类反思「智子封锁」的起点。",
+    "choices": "",
+    "events": [
+      "scientists-deaths"
+    ],
+    "concepts": [
+      "scientific-boundary"
+    ],
+    "portrait": ""
+  }
+]

@@ -1,1 +1,251 @@
-[]
+[
+  {
+    "id": "three-body-problem",
+    "name": "三体问题",
+    "tagline": "三个恒星的无序运动",
+    "group": "law",
+    "inBook": "三体世界的母星拥有三颗太阳，三个恒星在引力作用下无规律地互相绕转，运动轨迹混沌不可预测。这让三体文明永远无法预测天象：恒纪元与乱纪元随机交替，文明反复诞生又毁灭。三体问题是一切故事的前提，也是三体人必须逃离母星的原因。",
+    "science": "三体问题是真实存在的天体力学难题：三个天体在相互引力下没有一般解析解，运动对初值极度敏感（混沌）。法国数学家庞加莱率先证明其不可精确求解，并由此开创混沌理论。现实中的半人马座α就是三颗恒星互相绕转的系统。",
+    "events": [
+      "three-body-game",
+      "trisolaran-fleet-launch"
+    ],
+    "characters": [
+      "ye-wenjie"
+    ],
+    "related": [
+      "chaotic-era",
+      "trisolaran-civilization"
+    ]
+  },
+  {
+    "id": "chaotic-era",
+    "name": "恒纪元与乱纪元",
+    "tagline": "三体人的生死循环",
+    "group": "law",
+    "inBook": "三体世界因三颗太阳的乱序运动而气候极端：恒纪元适宜生存，乱纪元则是毁灭性的高温与严寒。三体人在乱纪元把身体脱水成纤维保存，恒纪元到来再泡水复活。文明就在这循环中挣扎求生，这也解释了《三体》游戏里那些脱水与复苏的奇观。",
+    "science": "现实中不存在真实的脱水复活；但水熊虫等极端生物确实能失水进入休眠状态，为这设定提供了生物学想象的基石。",
+    "events": [
+      "three-body-game"
+    ],
+    "characters": [
+      "wang-miao"
+    ],
+    "related": [
+      "three-body-problem",
+      "dehydration",
+      "three-body-game"
+    ]
+  },
+  {
+    "id": "cosmic-sociology",
+    "name": "宇宙社会学",
+    "tagline": "两条公理与一个悬念",
+    "group": "law",
+    "inBook": "叶文洁向罗辑提出的学科：公理一「生存是文明的第一需要」；公理二「文明不断增长和扩张，但宇宙中的物质总量保持不变」。由此可推导出文明间的关系是零和博弈。叶文洁留给罗辑的悬念是——宇宙就是一座黑暗森林。这是《黑暗森林》全部理论的地基。",
+    "science": "宇宙社会学是科幻设定，但其思维框架借鉴了真实的博弈论与「有限资源下的生存竞争」；「费米悖论」（宇宙为何如此寂静）是真实的天文学之问，黑暗森林正是刘慈欣给它的文学解答之一。",
+    "events": [
+      "luo-ji-ye-wenjie",
+      "luo-ji-car-crash",
+      "luo-ji-facewall"
+    ],
+    "characters": [
+      "ye-wenjie",
+      "luo-ji"
+    ],
+    "related": []
+  },
+  {
+    "id": "red-coast",
+    "name": "红岸基地",
+    "tagline": "倾听宇宙的绝密雷达",
+    "group": "tech",
+    "inBook": "文革时期建于深山的绝密军事工程，名义是国防科研基地，真实使命是向宇宙发射探测信号。叶文洁在此发现太阳放大器的原理，并向宇宙发出改变人类命运的信号。此后地球与三体的全部纠葛，都从一个监听站开始。",
+    "science": "现实中确有搜寻地外文明的项目（SETI、中国 FAST 射电望远镜）；「太阳放大器」是科幻设定——真实恒星无法按小说方式聚焦放大电波，但它延续了射电天文学对「利用天体」的浪漫想象。",
+    "events": [
+      "red-coast-foundation",
+      "ye-wenjie-redcoast",
+      "trisolaran-reply"
+    ],
+    "characters": [
+      "ye-wenjie"
+    ],
+    "related": [
+      "solar-amplifier"
+    ]
+  },
+  {
+    "id": "solar-amplifier",
+    "name": "太阳放大器",
+    "tagline": "向恒星发信",
+    "group": "tech",
+    "inBook": "红岸基地的核心发现：把电波以特定频率「命中」太阳，借日冕等离子体放大后向全宇宙广播。叶文洁正是用它在 1979 年发出人类的第一声问候，也让地球坐标暴露。这份「向恒星发信」的设想，后来演化为威慑时期的引力波广播。",
+    "science": "纯科幻设定：真实物理中恒星等离子体能影响电波传播，但无法实现小说式的恒星级放大广播；「借天体放大信号」是文学夸张。",
+    "events": [
+      "ye-wenjie-redcoast",
+      "solar-amplifier-launch",
+      "trisolaran-reply"
+    ],
+    "characters": [
+      "ye-wenjie"
+    ],
+    "related": [
+      "red-coast"
+    ]
+  },
+  {
+    "id": "sophon",
+    "name": "智子",
+    "tagline": "锁死人类科学的微观粒子",
+    "group": "tech",
+    "inBook": "三体人把质子二维展开、蚀刻电路再恢复三维，制成的智能微观探测器。它能与三体母星超光速通信、监视地球全境、并干扰人类对撞机实验以锁死基础科学。智子既是三体文明的「眼睛」，也是扼住人类科技咽喉的手，贯穿三部曲始终。",
+    "science": "智子工程是科幻想象：量子纠缠真实存在，但不能用来超光速传递信息；「质子展开蚀刻」借用了维度与弦论的概念并做了极大夸张。",
+    "events": [
+      "scientists-deaths",
+      "sophon-blockade",
+      "universe-flicker",
+      "trisolaran-fleet-launch"
+    ],
+    "characters": [
+      "ye-wenjie",
+      "wang-miao"
+    ],
+    "related": [
+      "scientific-boundary"
+    ]
+  },
+  {
+    "id": "three-body-game",
+    "name": "三体游戏",
+    "tagline": "虚拟的三体世界考场",
+    "group": "tech",
+    "inBook": "ETO 开发的虚拟现实游戏：玩家在三体世界的历史中轮番扮演角色（周文王、秦始皇、爱因斯坦等），亲历文明在恒纪元与乱纪元间的生死轮回，最终目标是破解三体问题。它既是招募工具，也是向人类展示三体文明处境的「教材」。",
+    "science": "VR 游戏是现实技术方向；游戏内的「人列计算机」「脱水复活」则是纯文学设定。",
+    "events": [
+      "three-body-game"
+    ],
+    "characters": [
+      "wang-miao"
+    ],
+    "related": [
+      "human-column-computer",
+      "chaotic-era"
+    ]
+  },
+  {
+    "id": "human-column-computer",
+    "name": "人列计算机",
+    "tagline": "以人组成的计算机",
+    "group": "tech",
+    "inBook": "《三体》游戏中的名场面：秦始皇命令三百万士兵排列成阵，举旗表示二进制信号，以阵列变换执行逻辑运算，组成一台「人列计算机」演算三体运动。它以最笨拙的方式演示了计算的本质，也展示出三体文明对破解三体问题的执念。",
+    "science": "理论计算机科学认为任何「足够复杂的系统」都能模拟通用计算（图灵完备）；人列计算机是这一思想的文学化演示。",
+    "events": [
+      "three-body-game"
+    ],
+    "characters": [
+      "wang-miao"
+    ],
+    "related": [
+      "three-body-game"
+    ]
+  },
+  {
+    "id": "nanofiber",
+    "name": "飞刃",
+    "tagline": "切碎邮轮的纳米细线",
+    "group": "tech",
+    "inBook": "汪淼研制的纳米材料「飞刃」：肉眼不可见却极端坚韧锋利的细丝，可轻易切割金属与舰船。古筝行动中，五十根飞刃横拉在巴拿马运河上，将「审判日」号邮轮切为数十片，船上成员与数据当场毁灭，ETO 的机密随之落入人类手中。",
+    "science": "碳纳米管等真实材料确实强度极高，但「细线切断邮轮」是文学夸张——现实中的纳米丝无法实现如此干净的切割。",
+    "events": [
+      "gu-zheng-operation"
+    ],
+    "characters": [
+      "wang-miao",
+      "shi-qiang"
+    ],
+    "related": []
+  },
+  {
+    "id": "dehydration",
+    "name": "脱水",
+    "tagline": "三体人的休眠形态",
+    "group": "tech",
+    "inBook": "乱纪元到来时，三体人排出体内水分、将身体缩成干纤维保存，称为脱水；恒纪元到来再泡水苏醒。三体文明正是在脱水与复苏的循环中延续千年，《三体》游戏里反复呈现这一奇观。",
+    "science": "现实中水熊虫等极端生物能失水休眠，为设定提供了生物学依据；人类脱水休眠是科幻发挥。",
+    "events": [
+      "three-body-game"
+    ],
+    "characters": [
+      "wang-miao"
+    ],
+    "related": [
+      "chaotic-era"
+    ]
+  },
+  {
+    "id": "eto",
+    "name": "ETO 地球三体组织",
+    "tagline": "人类的背叛者",
+    "group": "org",
+    "inBook": "由伊文斯创立、叶文洁任统帅的秘密组织，分三派：降临派（希望三体降临毁灭人类）、拯救派（视三体为救世主）、幸存派（提前为三体服务保命）。ETO 借三体游戏在全球招募精英，为三体文明提供支援，最终在古筝行动中被摧毁。",
+    "science": "现实无对应组织；「人类中有人类为外星文明服务」是经典科幻母题。",
+    "events": [
+      "eto-gathering",
+      "gu-zheng-operation",
+      "eto-fall"
+    ],
+    "characters": [
+      "ye-wenjie",
+      "evans",
+      "pan-han",
+      "shen-yufei"
+    ],
+    "related": [
+      "scientific-boundary",
+      "trisolaran-civilization"
+    ]
+  },
+  {
+    "id": "trisolaran-civilization",
+    "name": "三体文明",
+    "tagline": "在乱纪元中挣扎的种族",
+    "group": "org",
+    "inBook": "生活在三颗太阳下、文明史横跨上千年的种族。无法预测天象，文明在恒纪元与乱纪元间反复毁灭重建。为了逃离濒死母星，三体人派出舰队远征地球，并先以智子锁死人类科学——一个为了生存可以不择手段的文明。",
+    "science": "半人马座α三星系统真实存在；「三体文明」本身为科幻设定，其「生存优先」的思维正是黑暗森林法则成立的前提。",
+    "events": [
+      "trisolaran-reply",
+      "eto-gathering",
+      "trisolaran-fleet-launch",
+      "eto-fall"
+    ],
+    "characters": [
+      "ye-wenjie",
+      "evans"
+    ],
+    "related": [
+      "three-body-problem",
+      "eto"
+    ]
+  },
+  {
+    "id": "scientific-boundary",
+    "name": "科学边界",
+    "tagline": "被怀疑渗透的学术组织",
+    "group": "org",
+    "inBook": "杨冬等物理学家参与的学术组织，聚集了一批讨论「物理学极限」的学者。汪淼加入后逐渐发现，其中部分成员是 ETO 的掩护——「科学边界」名下的研讨，实为筛选谁能够理解并接受智子与三体的存在。",
+    "science": "「学术组织藏匿阴谋」是科幻设定。",
+    "events": [
+      "wang-miao-countdown",
+      "scientists-deaths"
+    ],
+    "characters": [
+      "wang-miao",
+      "shen-yufei",
+      "yang-dong"
+    ],
+    "related": [
+      "eto",
+      "sophon"
+    ]
+  }
+]
