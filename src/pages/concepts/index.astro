@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import { conceptGroups, pageUrl } from '../../lib/data.mjs';
+---
+<Base title="概念册 · 三体世界图鉴" description="三体世界的法则理论、科技器物、组织文明——每条讲清『书里怎么讲』与『科学底子』。">
+  <h1 class="page-title">概念册</h1>
+  <p class="page-lead">三体的魅力在思想。每一条设定：书里怎么讲 + 科学底子（真实科学 vs 文学发挥，通俗不较真）。</p>
+  {conceptGroups().map((g) => (
+    <section class="concept-group">
+      <h2>{g.title}</h2>
+      <div class="card-grid">
+        {g.items.map((c) => (
+          <a class="concept-card" href={pageUrl(`/concepts/${c.id}/`)}>
+            <h3>{c.name}</h3>
+            <p>{c.tagline}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  ))}
+</Base>
