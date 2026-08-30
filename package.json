@@ -8,7 +8,8 @@
     "build": "astro build && node scripts/gen-sitemap.mjs",
     "preview": "astro preview",
     "validate": "node scripts/validate-content.mjs",
-    "placeholders": "node scripts/gen-placeholders.mjs"
+    "placeholders": "node scripts/gen-placeholders.mjs",
+    "test": "node --test test/"
   },
   "dependencies": {
     "astro": "^5.0.0"
