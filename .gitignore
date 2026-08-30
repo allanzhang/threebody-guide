@@ -5,3 +5,7 @@ dist/
 .DS_Store
 *.log
 .astro/
+
+# 开发过程文档（不发布）
+guide/
+docs/
