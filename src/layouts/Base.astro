@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import { pageUrl } from '../lib/data.mjs';
+
+const { title = '三体世界图鉴', description = '顺时间线读懂三体三部曲：事件、概念、人物全景图鉴' } = Astro.props;
+const nav = [
+  { href: '/', label: '首页' },
+  { href: '/timeline/', label: '时间线' },
+  { href: '/concepts/', label: '概念册' },
+  { href: '/characters/', label: '人物墙' },
+];
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site-nav">
+      <a class="brand" href={pageUrl('/')}>三体<span>世界图鉴</span></a>
+      <nav>
+        {nav.map((n) => <a href={pageUrl(n.href)}>{n.label}</a>)}
+      </nav>
+    </header>
+    <main><slot /></main>
+    <footer class="site-footer">
+      <p>《三体》三部曲 · 刘慈欣著。本站为个人非商用科普项目，全站剧透。图片素材来自腾讯剧版宣传物料与自绘占位图，侵权请联系删除。</p>
+    </footer>
+  </body>
+</html>
