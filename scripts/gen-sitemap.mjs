@@ -18,7 +18,8 @@ function walk(dir, urlPath) {
   return urls;
 }
 
-const urls = walk(dist, BASE === '' ? '' : `${BASE}/`).map((u) => u.replace(/\/{2,}/g, '/'));
+const urls = walk(dist, BASE === '' ? '' : `${BASE}/`)
+  .map((u) => (u.startsWith('/') ? u : `/${u}`).replace(/\/{2,}/g, '/'));
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls.map((u) => `  <url><loc>${SITE}${u}</loc></url>`).join('\n')}
