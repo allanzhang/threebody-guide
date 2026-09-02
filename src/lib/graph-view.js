@@ -27,6 +27,13 @@ export function createGraph(root, data) {
   world.setAttribute('transform-origin', '0 0');
   svg.appendChild(world);
 
+  // meet 等比缩放下 css↔user 单位换算：s 均匀（xMidYMid meet），ox/oy 为居中留白偏移
+  const fit = () => {
+    const r = svg.getBoundingClientRect();
+    const s = (r.width > 0 && r.height > 0) ? Math.min(r.width / data.W, r.height / data.H) : 1;
+    return { s, ox: (r.width - data.W * s) / 2, oy: (r.height - data.H * s) / 2 };
+  };
+
   // 卷轨道（背景色带 + 卷名）
   const railsG = el('g', 'kg-rails');
   world.appendChild(railsG);
@@ -128,7 +135,9 @@ export function createGraph(root, data) {
       return;
     }
     if (e.pointerId === dragId) {
-      state.x += dx; state.y += dy;
+      const f = fit();
+      state.x += dx / f.s;
+      state.y += dy / f.s;
       if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
       applyView();
     }
@@ -144,11 +153,13 @@ export function createGraph(root, data) {
   svg.addEventListener('wheel', (e) => {
     e.preventDefault();
     const rect = svg.getBoundingClientRect();
+    const f = fit();
     const mx = e.clientX - rect.left, my = e.clientY - rect.top;
-    const wx = (mx - state.x) / state.k, wy = (my - state.y) / state.k;
+    const wx = (mx - f.ox) / f.s / state.k - state.x / state.k;
+    const wy = (my - f.oy) / f.s / state.k - state.y / state.k;
     state.k = clamp(state.k * Math.exp(-e.deltaY * 0.0015), 0.15, 6);
-    state.x = mx - wx * state.k;
-    state.y = my - wy * state.k;
+    state.x = (mx - f.ox) / f.s - wx * state.k;
+    state.y = (my - f.oy) / f.s - wy * state.k;
     applyView();
   }, { passive: false });
 
