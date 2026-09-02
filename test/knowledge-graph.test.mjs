@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { buildGraph, topConceptIds, skeletonIds } from '../src/lib/knowledge-graph.mjs';
+import { buildGraph, topConceptIds, skeletonIds, layout, LAYOUT, nodeKey } from '../src/lib/knowledge-graph.mjs';
 
 // 合成数据：3 概念 a(度数5) b(3) c(3)，k=2 时阈值=第2名度数3 → a,b,c 全取
 const synthetic = () => ({
@@ -75,4 +75,49 @@ test('最小数据不崩', () => {
   const g = buildGraph({ books: [], eras: [], events: [], concepts: [], characters: [], scenes: [] });
   assert.equal(g.nodes.length, 0);
   assert.equal(skeletonIds(g).size, 0);
+});
+
+test('布局：事件 x 对齐所属纪元列；列内 y 不重叠', () => {
+  const g = buildGraph();
+  const { pos } = layout(g);
+  const eraX = new Map(g.eras.map((e) => [e.id, pos.get(nodeKey('era', e.id)).x]));
+  for (const ev of g.events) assert.equal(pos.get(nodeKey('event', ev.id)).x, eraX.get(ev.eraId), `${ev.id} 列位错误`);
+  const cols = new Map();
+  for (const ev of g.events) {
+    const ys = cols.get(ev.eraId) || [];
+    ys.push(pos.get(nodeKey('event', ev.id)).y);
+    cols.set(ev.eraId, ys);
+  }
+  for (const [era, ys] of cols) assert.equal(new Set(ys).size, ys.length, `${era} 列事件 y 重叠`);
+});
+
+test('布局：概念按派生的 bookRef 收敛轨道', () => {
+  const g = buildGraph();
+  const { pos } = layout(g);
+  const byBook = new Map();
+  for (const c of g.concepts) {
+    const bk = g.nodeById.get(nodeKey('concept', c.id)).bookRef;
+    if (!bk) continue; // 无事件引用的概念落入松散区（真实数据当前无此情况）
+    const l = byBook.get(bk) || [];
+    l.push(nodeKey('concept', c.id));
+    byBook.set(bk, l);
+  }
+  assert.ok(byBook.size >= 1, '至少一卷有概念挂靠');
+  for (const [book, ids] of byBook) {
+    assert.equal(new Set(ids.map((i) => pos.get(i).x)).size, 1, `${book} 概念应收敛一列`);
+  }
+});
+
+test('布局：所有坐标在画布内且有限（含最小数据）', () => {
+  const g = buildGraph();
+  const { pos, W, H } = layout(g);
+  for (const n of g.nodes) {
+    const p = pos.get(n.id);
+    assert.ok(Number.isFinite(p.x) && Number.isFinite(p.y), `${n.id} 坐标非法`);
+    assert.ok(p.x >= 0 && p.x <= W && p.y >= 0 && p.y <= H, `${n.id} 越界 (${p.x}, ${p.y})`);
+  }
+  const empty = buildGraph({ books: [], eras: [], events: [], concepts: [], characters: [], scenes: [] });
+  const r = layout(empty);
+  assert.equal(r.pos.size, 0);
+  assert.ok(r.W > 0 && r.H > 0);
 });

@@ -107,3 +107,63 @@ export function skeletonIds(graph) {
   }
   return ids;
 }
+
+export const LAYOUT = { PAD: 90, COL_W: 260, ROW_H: 56, RAIL_GAP: 130, RAIL_OFF: 70, ANCHOR_R: 14, NODE_R: 9 };
+
+export function layout(graph) {
+  const { PAD, COL_W, ROW_H, RAIL_GAP, RAIL_OFF } = LAYOUT;
+  const erasSorted = [...graph.eras].sort((a, b) => a.order - b.order);
+  const eraOrder = new Map(erasSorted.map((e, i) => [e.id, i]));
+  const eraX = (id) => PAD + eraOrder.get(id) * COL_W;
+  const railX = (bId) => PAD + 5 * COL_W + RAIL_OFF + (Math.max(0, (graph.books.find((b) => b.id === bId)?.order || 1) - 1)) * RAIL_GAP;
+
+  const pos = new Map();
+  const eraCount = new Map();
+  for (const ev of [...graph.events].sort((a, b) => a.order - b.order)) {
+    const k = eraCount.get(ev.eraId) || 0;
+    pos.set(nodeKey('event', ev.id), { x: eraX(ev.eraId), y: PAD + k * ROW_H });
+    eraCount.set(ev.eraId, k + 1);
+  }
+  const bookCount = new Map();
+  const looseConcepts = [];
+  for (const c of [...graph.concepts].sort((a, b) => a.id.localeCompare(b.id))) {
+    // 卷归属用 buildGraph 派生的 bookRef（inBook 是散文，不可用）
+    const bk = graph.nodeById.get(nodeKey('concept', c.id)).bookRef;
+    if (!bk) { looseConcepts.push(c); continue; }
+    const k = bookCount.get(bk) || 0;
+    pos.set(nodeKey('concept', c.id), { x: railX(bk), y: PAD + k * ROW_H });
+    bookCount.set(bk, k + 1);
+  }
+
+  const maxRows = Math.max(1, ...[...eraCount.values(), ...bookCount.values()]);
+  const W = PAD * 2 + 5 * COL_W + RAIL_OFF + 3 * RAIL_GAP;
+  const H = PAD * 2 + maxRows * ROW_H;
+
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+  const avg = (arr) => arr.reduce((s, v) => s + v, 0) / arr.length;
+  const neighbors = (id) => graph.edges.filter((e) => e.source === id || e.target === id)
+    .map((e) => (e.source === id ? e.target : e.source));
+
+  // 无卷归属概念（无事件引用）→ 底部松散区横排
+  for (let i = 0; i < looseConcepts.length; i++) {
+    pos.set(nodeKey('concept', looseConcepts[i].id), { x: PAD + (i % 5) * 130, y: H - 46 - Math.floor(i / 5) * 44 });
+  }
+  for (const ch of graph.characters) {
+    const pts = neighbors(nodeKey('character', ch.id)).map((i) => pos.get(i)).filter(Boolean);
+    const base = pts.length
+      ? { x: avg(pts.map((p) => p.x)), y: avg(pts.map((p) => p.y)) }
+      : { x: W / 2, y: H - 46 };
+    pos.set(nodeKey('character', ch.id), { x: clamp(base.x, PAD, W - PAD), y: clamp(base.y, PAD, H - PAD) });
+  }
+  for (const s of graph.scenes) {
+    const base = pos.get(nodeKey('event', s.eventIds?.[0])) || { x: W / 2, y: H / 2 };
+    pos.set(nodeKey('scene', s.id), { x: clamp(base.x + 44, PAD, W - PAD), y: clamp(base.y - 44, PAD, H - PAD) });
+  }
+  for (const e of erasSorted) pos.set(nodeKey('era', e.id), { x: eraX(e.id), y: PAD - 42 });
+  for (const b of graph.books) {
+    const k = Math.max(0, (b.order || 1) - 1);
+    pos.set(nodeKey('book', b.id), { x: railX(b.id), y: PAD - 42 });
+    if (k > 0) pos.get(nodeKey('book', b.id)).x += (k % 2 ? 1 : -1) * 14; // 三本轨道同名轴微错位，避免标签叠压
+  }
+  return { pos, W, H };
+}
