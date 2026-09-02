@@ -423,7 +423,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
 .kg-types { display: flex; gap: 16px; color: var(--ink-dim); font-size: 14px; }
 .kg-types label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
 .kg-types input { accent-color: var(--accent); }
-.kg-hint { width: 100%; text-align: center; color: var(--ink-dim); font-size: 12px; letter-spacing: 0.08em; }
 
 .kg-stage {
   border: 1px solid var(--line); border-radius: var(--radius);
