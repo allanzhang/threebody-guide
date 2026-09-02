@@ -203,5 +203,6 @@ export function createGraph(root, data) {
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
 
   applyView();
+  render();
   return { setLayer: (l) => { state.layer = l; render(); }, setType: (t, on) => { on ? state.types.add(t) : state.types.delete(t); render(); } };
 }
