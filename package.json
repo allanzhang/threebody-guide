@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "validate": "node scripts/validate-content.mjs",
     "placeholders": "node scripts/gen-placeholders.mjs",
-    "test": "node --test test/"
+    "test": "node --test"
   },
   "dependencies": {
     "astro": "^5.0.0"
