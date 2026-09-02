@@ -199,8 +199,9 @@ export function createGraph(root, data) {
   svg.addEventListener('wheel', (e) => {
     e.preventDefault();
     const f = fit();
-    // 滚动 = 平移（覆盖触控板双指滚动 / Mac 三指拖移）；捏合或 ⌘/Ctrl+滚动 = 缩放（保留鼠标用户缩放通道）
-    if (!e.ctrlKey && !e.metaKey) {
+    // 滚动 = 缩放（双指滚动即缩放）；Shift+滚动 = 平移（显式通道）——
+    // macOS 双指滚动与三指拖移在浏览器层同属 wheel 事件、无法互相区分，故三指平移以 Shift+滚动或左键拖拽实现
+    if (e.shiftKey) {
       state.x += e.deltaX / f.s;
       state.y += e.deltaY / f.s;
       applyView();
