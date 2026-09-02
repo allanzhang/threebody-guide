@@ -105,13 +105,13 @@ export function createGraph(root, data) {
     for (const p of edgeEls) {
       p.classList.toggle('kg-hidden', !visible(p.dataset.a) || !visible(p.dataset.b));
     }
+    if (focusNode && !visible(focusNode)) unfocus(); // 锁定节点被筛选隐藏时同步清除
   };
 
-  // 悬停悬浮卡：移入节点显示实体简介卡（服务端模板 kg-card-{id}），移出/拖拽/滚轮时延时隐藏
+  // 悬停悬浮卡 + 锁定高亮：悬停节点即锁定状态（高亮 + 卡常驻，可从容移向卡片点击），
+  // 直到悬停另一节点（切换）或点击空白处（清除）才改变
   const card = document.getElementById('kg-hovercard');
-  let cardTimer = null;
-  const cancelCardHide = () => { if (cardTimer) { clearTimeout(cardTimer); cardTimer = null; } };
-  const scheduleCardHide = () => { cancelCardHide(); cardTimer = setTimeout(() => { card.hidden = true; }, 180); };
+  let focusNode = null;
   const placeCard = (cx, cy) => {
     const r = root.getBoundingClientRect();
     const left = clamp(cx - r.left + 14, 8, r.width - card.offsetWidth - 8);
@@ -122,20 +122,34 @@ export function createGraph(root, data) {
   const showCard = (id, cx, cy) => {
     const tpl = document.getElementById(`kg-card-${id}`);
     if (!tpl) return;
-    cancelCardHide();
     card.innerHTML = '';
     card.appendChild(tpl.content.cloneNode(true));
     card.hidden = false;
     placeCard(cx, cy);
   };
-  card.addEventListener('pointerenter', cancelCardHide);
+  const focus = (id, cx, cy) => {
+    if (focusNode === id) return; // 已锁定该节点，状态保持（用户可从容移向卡片）
+    focusNode = id;
+    clearHot();
+    const nb = neighbors(id);
+    nodeEls.get(id).classList.add('kg-hot');
+    nodeEls.forEach((ng, nid) => { if (nid !== id && !nb.has(nid)) ng.classList.add('kg-dim'); });
+    edgeEls.forEach((p) => { if (p.dataset.a === id || p.dataset.b === id) p.classList.add('kg-hot'); });
+    showCard(id, cx, cy);
+  };
+  const unfocus = () => {
+    if (focusNode === null) return;
+    focusNode = null;
+    clearHot();
+    card.hidden = true;
+  };
   svg.addEventListener('pointermove', (e) => { if (!card.hidden) placeCard(e.clientX, e.clientY); });
 
   // 平移 / 缩放（Pointer Events 统一鼠标触屏）
   const pointers = new Map();
   let dragId = null, moved = false, pinchDist = 0;
   svg.addEventListener('pointerdown', (e) => {
-    scheduleCardHide();
+    if (!e.target.closest('.kg-node')) unfocus(); // 点击空白处清除锁定状态
     svg.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
     if (e.button === 0 && !pointers.has(2) && !pointers.has(1)) dragId = e.pointerId;
@@ -177,7 +191,6 @@ export function createGraph(root, data) {
   svg.addEventListener('pointercancel', up);
 
   svg.addEventListener('wheel', (e) => {
-    scheduleCardHide();
     e.preventDefault();
     const rect = svg.getBoundingClientRect();
     const f = fit();
@@ -199,20 +212,9 @@ export function createGraph(root, data) {
   nodesG.addEventListener('pointerover', (e) => {
     const g = e.target.closest('.kg-node');
     if (!g || g.classList.contains('kg-hidden')) return;
-    clearHot();
-    const id = g.dataset.id;
-    const nb = neighbors(id);
-    g.classList.add('kg-hot');
-    nodeEls.forEach((ng, nid) => { if (ng !== g && !nb.has(nid)) ng.classList.add('kg-dim'); });
-    edgeEls.forEach((p) => { if (p.dataset.a === id || p.dataset.b === id) p.classList.add('kg-hot'); });
-    showCard(id, e.clientX, e.clientY);
+    focus(g.dataset.id, e.clientX, e.clientY);
   });
-  nodesG.addEventListener('pointerout', (e) => {
-  clearHot();
-  // 指针移入悬浮卡（relatedTarget 落在卡内）不调度隐藏，避免「节点→卡片」快速迁移时点击落空
-  if (e.relatedTarget instanceof Element && e.relatedTarget.closest('#kg-hovercard')) return;
-  scheduleCardHide();
-});
+  // 移出节点不解除状态（锁定高亮），切到另一节点或点击空白处时才变化
 
   // 点击 → 详情浮层（模板由 Astro 服务端预渲染）
   const panel = document.getElementById('kg-panel');
@@ -231,7 +233,7 @@ export function createGraph(root, data) {
     const g = e.target.closest('.kg-node');
     if (g && !g.classList.contains('kg-hidden') && !moved) openPanel(g.dataset.id);
   });
-  backdrop.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', () => { closePanel(); unfocus(); });
   document.getElementById('kg-close').addEventListener('click', closePanel);
   window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
 
