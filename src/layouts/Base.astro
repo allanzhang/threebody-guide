@@ -50,14 +50,16 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
       // 滚动渐显：JS 注入初始类（无 JS 无影响），reduced-motion 用户直接跳过
       (function () {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        var targets = document.querySelectorAll('main > section, .door, .era, .entry, .concept-group, .book-card');
+        // 只给条目级元素做渐显；.era 等巨形容器（可达 3 万 px 高）不参与——
+        // threshold 任何大于 0 的值对超视口元素永远无法满足，整块会卡在隐身态
+        var targets = document.querySelectorAll('main > section, .door, .entry, .concept-group, .book-card');
         if (!('IntersectionObserver' in window) || targets.length === 0) return;
         targets.forEach(function (el) { el.classList.add('reveal-init'); });
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (en) {
             if (en.isIntersecting) { en.target.classList.add('reveal-in'); io.unobserve(en.target); }
           });
-        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        }, { rootMargin: '0px 0px -6% 0px', threshold: 0 });
         targets.forEach(function (el) { io.observe(el); });
       })();
     </script>
