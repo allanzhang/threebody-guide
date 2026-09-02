@@ -198,8 +198,15 @@ export function createGraph(root, data) {
 
   svg.addEventListener('wheel', (e) => {
     e.preventDefault();
-    const rect = svg.getBoundingClientRect();
     const f = fit();
+    // 滚动 = 平移（覆盖触控板双指滚动 / Mac 三指拖移）；捏合或 ⌘/Ctrl+滚动 = 缩放（保留鼠标用户缩放通道）
+    if (!e.ctrlKey && !e.metaKey) {
+      state.x += e.deltaX / f.s;
+      state.y += e.deltaY / f.s;
+      applyView();
+      return;
+    }
+    const rect = svg.getBoundingClientRect();
     const mx = e.clientX - rect.left, my = e.clientY - rect.top;
     const wx = (mx - f.ox) / f.s / state.k - state.x / state.k;
     const wy = (my - f.oy) / f.s / state.k - state.y / state.k;
