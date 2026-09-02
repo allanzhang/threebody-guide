@@ -2,9 +2,8 @@
 import Base from '../layouts/Base.astro';
 import StarField from '../components/StarField.astro';
 import Linkify from '../components/Linkify.astro';
-import { pageUrl, imageUrl, bookCover, books, sceneById } from '../lib/data.mjs';
+import { pageUrl, imageUrl, bookCover, books } from '../lib/data.mjs';
 
-const droplet = sceneById.get('droplet-massacre');
 const doors = [
   { href: '/timeline/', title: '时间线', desc: '从红岸到归零，顺着纪年重走整个故事', mark: '01' },
   { href: '/graph/', title: '全景图谱', desc: '三卷脉络、人物交会、概念相连——一张图看全貌', mark: '02' },
@@ -32,16 +31,6 @@ const doors = [
       </a>
     ))}
   </section>
-
-  {droplet && (
-    <section class="scene-teaser">
-      <a href={pageUrl(`/scenes/${droplet.id}/`)}>
-        <p class="scene-teaser-kicker">最震撼的一幕</p>
-        <h2>{droplet.title}</h2>
-        <p>{droplet.tagline} —— 进入沉浸场景 →</p>
-      </a>
-    </section>
-  )}
 
   <section class="book-strip">
     <h2>三部曲</h2>
