@@ -46,6 +46,12 @@ const byId = (kind, id) => {
   if (kind === 'scene') return graph.scenes.find((x) => x.id === id);
   return null;
 };
+// 悬浮卡单行简介：事件用 summary，书/纪元用 intro，其余用 tagline；无字段则空
+const cardLine = (n) => {
+  const src = byId(n.type, n.ref);
+  const f = n.type === 'event' ? 'summary' : n.type === 'book' || n.type === 'era' ? 'intro' : 'tagline';
+  return (src && typeof src[f] === 'string' && src[f] !== '') ? src[f] : '';
+};
 ---
 <div class="kg-app">
   <div class="kg-controls">
@@ -61,7 +67,9 @@ const byId = (kind, id) => {
     <p class="kg-hint">拖拽平移 · 滚轮 / 捏合缩放 · 悬停点亮关联 · 点击看详情</p>
   </div>
 
-  <div class="kg-stage" id="kg-graph"></div>
+  <div class="kg-stage" id="kg-graph">
+    <div class="kg-hovercard" id="kg-hovercard" hidden></div>
+  </div>
 </div>
 
 <aside class="kg-panel" id="kg-panel" aria-label="实体详情">
@@ -90,7 +98,31 @@ const byId = (kind, id) => {
   );
 })}
 
-<script type="application/json" id="kg-data" set:html={JSON.stringify(payload).replace(/</g, '\\u003c')}></script>
+<!-- 悬停悬浮卡模板：单行简介 + 进入详情链接（书/纪元无详情页 → 仅简介） -->
+{graph.nodes.map((n) => {
+  const href = detailHref(n);
+  const line = cardLine(n);
+  return href ? (
+    <template id={`kg-card-${n.id}`}>
+      <a class="kg-card" href={href}>
+        <span class="kg-card-type">{TYPE_LABEL[n.type]}</span>
+        <strong class="kg-card-name">{n.label}</strong>
+        <span class="kg-card-line">{line}</span>
+        <span class="kg-card-go">进入详情页 →</span>
+      </a>
+    </template>
+  ) : (
+    <template id={`kg-card-${n.id}`}>
+      <div class="kg-card">
+        <span class="kg-card-type">{TYPE_LABEL[n.type]}</span>
+        <strong class="kg-card-name">{n.label}</strong>
+        <span class="kg-card-line">{line}</span>
+      </div>
+    </template>
+  );
+})}
+
+<script type="application/json" id="kg-data" set:html={JSON.stringify(payload).replace(/&lt;/g, '\\u003c')}></script>
 <script>
   import { createGraph } from '../lib/graph-view.js';
   const stage = document.getElementById('kg-graph');

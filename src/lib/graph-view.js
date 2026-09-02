@@ -107,10 +107,35 @@ export function createGraph(root, data) {
     }
   };
 
+  // 悬停悬浮卡：移入节点显示实体简介卡（服务端模板 kg-card-{id}），移出/拖拽/滚轮时延时隐藏
+  const card = document.getElementById('kg-hovercard');
+  let cardTimer = null;
+  const cancelCardHide = () => { if (cardTimer) { clearTimeout(cardTimer); cardTimer = null; } };
+  const scheduleCardHide = () => { cancelCardHide(); cardTimer = setTimeout(() => { card.hidden = true; }, 180); };
+  const placeCard = (cx, cy) => {
+    const r = root.getBoundingClientRect();
+    const left = clamp(cx - r.left + 14, 8, r.width - card.offsetWidth - 8);
+    const top = clamp(cy - r.top + 10, 8, r.height - card.offsetHeight - 8);
+    card.style.left = `${left}px`;
+    card.style.top = `${top}px`;
+  };
+  const showCard = (id, cx, cy) => {
+    const tpl = document.getElementById(`kg-card-${id}`);
+    if (!tpl) return;
+    cancelCardHide();
+    card.innerHTML = '';
+    card.appendChild(tpl.content.cloneNode(true));
+    card.hidden = false;
+    placeCard(cx, cy);
+  };
+  card.addEventListener('pointerenter', cancelCardHide);
+  svg.addEventListener('pointermove', (e) => { if (!card.hidden) placeCard(e.clientX, e.clientY); });
+
   // 平移 / 缩放（Pointer Events 统一鼠标触屏）
   const pointers = new Map();
   let dragId = null, moved = false, pinchDist = 0;
   svg.addEventListener('pointerdown', (e) => {
+    scheduleCardHide();
     svg.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
     if (e.button === 0 && !pointers.has(2) && !pointers.has(1)) dragId = e.pointerId;
@@ -152,6 +177,7 @@ export function createGraph(root, data) {
   svg.addEventListener('pointercancel', up);
 
   svg.addEventListener('wheel', (e) => {
+    scheduleCardHide();
     e.preventDefault();
     const rect = svg.getBoundingClientRect();
     const f = fit();
@@ -179,8 +205,14 @@ export function createGraph(root, data) {
     g.classList.add('kg-hot');
     nodeEls.forEach((ng, nid) => { if (ng !== g && !nb.has(nid)) ng.classList.add('kg-dim'); });
     edgeEls.forEach((p) => { if (p.dataset.a === id || p.dataset.b === id) p.classList.add('kg-hot'); });
+    showCard(id, e.clientX, e.clientY);
   });
-  nodesG.addEventListener('pointerout', () => clearHot());
+  nodesG.addEventListener('pointerout', (e) => {
+  clearHot();
+  // 指针移入悬浮卡（relatedTarget 落在卡内）不调度隐藏，避免「节点→卡片」快速迁移时点击落空
+  if (e.relatedTarget instanceof Element && e.relatedTarget.closest('#kg-hovercard')) return;
+  scheduleCardHide();
+});
 
   // 点击 → 详情浮层（模板由 Astro 服务端预渲染）
   const panel = document.getElementById('kg-panel');
