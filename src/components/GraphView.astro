@@ -74,7 +74,7 @@ const byId = (kind, id) => {
 {graph.nodes.map((n) => {
   const src = byId(n.type, n.ref);
   const href = detailHref(n);
-  const rows = desc(n.type).filter((f) => src && typeof src[f] === 'string' && src[f] !== '').slice(0, n.type === 'character' ? 4 : 4);
+  const rows = desc(n.type).filter((f) => src && typeof src[f] === 'string' && src[f] !== '').slice(0, 4);
   return (
     <template id={`kg-panel-${n.id}`}>
       <p class="kg-panel-type">{TYPE_LABEL[n.type]}</p>
