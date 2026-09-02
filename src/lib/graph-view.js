@@ -155,6 +155,7 @@ export function createGraph(root, data) {
   const pointers = new Map();
   let dragId = null, moved = false, pinchDist = 0;
   svg.addEventListener('pointerdown', (e) => {
+    console.log('[graph-debug] pointerdown', e.pointerId, e.button, e.offsetX, e.offsetY); // 临时诊断，定位后移除
     if (!e.target.closest('.kg-node')) unfocus(); // 点击空白处清除锁定状态
     svg.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
@@ -167,6 +168,7 @@ export function createGraph(root, data) {
   });
   svg.addEventListener('pointermove', (e) => {
     if (!pointers.has(e.pointerId)) return;
+    if (e.pointerId === dragId) console.log('[graph-debug] pointermove-drag', e.clientX, e.clientY); // 临时诊断，定位后移除
     const prev = pointers.get(e.pointerId);
     const dx = e.clientX - prev[0], dy = e.clientY - prev[1];
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
