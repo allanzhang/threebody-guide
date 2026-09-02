@@ -1,0 +1,109 @@
+---
+import { buildGraph, skeletonIds, layout } from '../lib/knowledge-graph.mjs';
+import { pageUrl } from '../lib/data.mjs';
+import Linkify from './Linkify.astro';
+
+const graph = buildGraph();
+const skeleton = skeletonIds(graph);
+const { pos, W, H } = layout(graph);
+
+const payload = {
+  W, H,
+  skeleton: [...skeleton],
+  nodeById: Object.fromEntries(graph.nodes.map((n) => {
+    const p = pos.get(n.id);
+    return [n.id, { id: n.id, type: n.type, label: n.label, color: n.color, x: p.x, y: p.y }];
+  })),
+  edges: graph.edges,
+};
+
+const TYPE_LABEL = { book: '书', era: '纪元', event: '事件', concept: '概念', character: '人物', scene: '场景' };
+const FIELD_LABEL = { role: '他的角色', storyline: '故事线', legacy: '他的遗产', details: '深读', turning: '关键转折', chilling: '细思极恐', moment: '那一刻', shock: '为什么震撼', science: '科学底子', echo: '伏笔与呼应', note: '备注', who: '他是谁', summary: '概要', intro: '来龙去脉', tagline: '一句话' };
+
+// 每类实体：科普段 + 考据段（有字段才渲染）
+const desc = (type) => {
+  switch (type) {
+    case 'concept': return ['tagline', 'details', 'chilling'];
+    case 'character': return ['who', 'role', 'storyline', 'legacy'];
+    case 'event': return ['summary', 'details', 'turning', 'note'];
+    case 'scene': return ['tagline', 'moment', 'shock', 'science', 'echo'];
+    default: return ['intro'];
+  }
+};
+const detailHref = (n) => {
+  if (n.type === 'concept') return pageUrl(`/concepts/${n.ref}/`);
+  if (n.type === 'character') return pageUrl(`/characters/${n.ref}/`);
+  if (n.type === 'scene') return pageUrl(`/scenes/${n.ref}/`);
+  if (n.type === 'event') return pageUrl('/timeline/');
+  return '';
+};
+const byId = (kind, id) => {
+  if (kind === 'book') return graph.books.find((x) => x.id === id);
+  if (kind === 'era') return graph.eras.find((x) => x.id === id);
+  if (kind === 'event') return graph.events.find((x) => x.id === id);
+  if (kind === 'concept') return graph.concepts.find((x) => x.id === id);
+  if (kind === 'character') return graph.characters.find((x) => x.id === id);
+  if (kind === 'scene') return graph.scenes.find((x) => x.id === id);
+  return null;
+};
+---
+<div class="kg-app">
+  <div class="kg-controls">
+    <div class="kg-toggle">
+      <button type="button" data-layer="skeleton" class="active">骨架</button>
+      <button type="button" data-layer="full">全部</button>
+    </div>
+    <div class="kg-types">
+      {['character', 'concept', 'event', 'scene'].map((t) => (
+        <label><input type="checkbox" data-type={t} checked /> <Linkify text={TYPE_LABEL[t]} /></label>
+      ))}
+    </div>
+    <p class="kg-hint">拖拽平移 · 滚轮 / 捏合缩放 · 悬停点亮关联 · 点击看详情</p>
+  </div>
+
+  <div class="kg-stage" id="kg-graph"></div>
+</div>
+
+<aside class="kg-panel" id="kg-panel" aria-label="实体详情">
+  <button type="button" class="kg-panel-close" id="kg-close" aria-label="关闭">×</button>
+  <div class="kg-panel-body" id="kg-panel-body"></div>
+</aside>
+<div class="kg-backdrop" id="kg-backdrop"></div>
+
+<!-- 每实体详情模板：服务端预渲染（复用 Linkify 内联链接），客户端仅克隆 -->
+{graph.nodes.map((n) => {
+  const src = byId(n.type, n.ref);
+  const href = detailHref(n);
+  const rows = desc(n.type).filter((f) => src && typeof src[f] === 'string' && src[f] !== '').slice(0, n.type === 'character' ? 4 : 4);
+  return (
+    <template id={`kg-panel-${n.id}`}>
+      <p class="kg-panel-type">{TYPE_LABEL[n.type]}</p>
+      <h3 class="kg-panel-title">{n.label}</h3>
+      {rows.map((f) => (
+        <div class="kg-panel-sec">
+          <h4>{FIELD_LABEL[f]}</h4>
+          <Linkify text={src[f]} />
+        </div>
+      ))}
+      {href && <a class="kg-panel-link" href={href}>进入详情页 →</a>}
+    </template>
+  );
+})}
+
+<script type="application/json" id="kg-data" set:html={JSON.stringify(payload).replace(/</g, '\\u003c')}></script>
+<script>
+  import { createGraph } from '../lib/graph-view.js';
+  const stage = document.getElementById('kg-graph');
+  const data = JSON.parse(document.getElementById('kg-data').textContent);
+  const api = createGraph(stage, data);
+  document.querySelectorAll('[data-layer]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-layer]').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      api.setLayer(btn.dataset.layer);
+    });
+  });
+  document.querySelectorAll('[data-type]').forEach((cb) => {
+    cb.addEventListener('change', () => api.setType(cb.dataset.type, cb.checked));
+  });
+</script>
