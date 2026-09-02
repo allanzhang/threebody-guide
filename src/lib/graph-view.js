@@ -155,11 +155,12 @@ export function createGraph(root, data) {
   const pointers = new Map();
   let dragId = null, moved = false, pinchDist = 0;
   svg.addEventListener('pointerdown', (e) => {
-    console.log('[graph-debug] pointerdown', e.pointerId, e.button, e.offsetX, e.offsetY); // 临时诊断，定位后移除
+    // 先记录是否首指针再写入 map——写后判断 has(pointerId) 恒真，会吞掉 dragId 赋值（拖拽失灵的真凶）
+    const firstPointer = pointers.size === 0;
     if (!e.target.closest('.kg-node')) unfocus(); // 点击空白处清除锁定状态
     svg.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
-    if (e.button === 0 && !pointers.has(2) && !pointers.has(1)) dragId = e.pointerId;
+    if (e.button === 0 && firstPointer) dragId = e.pointerId;
     moved = false;
     if (pointers.size === 2) {
       const [a, b] = [...pointers.values()];
@@ -168,7 +169,6 @@ export function createGraph(root, data) {
   });
   svg.addEventListener('pointermove', (e) => {
     if (!pointers.has(e.pointerId)) return;
-    if (e.pointerId === dragId) console.log('[graph-debug] pointermove-drag', e.clientX, e.clientY); // 临时诊断，定位后移除
     const prev = pointers.get(e.pointerId);
     const dx = e.clientX - prev[0], dy = e.clientY - prev[1];
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
