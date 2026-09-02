@@ -94,6 +94,7 @@ export function createGraph(root, data) {
   const state = { layer: 'skeleton', types: new Set(['character', 'concept', 'event', 'scene']), x: 24, y: 40, k: 0.82 };
   const applyView = () => {
     world.setAttribute('style', `transform: translate(${state.x}px, ${state.y}px) scale(${state.k});`);
+    if (focusNode) positionCardAtNode(focusNode); // 平移/缩放后卡片跟随节点
   };
   const visible = (id) => {
     const n = data.nodeById[id];
@@ -112,30 +113,36 @@ export function createGraph(root, data) {
   // 直到悬停另一节点（切换）或点击空白处（清除）才改变
   const card = document.getElementById('kg-hovercard');
   let focusNode = null;
-  const placeCard = (cx, cy) => {
+  // 卡片位置锚定节点（世界坐标 → 屏幕），不跟随鼠标——锁定后鼠标可移开去点击
+  const positionCardAtNode = (id) => {
+    const n = data.nodeById[id];
+    const f = fit();
     const r = root.getBoundingClientRect();
-    const left = clamp(cx - r.left + 14, 8, r.width - card.offsetWidth - 8);
-    const top = clamp(cy - r.top + 10, 8, r.height - card.offsetHeight - 8);
+    const sr = svg.getBoundingClientRect();
+    const x = (n.x * state.k + state.x) * f.s + f.ox + (sr.left - r.left);
+    const y = (n.y * state.k + state.y) * f.s + f.oy + (sr.top - r.top);
+    const left = clamp(x + 20, 8, r.width - card.offsetWidth - 8);
+    const top = clamp(y - card.offsetHeight / 2, 8, r.height - card.offsetHeight - 8);
     card.style.left = `${left}px`;
     card.style.top = `${top}px`;
   };
-  const showCard = (id, cx, cy) => {
+  const showCard = (id) => {
     const tpl = document.getElementById(`kg-card-${id}`);
     if (!tpl) return;
     card.innerHTML = '';
     card.appendChild(tpl.content.cloneNode(true));
     card.hidden = false;
-    placeCard(cx, cy);
+    positionCardAtNode(id);
   };
-  const focus = (id, cx, cy) => {
-    if (focusNode === id) return; // 已锁定该节点，状态保持（用户可从容移向卡片）
+  const focus = (id) => {
+    if (focusNode === id) return; // 已锁定该节点，状态保持
     focusNode = id;
     clearHot();
     const nb = neighbors(id);
     nodeEls.get(id).classList.add('kg-hot');
     nodeEls.forEach((ng, nid) => { if (nid !== id && !nb.has(nid)) ng.classList.add('kg-dim'); });
     edgeEls.forEach((p) => { if (p.dataset.a === id || p.dataset.b === id) p.classList.add('kg-hot'); });
-    showCard(id, cx, cy);
+    showCard(id);
   };
   const unfocus = () => {
     if (focusNode === null) return;
@@ -143,7 +150,6 @@ export function createGraph(root, data) {
     clearHot();
     card.hidden = true;
   };
-  svg.addEventListener('pointermove', (e) => { if (!card.hidden) placeCard(e.clientX, e.clientY); });
 
   // 平移 / 缩放（Pointer Events 统一鼠标触屏）
   const pointers = new Map();
@@ -212,7 +218,7 @@ export function createGraph(root, data) {
   nodesG.addEventListener('pointerover', (e) => {
     const g = e.target.closest('.kg-node');
     if (!g || g.classList.contains('kg-hidden')) return;
-    focus(g.dataset.id, e.clientX, e.clientY);
+    focus(g.dataset.id);
   });
   // 移出节点不解除状态（锁定高亮），切到另一节点或点击空白处时才变化
 
