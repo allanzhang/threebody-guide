@@ -97,7 +97,8 @@ export function createGraph(root, data) {
   };
   const visible = (id) => {
     const n = data.nodeById[id];
-    return state.types.has(n.type) && (state.layer === 'full' || data.skeleton.includes(id));
+    const anchor = n.type === 'book' || n.type === 'era';
+    return anchor || (state.types.has(n.type) && (state.layer === 'full' || data.skeleton.includes(id)));
   };
   const render = () => {
     for (const [id, g] of nodeEls) g.classList.toggle('kg-hidden', !visible(id));
