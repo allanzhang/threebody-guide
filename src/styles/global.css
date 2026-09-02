@@ -380,3 +380,78 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 80px; }
   .site-nav nav a { margin-left: 14px; font-size: 14px; }
   .era-hero { height: 50vh; }
 }
+
+/* ===== 全景图谱 ===== */
+.graph-hero { position: relative; padding: 72px 0 28px; text-align: center; }
+.graph-hero-canvas { position: absolute; inset: 0; z-index: 0; opacity: 0.6; pointer-events: none; }
+.graph-hero .page-title, .graph-hero .page-lead { position: relative; z-index: 1; }
+.graph-body { margin-top: 8px; }
+
+.kg-app { position: relative; }
+.kg-controls {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 20px;
+  padding: 14px 8px 18px;
+}
+.kg-toggle { display: flex; gap: 8px; }
+.kg-toggle button {
+  background: none; border: 1px solid var(--line); color: var(--ink-dim);
+  padding: 5px 18px; border-radius: 999px; font-size: 14px; font-family: var(--serif);
+  cursor: pointer; transition: color 0.15s, border-color 0.15s;
+}
+.kg-toggle button:hover { color: var(--accent-strong); }
+.kg-toggle button.active { color: var(--accent); border-color: var(--accent); box-shadow: var(--glow-dim); }
+.kg-types { display: flex; gap: 16px; color: var(--ink-dim); font-size: 14px; }
+.kg-types label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.kg-types input { accent-color: var(--accent); }
+.kg-hint { width: 100%; text-align: center; color: var(--ink-dim); font-size: 12px; letter-spacing: 0.08em; }
+
+.kg-stage {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: radial-gradient(ellipse at 30% 20%, rgba(59, 111, 158, 0.08), transparent 60%),
+              radial-gradient(ellipse at 80% 80%, rgba(138, 106, 146, 0.06), transparent 55%);
+  min-height: 66vh; overflow: hidden; position: relative;
+}
+.kg-svg { width: 100%; height: 72vh; min-height: 420px; display: block; touch-action: none; cursor: grab; }
+.kg-svg:active { cursor: grabbing; }
+.kg-world { transition: none; }
+.kg-edge { fill: none; stroke: rgba(232, 230, 225, 0.14); stroke-width: 1; }
+.kg-edge.kg-hot { stroke: var(--accent); stroke-opacity: 0.75; stroke-width: 1.4; }
+.kg-edge.kg-hidden { display: none; }
+.kg-node { cursor: pointer; }
+.kg-node.kg-hidden { display: none; }
+.kg-node.kg-dim { opacity: 0.12; }
+.kg-node.kg-hot circle { stroke: var(--accent-strong); stroke-width: 2; }
+.kg-circle { transition: opacity 0.2s; }
+.kg-anchor { filter: drop-shadow(0 0 10px rgba(232, 230, 225, 0.35)); }
+.kg-node-label { fill: var(--ink-dim); font-size: 12px; font-family: var(--sans); pointer-events: none; }
+.kg-anchor-label { fill: var(--ink); font-size: 15px; font-family: var(--serif); letter-spacing: 0.1em; pointer-events: none; }
+.kg-rail-label { font-family: var(--serif); font-size: 14px; letter-spacing: 0.3em; }
+
+/* 详情浮层 */
+.kg-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(430px, 92vw); z-index: 60;
+  background: var(--panel); backdrop-filter: blur(14px); border-left: 1px solid var(--line);
+  padding: 28px 26px; overflow-y: auto;
+  transform: translateX(105%); transition: transform 0.28s cubic-bezier(0.22, 0.8, 0.3, 1);
+}
+.kg-panel.kg-open { transform: translateX(0); }
+.kg-panel-close {
+  position: absolute; top: 14px; right: 16px; background: none; border: none;
+  color: var(--ink-dim); font-size: 26px; line-height: 1; cursor: pointer;
+}
+.kg-panel-close:hover { color: var(--accent-strong); }
+.kg-panel-type { color: var(--accent); font-size: 12px; letter-spacing: 0.3em; margin-bottom: 6px; }
+.kg-panel-title { font-size: 24px; margin-bottom: 18px; }
+.kg-panel-sec { margin-bottom: 16px; }
+.kg-panel-sec h4 { font-size: 13px; color: var(--accent); letter-spacing: 0.14em; margin-bottom: 4px; }
+.kg-panel-link { display: inline-block; margin-top: 10px; color: var(--accent-strong); border-bottom: 1px solid var(--accent); }
+.kg-backdrop {
+  position: fixed; inset: 0; background: rgba(4, 6, 10, 0.6); z-index: 55;
+  opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+.kg-backdrop.kg-show { opacity: 1; pointer-events: auto; }
+
+@media (max-width: 760px) {
+  .kg-svg { height: 60vh; }
+  .kg-panel { width: 88vw; }
+}

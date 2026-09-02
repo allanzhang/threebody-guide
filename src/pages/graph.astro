@@ -1,0 +1,13 @@
+---
+import Base from '../layouts/Base.astro';
+import StarField from '../components/StarField.astro';
+import GraphView from '../components/GraphView.astro';
+---
+<Base title="全景图谱 · 三体世界图鉴" description="三体三部曲知识图谱：三卷脉络、人物交会、概念相连——一张图看全三体的来龙去脉。">
+  <section class="graph-hero">
+    <div class="graph-hero-canvas"><StarField density={120} speed={0.4} /></div>
+    <h1 class="page-title">全景图谱</h1>
+    <p class="page-lead">横轴是纪年，纵带是卷册——事件坐在自己的年代，概念挂在卷册之下，人物悬在故事的中点。跨卷的连线，就是三体真正的逻辑关系。</p>
+  </section>
+  <section class="graph-body"><GraphView /></section>
+</Base>
