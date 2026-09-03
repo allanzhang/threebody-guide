@@ -58,7 +58,9 @@
       "human-column-computer",
       "nanofiber",
       "dehydration",
-      "scientific-boundary"
+      "scientific-boundary",
+      "shooter-hypothesis",
+      "farmer-hypothesis"
     ],
     "portrait": "/images/portrait-wang-miao.jpg",
     "legacy": "他留下的不是纳米材料，而是全书第一个「看见真相」的普通人视角——一切崩塌与重建，都从他打台球的那张桌子开始。"
@@ -229,7 +231,9 @@
       "scientists-deaths"
     ],
     "concepts": [
-      "scientific-boundary"
+      "scientific-boundary",
+      "shooter-hypothesis",
+      "farmer-hypothesis"
     ],
     "portrait": "/images/portrait-yang-dong.jpg",
     "legacy": "杨冬的遗产是一道无解的题：她因物理学可能不存在而绝望，却不知道母亲的秘密才是真正的起点——她的死，是全书最大误会的开幕。"
@@ -253,7 +257,9 @@
     ],
     "concepts": [
       "exodus-thought",
-      "hibernation"
+      "hibernation",
+      "blue-space",
+      "bronze-age"
     ],
     "portrait": "",
     "legacy": "他的遗产是那句「没关系的，都一样」——一个布局两百年的人，坦然接受自己不是执棋者而是垫脚石；星舰地球的火种由他点燃，由别人带走。"
@@ -343,7 +349,8 @@
       "droplet-massacre"
     ],
     "concepts": [
-      "droplet"
+      "droplet",
+      "bronze-age"
     ],
     "portrait": "/images/portrait-ding-yi.jpg",
     "legacy": "丁仪的遗产是一颗台球和一句「物理学不存在」——他两次站在人类物理学的尽头（智子锁死与水滴面前），两次都微笑着迎接终局。"
@@ -393,7 +400,9 @@
     "concepts": [
       "ladder-plan",
       "mini-universe",
-      "hibernation"
+      "hibernation",
+      "universal-gravity",
+      "red-giant"
     ],
     "portrait": "",
     "legacy": "她的遗产是两次「错误的善良」：放下开关、否决光速飞船——也留下最后一次正确的放弃：交出小宇宙的质量。刘慈欣让她活到最后，是让「人性」这份遗产带着全部重量传下去。"
@@ -531,7 +540,9 @@
     "concepts": [
       "fleet-international",
       "gravitational-wave",
-      "dimensions"
+      "dimensions",
+      "blue-space",
+      "universal-gravity"
     ],
     "portrait": "",
     "legacy": "他的遗产是银河系人类：黑暗战役里活下来的「先信者」，和一次把毁灭按钮交给全员表决的广播——最深的冷酷与最彻底的民主，在他身上同时成立。"
@@ -557,5 +568,94 @@
     ],
     "portrait": "",
     "legacy": "她的遗产是太空新人类的第一次让渡：把舰长权限交给劫舰的章北海——信任与求生这两件事，在她身上短暂地统一过，然后一起消失在黑暗战役里。"
+  },
+  {
+    "id": "yamamoto-keiko",
+    "name": "山杉惠子",
+    "alias": "",
+    "tagline": "希恩斯之妻 / 破壁人二号",
+    "group": "support",
+    "isCore": false,
+    "who": "希恩斯的妻子、杰出的脑科学家，参与思想钢印（Thought-stamp）计划。她既是希恩斯最信任的伴侣，也是三体侧选定的「破壁人二号」——在希恩斯即将成功时揭穿了他隐藏的「人类必败」命题，成为面壁计划中唯一由最亲近之人破壁的案例。",
+    "role": "她是「信任与背叛」的极致标本：最了解希恩斯的人，亲手终结了他。她的破壁不是出于敌意，而是出于对真相的清醒——她比希恩斯更早看清，思想钢印最终会伤害人类。她的存在，让「破壁人」从冷酷的敌人变成了有血有肉的悲剧角色。",
+    "storyline": "参与思想钢印 → 作为破壁人揭穿希恩斯 → 完成三体使命后离开。",
+    "choices": "",
+    "events": [
+      "face-wall-plan-launch",
+      "wall-breakers",
+      "thought-stamp"
+    ],
+    "concepts": [
+      "thought-stamp",
+      "wall-breaker",
+      "face-wall-plan"
+    ],
+    "portrait": "",
+    "legacy": "山杉惠子的遗产是「最亲近者的背叛」：她证明，在黑暗森林里，连爱人都可能成为破壁人。"
+  },
+  {
+    "id": "yang-weining",
+    "name": "杨卫宁",
+    "alias": "",
+    "tagline": "红岸总工程师 / 叶文洁的丈夫",
+    "group": "origin",
+    "isCore": false,
+    "who": "红岸基地总工程师，一个温和、正直的技术专家，在叶文洁最灰暗的时候接纳了她，成为她的丈夫。叶文洁利用他的信任接触到了红岸的核心机密，最终亲手把他推下山崖——为了掩盖她向三体发出信号的秘密。",
+    "role": "杨卫宁是「善被恶吞噬」的牺牲者：他是全书少数真正善良的人，却因妻子的背叛而死。他的死，让叶文洁的「背叛人类」有了更沉重的道德分量。",
+    "storyline": "接纳叶文洁 → 成为丈夫 → 察觉异常 → 被推下山崖。",
+    "choices": "",
+    "events": [
+      "ye-wenjie-redcoast",
+      "trisolaran-reply"
+    ],
+    "concepts": [
+      "red-coast",
+      "solar-amplifier"
+    ],
+    "portrait": "",
+    "legacy": "杨卫宁的遗产是一个沉重的问号：善良在乱世里，是否注定成为牺牲品？"
+  },
+  {
+    "id": "bai-rong",
+    "name": "白蓉",
+    "alias": "",
+    "tagline": "罗辑的作家恋人",
+    "group": "support",
+    "isCore": false,
+    "who": "罗辑青年时代的恋人、作家，教会他写作与爱。罗辑因她开始创作小说，这份对「爱」的想象成为他日后理解宇宙、推导黑暗森林法则（Dark Forest Theory）的原点。",
+    "role": "白蓉是罗辑「人性」的象征：她让罗辑这个理性到近乎冷酷的面壁者，保留了对爱与被爱的渴望。罗辑用她教会他的想象，去想象一个宇宙级的存在，最终推导出黑暗森林法则。",
+    "storyline": "与罗辑相识 → 引导他写作 → 罗辑成为面壁者。",
+    "choices": "",
+    "events": [],
+    "concepts": [
+      "face-wall-plan"
+    ],
+    "portrait": "",
+    "legacy": "白蓉的遗产是罗辑的想象力——她教会他「爱」，而他用「爱」的想象，拯救了人类。"
+  },
+  {
+    "id": "zhi-zi",
+    "name": "智子",
+    "alias": "智子使者",
+    "tagline": "三体的眼睛与使者",
+    "group": "eto",
+    "isCore": false,
+    "who": "三体文明以智子（Sophon）为载体、制造出的人形使者：威慑纪元与广播纪元里，她以日本少女的形象出现在罗辑与程心面前，既是三体监视人类的「眼睛」，也是三体与人类谈判的「嘴」，自称「三体世界驻地球大使」。",
+    "role": "智子是人类与三体之间唯一的直接通道：威慑纪元，她与罗辑对峙六十二年；威慑失败后，她向程心宣布了三体入侵的事实；太阳系二维化时，她以温柔的语气宣告了人类的末日。她是三体文明在人类面前最接近「人性」的存在，也是最彻底的讽刺。",
+    "storyline": "三体舰队启航 → 以人形出现于威慑纪元 → 与罗辑/程心对话 → 宣告太阳系二维化。",
+    "choices": "",
+    "events": [
+      "luo-ji-deterrence",
+      "deterrence-failure",
+      "singer-two-dimensional",
+      "roji-final-stand"
+    ],
+    "concepts": [
+      "sophon",
+      "deterrence",
+      "two-dimensional-foil"
+    ],
+    "portrait": "",
+    "legacy": "智子的遗产是「温柔的残忍」：她把文明的终结说得像一句祝福——「太阳系将变成一幅画，永存于宇宙的记忆中。」"
   }
 ]

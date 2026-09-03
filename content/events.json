@@ -32,7 +32,8 @@
     "isMajorEvent": false,
     "summary": "叶文洁在红岸基地（Red Coast Base）任职，负责频谱测算与天文观测，结识工程师杨卫宁并结为夫妻。工作枯燥而规律，宇宙的寂静近乎永恒，这反而放大她内心的暗流：父亲的死、时代的背叛，让她对人类文明彻底失望。她开始质疑红岸的意义——即便监听到地外文明的信息，人类这样自私的物种配拥有吗？这份「对人类失望」的信念，最终成为她按下发射键的真正动机。",
     "characters": [
-      "ye-wenjie"
+      "ye-wenjie",
+      "yang-weining"
     ],
     "concepts": [
       "red-coast",
@@ -75,7 +76,8 @@
     "isMajorEvent": false,
     "summary": "红岸的信号经四年抵达四光年外的三体世界，又过四年，回信到站：三体监听员的警告——「不要回答！不要回答！不要回答！」。监听员深知：人类一旦回答，地球坐标暴露，三体舰队将倾巢而出，人类将在四百年倒计时后迎来灭亡。叶文洁在巨大的沉默里做出了一生最重要的选择——她向宇宙回复：「到这里来吧，我将帮助你们获得这个世界。」三体的舰队，由此确认了地球的方向。",
     "characters": [
-      "ye-wenjie"
+      "ye-wenjie",
+      "yang-weining"
     ],
     "concepts": [
       "red-coast",
@@ -153,7 +155,8 @@
     ],
     "concepts": [
       "eto",
-      "trisolaran-civilization"
+      "trisolaran-civilization",
+      "farmer-hypothesis"
     ],
     "image": "",
     "note": "",
@@ -177,7 +180,9 @@
     ],
     "concepts": [
       "scientific-boundary",
-      "sophon"
+      "sophon",
+      "shooter-hypothesis",
+      "farmer-hypothesis"
     ],
     "image": "",
     "note": "",
@@ -200,7 +205,8 @@
     ],
     "concepts": [
       "sophon",
-      "particle-collider"
+      "particle-collider",
+      "shooter-hypothesis"
     ],
     "image": "",
     "note": "",
@@ -406,7 +412,8 @@
       "luo-ji",
       "hines",
       "rey-diaz",
-      "tyler"
+      "tyler",
+      "yamamoto-keiko"
     ],
     "concepts": [
       "face-wall-plan"
@@ -429,7 +436,8 @@
     "characters": [
       "hines",
       "rey-diaz",
-      "tyler"
+      "tyler",
+      "yamamoto-keiko"
     ],
     "concepts": [
       "face-wall-plan",
@@ -473,7 +481,8 @@
     "isMajorEvent": false,
     "summary": "希恩斯向联合国提出「思想钢印（Thought-stamp）」计划：用机器把信念直接写入大脑，给太空军打上必胜钢印。罗辑质疑后计划被否决，但希恩斯暗中保留机器，并把命题改成了「人类必败」——约五万太空军被打上钢印，组成潜伏的失败主义组织「钢印族」。当人类坚信必胜时，这些人已在为失败押注；当人类兵败如山倒时，正是这群人保存了最后的火种。",
     "characters": [
-      "hines"
+      "hines",
+      "yamamoto-keiko"
     ],
     "concepts": [
       "thought-stamp"
@@ -609,7 +618,9 @@
     ],
     "concepts": [
       "exodus-thought",
-      "deep-sea-state"
+      "deep-sea-state",
+      "blue-space",
+      "bronze-age"
     ],
     "image": "",
     "note": "",
@@ -627,7 +638,8 @@
     "isMajorEvent": true,
     "summary": "末日战役后，人类几乎没有抵抗力量，三体舰队则步步逼近太阳系。人类唯一的筹码，攥在罗辑手里：向宇宙广播三体坐标，让两个文明一起被黑暗森林（Dark Forest）清理。罗辑与智子（Sophon）正面对峙——他握着引力波天线的开关，平静地宣布：三体舰队若继续前进，他就按下开关。三体不相信他舍得同归于尽。罗辑随即把枪口对准自己：如果三体不转向，他就当场自尽，心跳停止将触发「摇篮」系统自动广播——同归于尽从「威胁」变成「必然」。三体舰队在距太阳系仅两光年处转向了。威慑建立：人类用「疯狂而可信」换来了六十二年的和平，罗辑成为唯一的执剑人（Swordholder），一个人扛起两个文明的平衡。",
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "zhi-zi"
     ],
     "concepts": [
       "deterrence",
@@ -744,7 +756,8 @@
     "summary": "威慑纪元六十二年，人类决定更换执剑人（Swordholder）。罗辑已独自执剑五十四年，人类却恐惧他、不信任他，最终以压倒性票数选出了程心——一个被全人类公认为「善良、绝不会按下开关」的人。交接的瞬间，三体发动全面进攻：智子（Sophon）在水星轨道展开太阳遮挡装置（日环蚀），水滴（Droplet）编队直扑引力波天线。新任执剑人（Swordholder）程心，必须在三分钟内决定是否按下引力波广播（Gravitational Wave Broadcast）的开关。她放下了。威慑在两分钟里崩溃：三体控制地球，强迫人类放弃防线、移民指定区域，并下令追杀罗辑。程心不是恶人——她只是用「善良」做出了全书最致命的选择，也让威慑制度的全部脆弱性暴露无遗。",
     "characters": [
       "cheng-xin",
-      "luo-ji"
+      "luo-ji",
+      "zhi-zi"
     ],
     "concepts": [
       "deterrence",
@@ -770,7 +783,9 @@
       "chu-yan"
     ],
     "concepts": [
-      "gravity-broadcast"
+      "gravity-broadcast",
+      "blue-space",
+      "universal-gravity"
     ],
     "image": "",
     "note": "",
@@ -791,7 +806,8 @@
     "concepts": [
       "dark-forest",
       "light-particle",
-      "dark-forest-strike"
+      "dark-forest-strike",
+      "universal-gravity"
     ],
     "image": "",
     "note": "",
@@ -833,7 +849,8 @@
     "summary": "人类无法逃离太阳系，只能选择「掩体计划（Shelter Plan）」：在木星、土星等巨行星的背阳面建造太空城，用巨行星庞大的身躯挡住可能到来的黑暗森林打击（Dark Forest Strike）。掩体纪元的两百余年里，人类把太阳系文明搬进巨行星的阴影，在夹缝中建造起最后的城邦。掩体计划（Shelter Plan）赌的是「概率」：赌打击不会落在阴影里——但它注定躲不过降维，因为已够格成为歌者眼里待处理的坐标。",
     "characters": [],
     "concepts": [
-      "shelter-plan"
+      "shelter-plan",
+      "red-giant"
     ],
     "image": "",
     "note": "",
@@ -851,13 +868,15 @@
     "isMajorEvent": true,
     "summary": "威慑失败、三体母星被光粒（Light Particle）清理后，太阳系成为暴露的坐标。高等文明「歌者」在例行清理中发现了太阳系文明，长老层决定执行清理。歌者掷出一张「二向箔（Dual-vector Foil）」：一张薄如卡片、几乎无质量的箔片，展开后让三维空间向二维跌落。太阳系从太阳开始被二维化——一切物质向平面坍缩，变成没有厚度的画；掩体纪元的人类躲藏在巨行星背后的太空城，但降维无法被遮挡：二维化以接近光速扩散，地球、太空城、舰队，全部被压成永恒静止的二维图景。人类的文明在宇宙尺度上被「抹除」——不是杀死，而是降维：文明的存在形式被彻底改变。",
     "characters": [
-      "ge-zhe"
+      "ge-zhe",
+      "zhi-zi"
     ],
     "concepts": [
       "two-dimensional-foil",
       "dimensional-reduction",
       "singer",
-      "dark-forest-strike"
+      "dark-forest-strike",
+      "red-giant"
     ],
     "image": "",
     "note": "",
@@ -899,7 +918,8 @@
     "summary": "威慑失败后，罗辑成为抵抗运动的精神符号，又在冥王星守护起「地球文明博物馆」——人类文明的记忆被一件件运到这里。二维化抵达太阳系边缘时，他把星环号留给程心，自己留在冥王星上，与太阳系一起变成二维的画。他说：孩子们，走好，我要进到画里去。这个曾经以疯狂威慑三体的人，最终以最平静的姿态，陪人类文明走到了最后一秒。",
     "characters": [
       "luo-ji",
-      "cheng-xin"
+      "cheng-xin",
+      "zhi-zi"
     ],
     "concepts": [],
     "image": "",
@@ -1036,7 +1056,9 @@
     ],
     "concepts": [
       "dark-forest",
-      "fleet-international"
+      "fleet-international",
+      "blue-space",
+      "bronze-age"
     ],
     "image": "",
     "note": "",
@@ -1058,7 +1080,9 @@
       "guan-yifan"
     ],
     "concepts": [
-      "dimensions"
+      "dimensions",
+      "blue-space",
+      "universal-gravity"
     ],
     "image": "",
     "note": "",

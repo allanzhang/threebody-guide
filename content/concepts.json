@@ -89,7 +89,8 @@
       "trisolaran-reply"
     ],
     "characters": [
-      "ye-wenjie"
+      "ye-wenjie",
+      "yang-weining"
     ],
     "related": [
       "solar-amplifier",
@@ -111,7 +112,8 @@
       "trisolaran-reply"
     ],
     "characters": [
-      "ye-wenjie"
+      "ye-wenjie",
+      "yang-weining"
     ],
     "related": [
       "red-coast"
@@ -134,7 +136,8 @@
     ],
     "characters": [
       "ye-wenjie",
-      "wang-miao"
+      "wang-miao",
+      "zhi-zi"
     ],
     "related": [
       "scientific-boundary",
@@ -142,7 +145,10 @@
       "wave-particle-duality",
       "uncertainty-principle",
       "quantum-entanglement",
-      "particle-collider"
+      "particle-collider",
+      "shooter-hypothesis",
+      "farmer-hypothesis",
+      "universal-gravity"
     ],
     "details": "① 制造智子的代价：倾尽三体文明相当比重的资源——为了锁死对手，一个文明选择自残式的赌注，可见它对「技术爆炸」的恐惧有多深。\n② 细节：智子曾短暂二维展开制造「宇宙闪烁」，成为汪淼眼前最震撼的场景，也是他相信三体存在的最后一击。\n③ 符号：威慑纪元中智子的女性化身，象征三体对人类的轻蔑与掌控。",
     "chilling": "锁死一个文明的科学，只用了两颗质子——谋杀一个文明，可以便宜到这个地步。"
@@ -295,7 +301,9 @@
     "related": [
       "eto",
       "sophon",
-      "uncertainty-principle"
+      "uncertainty-principle",
+      "shooter-hypothesis",
+      "farmer-hypothesis"
     ],
     "details": "① 科学边界的公开身份是学术沙龙——其隐蔽性恰恰让它成为 ETO 最合适的渗透场。\n② 细节：组织里对「实验异常」的讨论，精确地预演了智子锁死的物理后果。\n③ 主题：一个打着「认识极限」旗号的组织，最终成了人类理智崩溃的观察哨。",
     "chilling": "最深的恐惧不是科学被证伪，而是最顶尖的科学家自己先不信了——杀死物理学的从来不是实验，是信念。"
@@ -325,7 +333,10 @@
       "light-particle",
       "dark-forest-strike",
       "fermi-paradox",
-      "light-cone"
+      "light-cone",
+      "blue-space",
+      "bronze-age",
+      "universal-gravity"
     ],
     "details": "① 名称的出处：罗辑在雪夜公路上顿悟的场景——他一边开车一边推导，意识到自己与宇宙的关系，就像夜行者与森林中看不见的猎手。\n② 法则与费米悖论：它回答了「外星文明都在哪里」——他们都在隐藏，暴露者已被清理。\n③ 容易忽略的点：法则假设「暴露=危险」成立，但歌者的清理只是例行公事——猎手连猎物是谁都不知道，这才是最深的寒意。",
     "chilling": "黑暗森林不是比喻，而是一条可以推导的定律：只要宇宙物质总量有限、文明之间存在猜疑链与技术爆炸，「发现即毁灭」就不是道德选择，而是唯一理性解。真正让人后背发凉的是——推导的每一步，你都找不到反驳的地方。"
@@ -401,7 +412,8 @@
       "thought-stamp"
     ],
     "characters": [
-      "hines"
+      "hines",
+      "yamamoto-keiko"
     ],
     "related": [
       "face-wall-plan"
@@ -427,7 +439,9 @@
       "deterrence",
       "snow-project",
       "neutrino",
-      "gravitational-wave"
+      "gravitational-wave",
+      "blue-space",
+      "universal-gravity"
     ],
     "details": "① 引力波真实存在（2015 年 LIGO 首次探测）——小说把它升级为星际通讯与广播工具。\n② 细节：威慑的成立不完全靠天线，而靠「验证过的广播能力」——三体相信人类真的能发出坐标。\n③ 主题：广播权即生存权——整个威慑纪元，本质上是两个文明围绕「发信权」的博弈。",
     "chilling": "人类给自己修了一个「同归于尽」的扳机，然后把扳机绳交给极少数人的手——和平的保险栓本身就是核弹。"
@@ -446,7 +460,8 @@
       "deterrence-failure"
     ],
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "zhi-zi"
     ],
     "related": [
       "dark-forest",
@@ -496,7 +511,9 @@
       "luo-ji",
       "hines",
       "rey-diaz",
-      "tyler"
+      "tyler",
+      "yamamoto-keiko",
+      "bai-rong"
     ],
     "related": [
       "thought-stamp",
@@ -568,7 +585,8 @@
     "related": [
       "curvature-drive",
       "light-speed",
-      "time-dilation"
+      "time-dilation",
+      "blue-space"
     ],
     "details": "① 星环号的研制被程心否决过——人类在最需要它的时候，主动放弃了它。\n② 细节：光速飞船留下曲率尾迹——逃亡者也在黑暗森林中留下脚印。\n③ 主题：光速飞船是「自由」与「暴露」的双刃剑：离开太阳系的人，从此只能流浪。",
     "chilling": "逃生船造出来的那天，人类先争论的不是怎么造，而是「谁配逃」——文明真正的死因往往是内耗。"
@@ -600,7 +618,9 @@
     "events": [
       "singer-two-dimensional"
     ],
-    "characters": [],
+    "characters": [
+      "zhi-zi"
+    ],
     "related": [
       "dimensional-reduction",
       "singer",
@@ -685,7 +705,8 @@
     ],
     "characters": [],
     "related": [
-      "lagrange-point"
+      "lagrange-point",
+      "red-giant"
     ],
     "details": "① 掩体计划是「用工程学回答宇宙恐惧」的典型——人类把威胁当作可计算的概率问题。\n② 细节：掩体时代的太空城是人类最后的城市文明——文明仍在建设，尽管头顶悬着未知。\n③ 主题：掩体计划的失败证明：在降维面前，位置、阴影、概率都不成立——只有离开维度的能力才谈得上逃生。",
     "chilling": "人类最后的家园，是躲在木星背后借它的身体挡枪——文明退到阴影里求生，连抬头看星星都是奢侈。"
@@ -782,7 +803,8 @@
     "characters": [
       "hines",
       "rey-diaz",
-      "tyler"
+      "tyler",
+      "yamamoto-keiko"
     ],
     "related": [
       "face-wall-plan"
@@ -882,7 +904,8 @@
     "events": [],
     "characters": [],
     "related": [
-      "three-body-problem"
+      "three-body-problem",
+      "red-giant"
     ],
     "chilling": "三体行星没有「稳定的天空」可以仰赖——地球人最平凡的白昼与黑夜，是宇宙里的少数派福利。"
   },
@@ -1210,7 +1233,8 @@
     "characters": [],
     "related": [
       "white-dwarf-neutron-star",
-      "black-hole"
+      "black-hole",
+      "red-giant"
     ],
     "chilling": "你身体里的金、钙、铁全部来自超新星——你是星星尸骸组成的，思考着星星为什么会死。"
   },
@@ -1231,7 +1255,8 @@
       "droplet",
       "strong-force",
       "supernova",
-      "pulsar"
+      "pulsar",
+      "red-giant"
     ],
     "chilling": "一勺中子星物质重十亿吨——宇宙用恒星的尸体，把「物质」的极限压给你看。"
   },
@@ -1427,7 +1452,8 @@
     "related": [
       "mass-energy",
       "trisolaran-fleet",
-      "stellar-hydrogen-bomb"
+      "stellar-hydrogen-bomb",
+      "blue-space"
     ],
     "chilling": "太阳烧了四十六亿年还没烧完——可控核聚变一旦点火成功，人类文明等于随身携带了一颗恒星。"
   },
@@ -1479,7 +1505,8 @@
     "related": [
       "wave-particle-duality",
       "sophon",
-      "scientific-boundary"
+      "scientific-boundary",
+      "shooter-hypothesis"
     ],
     "chilling": "有些信息宇宙不允许任何存在获得，与仪器好坏无关——「全知」从物理上就被判了死刑。"
   },
@@ -1514,7 +1541,8 @@
     "characters": [],
     "related": [
       "sophon",
-      "proton-nucleus"
+      "proton-nucleus",
+      "shooter-hypothesis"
     ],
     "chilling": "人类认识微观世界的唯一方式：把粒子加速到近光速再撞得粉碎——我们的全部物理学，是砸出来的。"
   },
@@ -1775,5 +1803,151 @@
       "eto"
     ],
     "chilling": "谋杀可以精确到一组基因序列——当技术能「编辑」死期，暗杀就不再需要枪。"
+  },
+  {
+    "id": "shooter-hypothesis",
+    "name": "射手假说",
+    "tagline": "靶子上的弹孔，可能是唯一的宇宙规律",
+    "group": "physics",
+    "inBook": "科学边界内部流传的著名思想实验：一个神枪手在靶子上每隔十厘米打出一个洞，靶面上生活的二维智慧生物据此归纳出「宇宙规律」——它们永远不会理解，自己只是被更高维的射手按随机习惯创造出的实验品。《三体》里，射手假说是「科学边界」动摇人类基础科学信念的武器：当智子锁死对撞机、实验结果不可重复时，人类就像靶子上的智慧生物——自以为发现了规律，其实只是被更高维文明圈养在靶面上。",
+    "science": "本质是科学哲学的「归纳问题」（休谟问题）——观察样本无法证明规律的普遍性，是科幻对「规律是否可靠」的文学化表达，并非可验证的科学命题。",
+    "events": [
+      "scientists-deaths",
+      "sophon-blockade"
+    ],
+    "characters": [
+      "wang-miao",
+      "yang-dong"
+    ],
+    "related": [
+      "scientific-boundary",
+      "sophon",
+      "particle-collider",
+      "uncertainty-principle",
+      "farmer-hypothesis"
+    ],
+    "details": "① 与农场主假说（Farmer Hypothesis）并称「科学边界双假说」，都是「规律不可靠」的隐喻。\n② 细节：汪淼在科学边界聚会上第一次对「人类科学是否真实」产生动摇。\n③ 象征：人类以为在研究宇宙，可能只是宇宙的靶子。",
+    "chilling": "如果宇宙真是这样，那么人类引以为傲的物理定律，都只是某个更高存在随手设定的「弹孔」。"
+  },
+  {
+    "id": "farmer-hypothesis",
+    "name": "农场主假说",
+    "tagline": "火鸡科学家与感恩节的规律",
+    "group": "physics",
+    "inBook": "科学边界另一则思想实验：农场里有一群火鸡，农场主每天上午十一点准时喂食。一位火鸡科学家经过长期观察归纳出一条铁律——「每天上午十一点，食物会降临」。它在感恩节前的早晨向全体火鸡宣布了这个伟大的发现，而这一天等来的不是食物，而是屠刀。农场主假说与射手假说（Shooter Hypothesis）一起，构成「科学边界」动摇人类物理信念的核心隐喻：任何从历史观察中归纳的规律，都可能在下一个「感恩节」被瞬间推翻。",
+    "science": "同为「归纳问题」的文学表达，强调「未来的意外性」——规律不保证在未来继续成立。",
+    "events": [
+      "scientists-deaths",
+      "eto-gathering"
+    ],
+    "characters": [
+      "wang-miao",
+      "yang-dong"
+    ],
+    "related": [
+      "scientific-boundary",
+      "shooter-hypothesis",
+      "sophon"
+    ],
+    "details": "① 火鸡的「科学」越是精确严谨，被屠杀时的讽刺就越深——规律越确定，崩塌越彻底。\n② 细节：这两个假说在书里是 ETO 与科学边界传播「人类科学是虚假的」观念的工具。\n③ 象征：农场主可能是三体人，也可能只是另一个更深不可测的存在——人类无法分辨。",
+    "chilling": "人类也许就是那群火鸡，而「感恩节」，可能已经以智子的形式降临。"
+  },
+  {
+    "id": "blue-space",
+    "name": "蓝色空间号",
+    "tagline": "深空中的黑暗火种",
+    "group": "tech",
+    "inBook": "恒星级战舰「蓝色空间号（Blue Space）」是人类最先进的太空军事力量之一。黑暗战役中，章北海以生命为代价清除威胁后，蓝色空间号成为人类唯一遁入深空的舰船。它与追击而至的万有引力号（Gravity）在四维空间碎块中相遇，并由此掌握了引力波广播的真相；最终两舰共同向宇宙广播了三体世界的坐标。褚岩接过章北海的意志，让蓝色空间号成为深空人类文明的火种——它象征着人类在黑暗森林里被迫学会的第一课：先下手为强是生存的唯一法则。",
+    "science": "核聚变动力恒星级战舰（核聚变概念），其「星舰文明」设定属于科幻推演。",
+    "events": [
+      "zhang-beihai-escape",
+      "dark-battle",
+      "four-d-fragment",
+      "broadcast-of-coordinates"
+    ],
+    "characters": [
+      "chu-yan",
+      "zhang-beihai"
+    ],
+    "related": [
+      "dark-forest",
+      "fusion",
+      "lightspeed-ship",
+      "gravity-broadcast",
+      "bronze-age",
+      "universal-gravity"
+    ],
+    "details": "① 黑暗战役中反杀的瞬间，是人类文明第一次在星际尺度上实践黑暗森林法则。\n② 细节：蓝色空间号最终与万有引力号一起，向宇宙广播了三体世界的坐标。\n③ 象征：它是「逃亡主义」真正活下来的证明——章北海赌上性命也要保住的火种。",
+    "chilling": "地球的背叛者与逃亡者，最终成了人类文明在宇宙里唯一的回声。"
+  },
+  {
+    "id": "bronze-age",
+    "name": "青铜时代号",
+    "tagline": "先动手的战舰与它的审判",
+    "group": "tech",
+    "inBook": "「青铜时代号（Bronze Age）」是黑暗战役中的另一艘恒星级战舰。在补给断绝、彼此猜疑的绝境里，它率先向其他战舰发起攻击，成为黑暗战役的发起者之一；幸存后收到地球「战争胜利」的召唤返回母星，等待它的却是军事审判——人类用道德审判自己的逃生者。返航前，它的一名军官向蓝色空间号（Blue Space）发出警告，促使后者彻底放弃返回、遁入深空。",
+    "science": "核聚变动力恒星级战舰，同蓝色空间号，属科幻设定。",
+    "events": [
+      "dark-battle",
+      "zhang-beihai-escape"
+    ],
+    "characters": [
+      "ding-yi",
+      "zhang-beihai"
+    ],
+    "related": [
+      "blue-space",
+      "dark-forest"
+    ],
+    "details": "① 青铜时代号被审判，与蓝色空间号被放逐，是同一个选择的两种结局——人类无法同时原谅「背叛者」与「求生者」。\n② 细节：它发出的警告，救了蓝色空间号。\n③ 象征：它是「道德」在黑暗宇宙里的最后一次挣扎。",
+    "chilling": "用道德审判求生者，是人类文明在地球上的最后一次「体面」。"
+  },
+  {
+    "id": "universal-gravity",
+    "name": "万有引力号",
+    "tagline": "按下同归于尽扳机的战舰",
+    "group": "tech",
+    "inBook": "恒星级战舰「万有引力号（Gravity）」受命追击逃入深空的蓝色空间号（Blue Space），船上携带着三体的智子（Sophon）监视，是人类与三体之间的「最后一道锁链」。在四维空间碎块中，万有引力号与蓝色空间号相遇，并因智子无法监视四维空间而获得短暂的沟通自由；最终，两舰共同决定向宇宙广播三体世界的坐标——万有引力号，成为人类历史上第一个真正按下「同归于尽」扳机的存在。",
+    "science": "万有引力号是引力波广播的载体（引力波概念），其星际航行设定属科幻。",
+    "events": [
+      "four-d-fragment",
+      "broadcast-of-coordinates",
+      "trisolaris-destroyed"
+    ],
+    "characters": [
+      "chu-yan",
+      "cheng-xin"
+    ],
+    "related": [
+      "blue-space",
+      "gravity-broadcast",
+      "sophon",
+      "dark-forest"
+    ],
+    "details": "① 威慑失败后，地球上的执剑人没有按下开关，而深空中的万有引力号在人类不知情的情况下完成了广播。\n② 细节：广播发生之时，人类仍以为威慑有效——它宣告了黑暗森林威慑的彻底终结。\n③ 象征：真正的「执剑人」不在太阳系，而在无人知晓的深空。",
+    "chilling": "人类在太阳系里守护了六十二年的「扳机」，最终被一艘追叛徒的船，在没人看见的地方扣下了。"
+  },
+  {
+    "id": "red-giant",
+    "name": "红巨星",
+    "tagline": "恒星衰老前的最后一抹膨胀",
+    "group": "astro",
+    "inBook": "红巨星（Red Giant）是恒星演化晚期的形态：核心氢燃尽后，恒星急剧膨胀、表面冷却变红，体积可达原来的数百倍。它是三体世界三颗太阳不可预测的底色，也是人类太阳系宿命的天文注脚——终有一天太阳会膨胀为红巨星，吞没内行星。人类文明在威慑纪元末期推行的掩体计划（Shelter Plan），正是基于对「太阳系终将不可居住」的清醒认知，为文明寻找安身之处。",
+    "science": "红巨星是恒星演化的真实阶段（太阳约 50 亿年后将进入红巨星期），书中时间尺度做了艺术压缩。",
+    "events": [
+      "shelter-era-begins",
+      "singer-two-dimensional"
+    ],
+    "characters": [
+      "cheng-xin"
+    ],
+    "related": [
+      "shelter-plan",
+      "stars-and-planets",
+      "supernova",
+      "white-dwarf-neutron-star"
+    ],
+    "details": "① 掩体计划把人类迁往木星等巨行星的卫星，用巨行星抵挡打击与膨胀。\n② 细节：红巨星与二向箔，构成太阳系「灼烧」与「扁平」两种灭亡方式。\n③ 象征：人类一直在为「太阳会死」做准备，却没能预料到宇宙会先动手。",
+    "chilling": "人类谋划着如何熬过太阳的衰老，等来的却是比死亡更彻底的二维化。"
   }
 ]
