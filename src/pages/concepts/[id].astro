@@ -9,7 +9,7 @@ export function getStaticPaths() {
 
 const { id } = Astro.params;
 const c = conceptById.get(id);
-const groupTitles = { law: '法则与理论', tech: '科技与器物', org: '组织与文明' };
+const groupTitles = { law: '法则与理论', tech: '科技与器物', org: '组织与文明', astro: '天文与宇宙', physics: '物理与时空' };
 ---
 <Base title={`${c ? c.name : '未找到'} · 概念册 · 三体世界图鉴`} description={c ? `${c.name}｜${c.tagline}。书里怎么讲 + 科学底子。三体世界图鉴概念册` : '三体世界图鉴'}>
   {c && (
@@ -32,6 +32,12 @@ const groupTitles = { law: '法则与理论', tech: '科技与器物', org: '组
           <h2>细节与伏笔</h2>
           {c.details.split('\n').map((line) => <p><Linkify text={line} exclude={[c.name]} /></p>)}
         </section>
+      )}
+      {c.chilling && (
+        <div class="insight chilling">
+          <h4>细思极恐</h4>
+          <p><Linkify text={c.chilling} exclude={[c.name]} /></p>
+        </div>
       )}
       <footer class="detail-links">
         {c.related.length > 0 && (

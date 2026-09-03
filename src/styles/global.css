@@ -350,6 +350,9 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
 .insight p { font-size: 14px; color: var(--ink); line-height: 1.9; max-width: 860px; }
 .insight.turning { border-left-color: #7fa8d8; background: linear-gradient(90deg, rgba(90,140,210,0.12) 0%, rgba(90,140,210,0.02) 78%); }
 .insight.turning h4 { color: #9fc0e8; }
+.insight.chilling { border-left-color: #9a7ab8; background: linear-gradient(90deg, rgba(154,122,184,0.14) 0%, rgba(154,122,184,0.02) 78%); }
+.insight.chilling h4 { color: #b9a3d8; }
+.insight.legacy { border-left-color: var(--accent); }
 
 /* ===== 大场面沉浸页 ===== */
 .scene-page { margin: -24px -24px 0; }

@@ -41,6 +41,12 @@ const c = characterById.get(id);
           <p>{c.choices}</p>
         </section>
       )}
+      {c.legacy && (
+        <div class="insight legacy">
+          <h4>他的遗产</h4>
+          <p><Linkify text={c.legacy} exclude={[c.name]} /></p>
+        </div>
+      )}
       <footer class="detail-links">
         {c.events.length > 0 && (
           <div>
