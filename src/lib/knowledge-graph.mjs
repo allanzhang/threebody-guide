@@ -1,7 +1,7 @@
 // 知识图谱数据派生：从 6 套 JSON 建节点/边 + 骨架分层（纯函数，服务端与测试共用）
 import { books as dbBooks, eras as dbEras, events as dbEvents, concepts as dbConcepts, characters as dbCharacters, scenes as dbScenes } from './data.mjs';
 
-const CONCEPT_COLOR = { law: '#d8c48a', tech: '#5b8db8', org: '#3fa39c' };
+const CONCEPT_COLOR = { law: '#d8c48a', tech: '#5b8db8', org: '#3fa39c', astro: '#9a7ab8', physics: '#b8836a' };
 const CHAR_COLOR = { origin: '#d8c48a', face: '#5b8db8', eto: '#8a6a92', support: '#56616e' };
 const BOOK_COLOR = '#b8a877';
 

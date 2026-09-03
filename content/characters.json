@@ -27,7 +27,8 @@
       "solar-amplifier",
       "sophon",
       "eto",
-      "trisolaran-civilization"
+      "trisolaran-civilization",
+      "radio-telescope"
     ],
     "portrait": "/images/portrait-ye-wenjie.jpg",
     "legacy": "红岸基地的发射按钮、地球三体组织的种子、以及一个无法回答的问题——人类是否值得被拯救。她留下的不是组织或技术，而是一场持续到宇宙末日的争论：一个人的绝望，在文明尺度上究竟能改变多少。"
@@ -59,7 +60,8 @@
       "dehydration",
       "scientific-boundary"
     ],
-    "portrait": "/images/portrait-wang-miao.jpg"
+    "portrait": "/images/portrait-wang-miao.jpg",
+    "legacy": "他留下的不是纳米材料，而是全书第一个「看见真相」的普通人视角——一切崩塌与重建，都从他打台球的那张桌子开始。"
   },
   {
     "id": "shi-qiang",
@@ -82,7 +84,8 @@
     "concepts": [
       "nanofiber"
     ],
-    "portrait": "/images/portrait-shi-qiang.jpg"
+    "portrait": "/images/portrait-shi-qiang.jpg",
+    "legacy": "大史的遗产是常识：技术会骗人，日子得过人——他没搞懂任何一个理论，却看懂了所有人，包括那些自以为看懂宇宙的人。"
   },
   {
     "id": "shen-yufei",
@@ -103,7 +106,8 @@
       "eto",
       "scientific-boundary"
     ],
-    "portrait": "/images/portrait-shen-yufei.jpg"
+    "portrait": "/images/portrait-shen-yufei.jpg",
+    "legacy": "她是ETO里的反战派——遗产是一个问题：叛徒群里，也有想踩刹车的人。"
   },
   {
     "id": "luo-ji",
@@ -143,7 +147,8 @@
       "snow-project",
       "hibernation"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "他的遗产是威慑本身：一个玩世不恭的人被命运选中，用庄颜与女儿学会牵挂，再用六十年执剑把牵挂熬成孤独——宇宙社会学唯一一次实践，签名是他。"
   },
   {
     "id": "evans",
@@ -165,7 +170,8 @@
       "eto",
       "trisolaran-civilization"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "伊文斯的遗产是「物种共产主义」的反面教材——爱一切生灵的人，也可以恨全人类，而且逻辑自洽。"
   },
   {
     "id": "pan-han",
@@ -185,7 +191,8 @@
     "concepts": [
       "eto"
     ],
-    "portrait": "/images/portrait-pan-han.jpg"
+    "portrait": "/images/portrait-pan-han.jpg",
+    "legacy": "从环保理想主义者到降临派打手——他的遗产是一句警告：救世的理想走到极端，就是毁灭的工具。"
   },
   {
     "id": "chang-weisi",
@@ -204,7 +211,8 @@
       "crisis-era-begins"
     ],
     "concepts": [],
-    "portrait": "/images/portrait-chang-weisi.jpg"
+    "portrait": "/images/portrait-chang-weisi.jpg",
+    "legacy": "常伟思的遗产是面壁计划的第一道授权——一个军人对「用欺骗保护文明」的押注，他明知荒诞，仍然签字。"
   },
   {
     "id": "yang-dong",
@@ -223,7 +231,8 @@
     "concepts": [
       "scientific-boundary"
     ],
-    "portrait": "/images/portrait-yang-dong.jpg"
+    "portrait": "/images/portrait-yang-dong.jpg",
+    "legacy": "杨冬的遗产是一道无解的题：她因物理学可能不存在而绝望，却不知道母亲的秘密才是真正的起点——她的死，是全书最大误会的开幕。"
   },
   {
     "id": "zhang-beihai",
@@ -238,13 +247,16 @@
     "choices": "行星防御理事会相信人类必胜，他相信必败。他选择用「叛逃」换取文明的另一种可能——如果注定要输，就把种子带出太阳系。这份几乎不可能伪装的坚定，让他被后世称为「野生钢印族」。",
     "events": [
       "zhang-beihai-future",
-      "zhang-beihai-escape"
+      "zhang-beihai-escape",
+      "great-ravine",
+      "dark-battle"
     ],
     "concepts": [
       "exodus-thought",
       "hibernation"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "他的遗产是那句「没关系的，都一样」——一个布局两百年的人，坦然接受自己不是执棋者而是垫脚石；星舰地球的火种由他点燃，由别人带走。"
   },
   {
     "id": "hines",
@@ -268,7 +280,8 @@
       "wall-breaker",
       "hibernation"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "希恩斯的遗产是思想钢印：信念可以被技术写入——他与山杉惠子互为破壁人，证明怀疑与信仰可以共度一生。"
   },
   {
     "id": "rey-diaz",
@@ -289,7 +302,8 @@
       "face-wall-plan",
       "wall-breaker"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "雷迪亚兹的遗产是暴力主义的破产实验：用最大当量换生存的人，最终死于本国人民的石块——以恐惧为纲领者，必被恐惧反噬。"
   },
   {
     "id": "tyler",
@@ -310,7 +324,8 @@
       "face-wall-plan",
       "wall-breaker"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "泰勒的遗产是失败本身：面壁者里最有「英雄相」的人最先出局——计划在破壁人面前透明如纸，战略与表演只差一层窗户纸。"
   },
   {
     "id": "ding-yi",
@@ -330,7 +345,8 @@
     "concepts": [
       "droplet"
     ],
-    "portrait": "/images/portrait-ding-yi.jpg"
+    "portrait": "/images/portrait-ding-yi.jpg",
+    "legacy": "丁仪的遗产是一颗台球和一句「物理学不存在」——他两次站在人类物理学的尽头（智子锁死与水滴面前），两次都微笑着迎接终局。"
   },
   {
     "id": "zhuang-yan",
@@ -347,7 +363,8 @@
       "luo-ji-idyll"
     ],
     "concepts": [],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "庄颜的遗产是一个问题：被组织「定制」出来的爱情里，幸福算不算真的——罗辑信了，宇宙才得救；这或许是定制爱情唯一的功德。"
   },
   {
     "id": "cheng-xin",
@@ -370,14 +387,16 @@
       "galaxy-era-meeting",
       "returner-return",
       "mini-universe",
-      "universe-restart"
+      "universe-restart",
+      "star-ring-city"
     ],
     "concepts": [
       "ladder-plan",
       "mini-universe",
       "hibernation"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "她的遗产是两次「错误的善良」：放下开关、否决光速飞船——也留下最后一次正确的放弃：交出小宇宙的质量。刘慈欣让她活到最后，是让「人性」这份遗产带着全部重量传下去。"
   },
   {
     "id": "yun-tianming",
@@ -399,7 +418,8 @@
     "concepts": [
       "ladder-plan"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "他的遗产是三个童话：一颗被送出去的大脑，在敌人的腹地熬过一生，用最柔软的文学形式给人类递回最硬的情报——爱情唯一的远行，是以光速完成的。"
   },
   {
     "id": "ai-aa",
@@ -417,7 +437,8 @@
       "galaxy-era-meeting"
     ],
     "concepts": [],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "艾AA的遗产是「人间」本身：程心身边唯一没有宏大事由的人——文明毁灭时，也要有人记得把一亩田种好，把日子过得像日子。"
   },
   {
     "id": "guan-yifan",
@@ -435,13 +456,15 @@
       "galaxy-era-meeting",
       "returner-return",
       "mini-universe",
-      "universe-restart"
+      "universe-restart",
+      "four-d-fragment"
     ],
     "concepts": [
       "lightspeed-ship",
       "mini-universe"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "他的遗产是「光锥之内就是命运」的解释权——银河系人类的科学家，最后陪程心走进小宇宙，替宇宙留下一对见证者。"
   },
   {
     "id": "ge-zhe",
@@ -461,6 +484,78 @@
       "singer",
       "dark-forest-strike"
     ],
-    "portrait": ""
+    "portrait": "",
+    "legacy": "歌者的遗产是那记随手一掷：毁灭太阳系只是他的日常工作——宇宙的残酷不在于恶意，而在于连恶意都轮不到你。"
+  },
+  {
+    "id": "wade",
+    "name": "托马斯·维德",
+    "alias": "维德",
+    "tagline": "PIA 局长 / 比疯狂更清醒的人",
+    "group": "face",
+    "isCore": true,
+    "who": "行星情报局（PIA，Planetary Intelligence Agency）的创建者与实际掌舵人，程心（Cheng Xin）早年在 PIA 的上司。冷酷、精确、毫无道德包袱——全书人性光谱最暗的一端，也是最清醒的一端。",
+    "role": "两度主导人类最疯狂也最关键的计划：危机初期提出阶梯计划（Ladder Plan），用一次核弹级加速把一颗人类大脑（Hibernation 时代的极限赌注）送向三体舰队；掩体纪元率星环公司秘密研发光速飞船（Lightspeed Ship），在政府的高压下为人类偷留一线生机。他信奉丛林，却比所有理想主义者更早看清宇宙的真面目。",
+    "storyline": "危机初期创建 PIA → 提出并主导阶梯计划，留下名句「我们只送大脑」→ 冬眠跨纪元 → 威慑纪元末期与程心竞选执剑人（Swordholder），以压倒性的威慑度落败 → 掩体纪元率星环城以反物质子弹逼出四年研究窗口 → 窗口将尽时唤醒程心并服从她「放弃」的裁决 → 星环城陷落，他本人被联邦处决，研究火种却以星环号的形式留存。",
+    "choices": "三次抉择构成他的一生：阶梯计划上「我们只送大脑」——把人道折算成质量；执剑人竞选败给程心——把开关交给威慑度只有自己零头的她；星环城窗口将尽时唤醒程心——他把「不择手段」的人自己交到了「择手段」的人手里，然后服从。三句话：前进！不择手段地前进！",
+    "events": [
+      "ladder-plan",
+      "cheng-xin-awake",
+      "star-ring-city"
+    ],
+    "concepts": [
+      "ladder-plan",
+      "lightspeed-ship",
+      "curvature-drive"
+    ],
+    "portrait": "",
+    "legacy": "他的遗产是三句话：「我们只送大脑」「前进！不择手段地前进！」「失去人性，失去很多；失去兽性，失去一切」——以及星环号，那艘最终救走程心的船。"
+  },
+  {
+    "id": "chu-yan",
+    "name": "褚岩",
+    "alias": "",
+    "tagline": "蓝色空间号舰长 / 银河系人类的缔造者",
+    "group": "support",
+    "isCore": false,
+    "who": "危机纪元土生土长的太空军人，蓝色空间号（Blue Space）舰长。沉默、谨慎、深不可测——出场不多，却站在人类深空史每一次转折的中央。",
+    "role": "两场决定人类命运的深空事件的主角：黑暗战役中因先见之明率舰幸存，收殓四舰物资，让「星舰地球」活了下来；威慑纪元末，与万有引力号（Gravity）联合，做出向全宇宙广播三体坐标的最终决定——他按下的不是开关，是两个文明的死刑判决。",
+    "storyline": "率蓝色空间号追击叛逃的自然选择号 → 末日战役噩耗传来 → 黑暗战役幸存并收编四舰残骸 → 深空流浪 → 误入四维碎块「坟墓」，与万有引力号从猎杀走向联合 → 全舰表决发动引力波广播（Gravitational Wave Broadcast）→ 成为银河系人类的远祖。",
+    "choices": "在其他舰还沉浸在「人类舰队是一家」的幻觉里时，他默默让蓝色空间号做好的了互射预案——黑暗森林没有例外，他先信了。广播表决时，他把决定权交还给全员投票：毁灭两个世界的按钮，以最民主的方式按下。",
+    "events": [
+      "zhang-beihai-escape",
+      "dark-battle",
+      "four-d-fragment",
+      "broadcast-of-coordinates"
+    ],
+    "concepts": [
+      "fleet-international",
+      "gravitational-wave",
+      "dimensions"
+    ],
+    "portrait": "",
+    "legacy": "他的遗产是银河系人类：黑暗战役里活下来的「先信者」，和一次把毁灭按钮交给全员表决的广播——最深的冷酷与最彻底的民主，在他身上同时成立。"
+  },
+  {
+    "id": "dongfang-yanxu",
+    "name": "东方延绪",
+    "alias": "",
+    "tagline": "自然选择号舰长 / 太空新人类的一代",
+    "group": "support",
+    "isCore": false,
+    "who": "恒星级战舰「自然选择号」（Natural Selection）的舰长，太空新人类的代表——生于太空、长于太空、从未踏上地球的一代，把舰队当作故乡而非工具。",
+    "role": "她的舰被章北海劫持，她的人被章北海的远见说服；从叛舰的看守到叛舰的舰长，她代表了舰队国际对逃亡从抗拒到认同的转折。黑暗战役中随舰罹难，成为「星舰地球」创世的代价之一。",
+    "storyline": "执掌自然选择号 → 舰被章北海劫持、被迫进入深海状态（Deep-Sea State）高速叛逃 → 与章北海在孤舰上有过一段克制的情感微光 → 末日战役噩耗 → 黑暗战役中随舰一同消失在深空。",
+    "choices": "章北海劫舰时，她有反抗的机会，最终为保全全舰乘员交出权限——几分钟后，她成了这艘「叛舰」的舰长。她没有章北海的百年谋划，却在他身上看见了同一种东西：对人类延续的忠诚。至于忠诚把船带向哪里，没有人料到。",
+    "events": [
+      "zhang-beihai-escape",
+      "dark-battle"
+    ],
+    "concepts": [
+      "fleet-international",
+      "deep-sea-state"
+    ],
+    "portrait": "",
+    "legacy": "她的遗产是太空新人类的第一次让渡：把舰长权限交给劫舰的章北海——信任与求生这两件事，在她身上短暂地统一过，然后一起消失在黑暗战役里。"
   }
 ]

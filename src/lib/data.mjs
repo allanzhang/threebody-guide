@@ -71,6 +71,8 @@ const CONCEPT_GROUPS = [
   { key: 'law', title: '法则与理论' },
   { key: 'tech', title: '科技与器物' },
   { key: 'org', title: '组织与文明' },
+  { key: 'astro', title: '天文与宇宙' },
+  { key: 'physics', title: '物理与时空' },
 ];
 export function conceptGroups() {
   return CONCEPT_GROUPS.map((g) => ({ ...g, items: concepts.filter((c) => c.group === g.key) }));

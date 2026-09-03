@@ -46,7 +46,7 @@ function validate(data) {
 
   for (const c of concepts) {
     required(c, ['id', 'name', 'tagline', 'group', 'inBook', 'science', 'events', 'characters', 'related'], 'concept');
-    if (!['law', 'tech', 'org'].includes(c.group)) errors.push(`concept ${c.id} 分组非法: ${c.group}`);
+    if (!['law', 'tech', 'org', 'astro', 'physics'].includes(c.group)) errors.push(`concept ${c.id} 分组非法: ${c.group}`);
     for (const eid of c.events) if (!eventIds.has(eid)) errors.push(`concept ${c.id} 引用了不存在的事件 ${eid}`);
     for (const cid of c.characters) if (!charIds.has(cid)) errors.push(`concept ${c.id} 引用了不存在的人物 ${cid}`);
     for (const rid of c.related) if (!conceptIds.has(rid)) errors.push(`concept ${c.id} 的 related 引用了不存在的概念 ${rid}`);
@@ -103,6 +103,16 @@ function validate(data) {
   for (const c of concepts) if (c.chilling !== undefined && (typeof c.chilling !== 'string' || c.chilling === '')) errors.push(`concept ${c.id} chilling 必须为非空字符串`);
   for (const ch of characters) if (ch.legacy !== undefined && (typeof ch.legacy !== 'string' || ch.legacy === '')) errors.push(`character ${ch.id} legacy 必须为非空字符串`);
 
+  // ---- 概念别名：不得与其他概念名/别名冲突 ----
+  const aliasSeen = new Map(concepts.map((c) => [c.name, `concept ${c.id}`]));
+  for (const c of concepts) {
+    for (const a of c.alias || []) {
+      if (!a || typeof a !== 'string') errors.push(`concept ${c.id} alias 非法: ${a}`);
+      else if (aliasSeen.has(a)) errors.push(`concept ${c.id} alias「${a}」与 ${aliasSeen.get(a)} 冲突`);
+      else aliasSeen.set(a, `concept ${c.id}`);
+    }
+  }
+
   return errors;
 }
 
@@ -146,6 +156,16 @@ if (process.argv.includes('--self-test')) {
   const broken6 = makeData();
   broken6.events[0].turning = '';
   if (validate(broken6).length === 0) { console.error('✗ self-test 失败：空 turning 未被捕获'); process.exit(1); }
+  // 用例7：概念分组非法 / alias 冲突必须被捕获
+  const broken7 = makeData();
+  broken7.concepts = [{ id: 'cp1', name: 'N', tagline: 'T', group: 'bogus', inBook: 'B', science: 'S', events: [], characters: [], related: [] }];
+  if (validate(broken7).length === 0) { console.error('✗ self-test 失败：非法分组未被捕获'); process.exit(1); }
+  const broken8 = makeData();
+  broken8.concepts = [
+    { id: 'cp1', name: 'N1', tagline: 'T', group: 'law', inBook: 'B', science: 'S', events: [], characters: [], related: [] },
+    { id: 'cp2', name: 'N2', tagline: 'T', group: 'law', inBook: 'B', science: 'S', events: [], characters: [], related: [], alias: ['N1'] },
+  ];
+  if (validate(broken8).length === 0) { console.error('✗ self-test 失败：alias 冲突未被捕获'); process.exit(1); }
   console.log('✓ self-test 通过：非法引用/不对称/图片文件缺失均能被捕获');
   process.exit(0);
 }

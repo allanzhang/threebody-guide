@@ -1,12 +1,14 @@
 ---
-// 正文实体自动内联链接：概念名/人物名 → 详情页（长词优先，防止部分匹配）
+// 正文实体自动内联链接：概念名（含别名）/人物名 → 详情页（长词优先防部分匹配）
+// 被排除的实体保留为 plain：仍占住字符，防止短名钻进被排除的长名里（如「光速」匹配进「光速飞船」）
 import { concepts, characters, pageUrl } from '../lib/data.mjs';
 const { text = '', exclude = [] } = Astro.props;
 const EXCLUDE = new Set(exclude);
 
 const ENTITIES = [
-  ...concepts.filter((c) => !EXCLUDE.has(c.name)).map((c) => ({ name: c.name, url: pageUrl(`/concepts/${c.id}/`) })),
-  ...characters.filter((c) => !EXCLUDE.has(c.name)).map((c) => ({ name: c.name, url: pageUrl(`/characters/${c.id}/`) })),
+  ...concepts.flatMap((c) => [c.name, ...(c.alias || [])].map((name) => ({ name, url: pageUrl(`/concepts/${c.id}/`), plain: EXCLUDE.has(name) }))),
+  // 人物 alias 是字符串、概念 alias 是数组，两种形态都兼容
+  ...characters.flatMap((c) => [c.name, ...(Array.isArray(c.alias) ? c.alias : c.alias ? [c.alias] : [])].map((name) => ({ name, url: pageUrl(`/characters/${c.id}/`), plain: EXCLUDE.has(name) }))),
 ].sort((a, b) => b.name.length - a.name.length || a.name.localeCompare(b.name));
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -20,7 +22,7 @@ function linkify(t) {
       if (t.startsWith(e.name, i)) { hit = e; break; }
     }
     if (hit) {
-      out += `<a class="inline-link" href="${hit.url}">${esc(hit.name)}</a>`;
+      out += hit.plain ? esc(hit.name) : `<a class="inline-link" href="${hit.url}">${esc(hit.name)}</a>`;
       i += hit.name.length;
       continue;
     }
