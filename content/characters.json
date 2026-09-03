@@ -702,7 +702,9 @@
     "role": "白蓉是罗辑「人性」的象征：她让罗辑这个理性到近乎冷酷的面壁者，保留了对爱与被爱的渴望。罗辑用她教会他的想象，去想象一个宇宙级的存在，最终推导出黑暗森林法则。",
     "storyline": "与罗辑相识 → 引导他写作 → 罗辑成为面壁者。",
     "choices": "",
-    "events": [],
+    "events": [
+      "face-wall-plan-launch"
+    ],
     "concepts": [
       "face-wall-plan",
       "dark-forest"

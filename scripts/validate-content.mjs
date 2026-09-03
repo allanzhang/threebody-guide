@@ -82,6 +82,24 @@ function validate(data) {
   checkSym(characters, 'concepts', concepts, 'characters', conceptIds, charIds, '人物↔概念');
   checkSym(concepts, 'related', concepts, 'related', conceptIds, conceptIds, '概念↔概念');
 
+  // 孤立/悬空检测：实体进册必须至少有一条链接（事件/人物/概念互相勾稽）
+  const evCharRef = new Map(characters.map((c) => [c.id, []]));
+  const evConRef = new Map(concepts.map((c) => [c.id, []]));
+  for (const ev of events) {
+    if ((ev.characters || []).length === 0 && (ev.concepts || []).length === 0)
+      errors.push(`event ${ev.id} 孤立：未关联任何人物与概念`);
+    for (const cid of ev.characters || []) if (evCharRef.has(cid)) evCharRef.get(cid).push(ev.id);
+    for (const cid of ev.concepts || []) if (evConRef.has(cid)) evConRef.get(cid).push(ev.id);
+  }
+  for (const c of characters) {
+    if ((c.events || []).length === 0 && (evCharRef.get(c.id) || []).length === 0)
+      errors.push(`character ${c.id} 孤立：未关联任何事件（${c.name}）`);
+  }
+  for (const c of concepts) {
+    if ((c.events || []).length === 0 && (c.related || []).length === 0 && (evConRef.get(c.id) || []).length === 0)
+      errors.push(`concept ${c.id} 孤立：未关联任何事件或相关概念（${c.name}）`);
+  }
+
   // 解读块字段：存在即须为非空字符串
   for (const ev of events) if (ev.turning !== undefined && (typeof ev.turning !== 'string' || ev.turning === '')) errors.push(`event ${ev.id} turning 必须为非空字符串`);
   for (const c of concepts) if (c.chilling !== undefined && (typeof c.chilling !== 'string' || c.chilling === '')) errors.push(`concept ${c.id} chilling 必须为非空字符串`);
@@ -131,6 +149,12 @@ if (process.argv.includes('--self-test')) {
   const broken6 = makeData();
   broken6.events[0].turning = '';
   if (validate(broken6).length === 0) { console.error('✗ self-test 失败：空 turning 未被捕获'); process.exit(1); }
+  // 用例6：孤立人物（未关联任何事件）必须被捕获
+  const broken9 = makeData();
+  broken9.characters[0].events = [];
+  broken9.events[0].characters = [];
+  const errs9 = validate(broken9);
+  if (!errs9.some((e) => e.includes('孤立'))) { console.error('✗ self-test 失败：孤立人物未被捕获'); process.exit(1); }
   // 用例5：概念分组非法 / alias 冲突必须被捕获
   const broken7 = makeData();
   broken7.concepts = [{ id: 'cp1', name: 'N', tagline: 'T', group: 'bogus', inBook: 'B', science: 'S', events: [], characters: [], related: [] }];

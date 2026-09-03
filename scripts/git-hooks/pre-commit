@@ -1,0 +1,11 @@
+#!/bin/sh
+# 数据完整性门禁：任何提交前强制校验 content 数据（引用存在/双向对称/孤立检测）。
+# 由 scripts/install-git-hooks.mjs 在 npm install 时自动安装到 .git/hooks/。
+set -e
+cd "$(git rev-parse --show-toplevel)"
+echo "▶ 运行数据校验门禁 (validate)..."
+if ! node scripts/validate-content.mjs; then
+  echo ""
+  echo "✗ 提交被拦截：content 数据未通过校验，请修复后重新提交。"
+  exit 1
+fi
