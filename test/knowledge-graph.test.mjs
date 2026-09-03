@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { buildGraph, topConceptIds, skeletonIds, layout, LAYOUT, nodeKey } from '../src/lib/knowledge-graph.mjs';
+import { conceptGroups, characterGroups, storyOrderKey } from '../src/lib/data.mjs';
 
 // 合成数据：3 概念 a(度数5) b(3) c(3)，k=2 时阈值=第2名度数3 → a,b,c 全取
 const synthetic = () => ({
@@ -135,4 +136,50 @@ test('布局：所有坐标在画布内且有限（含最小数据）', () => {
   const r = layout(empty);
   assert.equal(r.pos.size, 0);
   assert.ok(r.W > 0 && r.H > 0);
+});
+// 断言某分组内排序键字典序单调非递减
+function assertSorted(groups, label) {
+  for (const g of groups) {
+    let prev = null;
+    for (const [i, item] of g.items.entries()) {
+      const k = storyOrderKey(item.events, i);
+      if (prev) {
+        assert.ok(k[0] >= prev[0], `${label} ${g.key} 纪元乱序：${prev[0]} -> ${k[0]} (${item.id})`);
+        if (k[0] === prev[0]) assert.ok(k[1] >= prev[1], `${label} ${g.key} 书序乱序：${prev[1]} -> ${k[1]} (${item.id})`);
+        if (k[0] === prev[0] && k[1] === prev[1]) assert.ok(k[2] >= prev[2], `${label} ${g.key} 事件序乱序：${prev[2]} -> ${k[2]} (${item.id})`);
+      }
+      prev = k;
+    }
+    // 有事件引用的实体必须集中在无事件实体（组尾）之前
+    const keys = g.items.map((c, i) => storyOrderKey(c.events, i));
+    const firstNone = keys.findIndex((k) => k[0] === 9);
+    if (firstNone >= 0) {
+      for (let i = firstNone; i < keys.length; i++) assert.equal(keys[i][0], 9, `${label} ${g.key} 无事件实体应集中在组尾`);
+    }
+  }
+}
+
+test('概念分组内按首次提及（纪元时间线→书→事件序）排列，无事件科普词条居组尾', () => {
+  assertSorted(conceptGroups(), '概念');
+  // 火鸡（农场主假说）首次提及在危机纪元，应排 physics 组前部而非末尾
+  const ph = conceptGroups().find((g) => g.key === 'physics');
+  const idx = ph.items.findIndex((c) => c.id === 'farmer-hypothesis');
+  assert.ok(idx >= 0 && idx < ph.items.length / 2, `farmer-hypothesis 应排在 physics 组前部，实际第 ${idx}/${ph.items.length}`);
+  // 时间线锚定：降维打击(掩体纪元) 应先于 回归运动(归零纪元)
+  const law = conceptGroups().find((g) => g.key === 'law');
+  const di = law.items.findIndex((c) => c.id === 'dimensional-reduction');
+  const ri = law.items.findIndex((c) => c.id === 'return-to-zero');
+  assert.ok(di < ri, `降维打击(${di}) 应先于 回归运动(${ri})`);
+});
+
+test('人物分组内按出场顺序（纪元时间线→书→事件序）排列', () => {
+  assertSorted(characterGroups(), '人物');
+  const origin = characterGroups().find((g) => g.key === 'origin');
+  const yi = origin.items.findIndex((c) => c.id === 'ye-wenjie');
+  const si = origin.items.findIndex((c) => c.id === 'shen-yufei');
+  assert.ok(yi < si, `叶文洁(${yi}) 应先于 申玉菲(${si})`);
+  const face = characterGroups().find((g) => g.key === 'face');
+  const lj = face.items.findIndex((c) => c.id === 'luo-ji');
+  const cx = face.items.findIndex((c) => c.id === 'cheng-xin');
+  assert.ok(lj < cx, `罗辑(${lj}) 应先于 程心(${cx})`);
 });

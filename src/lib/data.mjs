@@ -68,7 +68,41 @@ const CONCEPT_GROUPS = [
   { key: 'physics', title: '物理与时空' },
 ];
 export function conceptGroups() {
-  return CONCEPT_GROUPS.map((g) => ({ ...g, items: concepts.filter((c) => c.group === g.key) }));
+  return CONCEPT_GROUPS.map((g) => ({
+    ...g,
+    items: concepts
+      .filter((c) => c.group === g.key)
+      .map((c, i) => [c, i])
+      .sort(([a, i], [b, j]) => {
+        const ka = storyOrderKey(a.events, i), kb = storyOrderKey(b.events, j);
+        return ka[0] - kb[0] || ka[1] - kb[1] || ka[2] - kb[2] || ka[3] - kb[3];
+      })
+      .map(([c]) => c),
+  }));
+}
+
+/** 全局时间键：纪元 order → 书 order → 事件书内 order。
+ *  注意：事件 order 仅在「同一纪元内」才是时间顺序（如 dark-forest 的威慑纪元 order=1,2
+ *  反而早于危机纪元 order=18+），跨纪元必须先以纪元 order 定锚，否则时间线会倒挂。 */
+const eraOrderOf = new Map(eras.map((e) => [e.id, e.order]));
+const bookOrderOf = new Map(books.map((b) => [b.id, b.order]));
+const eventTimeKey = new Map(events.map((e) => [e.id, [eraOrderOf.get(e.eraId) ?? 9, bookOrderOf.get(e.bookId) ?? 9, e.order]]));
+const cmpKey = (a, b) => a[0] - b[0] || a[1] - b[1] || a[2] - b[2];
+
+/** 实体「首次提及/最早出场」= 关联事件中全局时间键最小者；无事件引用 → null（排组尾保持原序） */
+function firstTimeKey(ids) {
+  let best = null;
+  for (const id of ids || []) {
+    const k = eventTimeKey.get(id);
+    if (k && (!best || cmpKey(k, best) < 0)) best = k;
+  }
+  return best;
+}
+
+/** 概念/人物共用排序键：最早出场时间键(纪元→书→书内 order) → 原 JSON 索引(兜底，保持作者手排顺序) */
+export function storyOrderKey(ids, idx) {
+  const k = firstTimeKey(ids);
+  return k ? [...k, idx] : [9, 9, Infinity, idx];
 }
 
 const CHAR_GROUPS = [
@@ -78,5 +112,15 @@ const CHAR_GROUPS = [
   { key: 'support', title: '重要配角' },
 ];
 export function characterGroups() {
-  return CHAR_GROUPS.map((g) => ({ ...g, items: characters.filter((c) => c.group === g.key) }));
+  return CHAR_GROUPS.map((g) => ({
+    ...g,
+    items: characters
+      .filter((c) => c.group === g.key)
+      .map((c, i) => [c, i])
+      .sort(([a, i], [b, j]) => {
+        const ka = storyOrderKey(a.events, i), kb = storyOrderKey(b.events, j);
+        return ka[0] - kb[0] || ka[1] - kb[1] || ka[2] - kb[2] || ka[3] - kb[3];
+      })
+      .map(([c]) => c),
+  }));
 }
