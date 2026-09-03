@@ -18,7 +18,11 @@
       "eto-gathering",
       "sophon-blockade",
       "eto-fall",
-      "luo-ji-ye-wenjie"
+      "luo-ji-ye-wenjie",
+      "scientists-deaths",
+      "luo-ji-car-crash",
+      "luo-ji-facewall",
+      "dark-forest-confirmed"
     ],
     "concepts": [
       "three-body-problem",
@@ -28,7 +32,9 @@
       "sophon",
       "eto",
       "trisolaran-civilization",
-      "radio-telescope"
+      "radio-telescope",
+      "suspect-chain",
+      "fermi-paradox"
     ],
     "portrait": "/images/portrait-ye-wenjie.jpg",
     "legacy": "红岸基地的发射按钮、地球三体组织的种子、以及一个无法回答的问题——人类是否值得被拯救。她留下的不是组织或技术，而是一场持续到宇宙末日的争论：一个人的绝望，在文明尺度上究竟能改变多少。"
@@ -49,7 +55,8 @@
       "three-body-game",
       "scientists-deaths",
       "sophon-blockade",
-      "universe-flicker"
+      "universe-flicker",
+      "gu-zheng-operation"
     ],
     "concepts": [
       "chaotic-era",
@@ -60,7 +67,8 @@
       "dehydration",
       "scientific-boundary",
       "shooter-hypothesis",
-      "farmer-hypothesis"
+      "farmer-hypothesis",
+      "nanomaterials"
     ],
     "portrait": "/images/portrait-wang-miao.jpg",
     "legacy": "他留下的不是纳米材料，而是全书第一个「看见真相」的普通人视角——一切崩塌与重建，都从他打台球的那张桌子开始。"
@@ -81,10 +89,12 @@
       "gu-zheng-operation",
       "luo-ji-car-crash",
       "luo-ji-facewall",
-      "droplet-arrival"
+      "droplet-arrival",
+      "scientists-deaths"
     ],
     "concepts": [
-      "nanofiber"
+      "nanofiber",
+      "hibernation"
     ],
     "portrait": "/images/portrait-shi-qiang.jpg",
     "legacy": "大史的遗产是常识：技术会骗人，日子得过人——他没搞懂任何一个理论，却看懂了所有人，包括那些自以为看懂宇宙的人。"
@@ -106,7 +116,9 @@
     ],
     "concepts": [
       "eto",
-      "scientific-boundary"
+      "scientific-boundary",
+      "three-body-game",
+      "trisolaran-civilization"
     ],
     "portrait": "/images/portrait-shen-yufei.jpg",
     "legacy": "她是ETO里的反战派——遗产是一个问题：叛徒群里，也有想踩刹车的人。"
@@ -135,7 +147,16 @@
       "deterrence-era-peace",
       "cheng-xin-awake",
       "deterrence-failure",
-      "roji-final-stand"
+      "roji-final-stand",
+      "scientists-deaths",
+      "eto-fall",
+      "wall-breakers",
+      "thought-stamp",
+      "droplet-arrival",
+      "droplet-massacre",
+      "shelter-era-begins",
+      "singer-two-dimensional",
+      "cheng-xin-escape"
     ],
     "concepts": [
       "cosmic-sociology",
@@ -147,7 +168,13 @@
       "sword-holder",
       "face-wall-plan",
       "snow-project",
-      "hibernation"
+      "hibernation",
+      "sophon",
+      "black-domain",
+      "two-dimensional-foil",
+      "wall-breaker",
+      "fermi-paradox",
+      "gene-missile"
     ],
     "portrait": "",
     "legacy": "他的遗产是威慑本身：一个玩世不恭的人被命运选中，用庄颜与女儿学会牵挂，再用六十年执剑把牵挂熬成孤独——宇宙社会学唯一一次实践，签名是他。"
@@ -212,7 +239,10 @@
       "trisolaran-fleet-launch",
       "crisis-era-begins"
     ],
-    "concepts": [],
+    "concepts": [
+      "face-wall-plan",
+      "sophon"
+    ],
     "portrait": "/images/portrait-chang-weisi.jpg",
     "legacy": "常伟思的遗产是面壁计划的第一道授权——一个军人对「用欺骗保护文明」的押注，他明知荒诞，仍然签字。"
   },
@@ -228,12 +258,17 @@
     "storyline": "对撞实验出现异常 → 信念崩溃自杀 → 遗言成为「智子（Sophon）封锁」最早的证词 → 其墓成为罗辑与叶文洁对话的舞台。",
     "choices": "",
     "events": [
-      "scientists-deaths"
+      "scientists-deaths",
+      "wang-miao-countdown",
+      "luo-ji-ye-wenjie"
     ],
     "concepts": [
       "scientific-boundary",
       "shooter-hypothesis",
-      "farmer-hypothesis"
+      "farmer-hypothesis",
+      "particle-collider",
+      "sophon",
+      "cosmic-sociology"
     ],
     "portrait": "/images/portrait-yang-dong.jpg",
     "legacy": "杨冬的遗产是一道无解的题：她因物理学可能不存在而绝望，却不知道母亲的秘密才是真正的起点——她的死，是全书最大误会的开幕。"
@@ -253,13 +288,17 @@
       "zhang-beihai-future",
       "zhang-beihai-escape",
       "great-ravine",
-      "dark-battle"
+      "dark-battle",
+      "trisolaran-fleet-launch"
     ],
     "concepts": [
       "exodus-thought",
       "hibernation",
       "blue-space",
-      "bronze-age"
+      "bronze-age",
+      "thought-stamp",
+      "time-dilation",
+      "deep-sea-state"
     ],
     "portrait": "",
     "legacy": "他的遗产是那句「没关系的，都一样」——一个布局两百年的人，坦然接受自己不是执棋者而是垫脚石；星舰地球的火种由他点燃，由别人带走。"
@@ -284,7 +323,8 @@
       "thought-stamp",
       "face-wall-plan",
       "wall-breaker",
-      "hibernation"
+      "hibernation",
+      "exodus-thought"
     ],
     "portrait": "",
     "legacy": "希恩斯的遗产是思想钢印：信念可以被技术写入——他与山杉惠子互为破壁人，证明怀疑与信仰可以共度一生。"
@@ -350,7 +390,8 @@
     ],
     "concepts": [
       "droplet",
-      "bronze-age"
+      "bronze-age",
+      "sophon"
     ],
     "portrait": "/images/portrait-ding-yi.jpg",
     "legacy": "丁仪的遗产是一颗台球和一句「物理学不存在」——他两次站在人类物理学的尽头（智子锁死与水滴面前），两次都微笑着迎接终局。"
@@ -369,7 +410,9 @@
     "events": [
       "luo-ji-idyll"
     ],
-    "concepts": [],
+    "concepts": [
+      "hibernation"
+    ],
     "portrait": "",
     "legacy": "庄颜的遗产是一个问题：被组织「定制」出来的爱情里，幸福算不算真的——罗辑信了，宇宙才得救；这或许是定制爱情唯一的功德。"
   },
@@ -395,14 +438,21 @@
       "returner-return",
       "mini-universe",
       "universe-restart",
-      "star-ring-city"
+      "star-ring-city",
+      "fairy-tales"
     ],
     "concepts": [
       "ladder-plan",
       "mini-universe",
       "hibernation",
       "universal-gravity",
-      "red-giant"
+      "red-giant",
+      "lightspeed-ship",
+      "return-to-zero",
+      "sword-holder",
+      "sophon",
+      "curvature-drive",
+      "time-dilation"
     ],
     "portrait": "",
     "legacy": "她的遗产是两次「错误的善良」：放下开关、否决光速飞船——也留下最后一次正确的放弃：交出小宇宙的质量。刘慈欣让她活到最后，是让「人性」这份遗产带着全部重量传下去。"
@@ -422,10 +472,20 @@
       "ladder-plan",
       "yun-tianming-chengxin",
       "fairy-tales",
-      "galaxy-era-meeting"
+      "galaxy-era-meeting",
+      "singer-two-dimensional",
+      "cheng-xin-escape",
+      "mini-universe"
     ],
     "concepts": [
-      "ladder-plan"
+      "ladder-plan",
+      "black-domain",
+      "curvature-drive",
+      "light-speed",
+      "lightspeed-ship",
+      "trisolaran-civilization",
+      "two-dimensional-foil",
+      "mini-universe"
     ],
     "portrait": "",
     "legacy": "他的遗产是三个童话：一颗被送出去的大脑，在敌人的腹地熬过一生，用最柔软的文学形式给人类递回最硬的情报——爱情唯一的远行，是以光速完成的。"
@@ -443,9 +503,13 @@
     "choices": "",
     "events": [
       "cheng-xin-escape",
-      "galaxy-era-meeting"
+      "galaxy-era-meeting",
+      "star-ring-city"
     ],
-    "concepts": [],
+    "concepts": [
+      "sword-holder",
+      "curvature-drive"
+    ],
     "portrait": "",
     "legacy": "艾AA的遗产是「人间」本身：程心身边唯一没有宏大事由的人——文明毁灭时，也要有人记得把一亩田种好，把日子过得像日子。"
   },
@@ -470,7 +534,11 @@
     ],
     "concepts": [
       "lightspeed-ship",
-      "mini-universe"
+      "mini-universe",
+      "curvature",
+      "gravity-broadcast",
+      "light-cone",
+      "universal-gravity"
     ],
     "portrait": "",
     "legacy": "他的遗产是「光锥之内就是命运」的解释权——银河系人类的科学家，最后陪程心走进小宇宙，替宇宙留下一对见证者。"
@@ -491,7 +559,10 @@
     ],
     "concepts": [
       "singer",
-      "dark-forest-strike"
+      "dark-forest-strike",
+      "two-dimensional-foil",
+      "dark-forest",
+      "black-domain"
     ],
     "portrait": "",
     "legacy": "歌者的遗产是那记随手一掷：毁灭太阳系只是他的日常工作——宇宙的残酷不在于恶意，而在于连恶意都轮不到你。"
@@ -515,7 +586,11 @@
     "concepts": [
       "ladder-plan",
       "lightspeed-ship",
-      "curvature-drive"
+      "curvature-drive",
+      "antimatter-annihilation",
+      "hibernation",
+      "sword-holder",
+      "trisolaran-fleet"
     ],
     "portrait": "",
     "legacy": "他的遗产是三句话：「我们只送大脑」「前进！不择手段地前进！」「失去人性，失去很多；失去兽性，失去一切」——以及星环号，那艘最终救走程心的船。"
@@ -542,7 +617,8 @@
       "gravitational-wave",
       "dimensions",
       "blue-space",
-      "universal-gravity"
+      "universal-gravity",
+      "gravity-broadcast"
     ],
     "portrait": "",
     "legacy": "他的遗产是银河系人类：黑暗战役里活下来的「先信者」，和一次把毁灭按钮交给全员表决的广播——最深的冷酷与最彻底的民主，在他身上同时成立。"
@@ -628,20 +704,21 @@
     "choices": "",
     "events": [],
     "concepts": [
-      "face-wall-plan"
+      "face-wall-plan",
+      "dark-forest"
     ],
     "portrait": "",
     "legacy": "白蓉的遗产是罗辑的想象力——她教会他「爱」，而他用「爱」的想象，拯救了人类。"
   },
   {
     "id": "zhi-zi",
-    "name": "智子",
+    "name": "人形智子",
     "alias": "智子使者",
     "tagline": "三体的眼睛与使者",
     "group": "eto",
     "isCore": false,
     "who": "三体文明以智子（Sophon）为载体、制造出的人形使者：威慑纪元与广播纪元里，她以日本少女的形象出现在罗辑与程心面前，既是三体监视人类的「眼睛」，也是三体与人类谈判的「嘴」，自称「三体世界驻地球大使」。",
-    "role": "智子是人类与三体之间唯一的直接通道：威慑纪元，她与罗辑对峙六十二年；威慑失败后，她向程心宣布了三体入侵的事实；太阳系二维化时，她以温柔的语气宣告了人类的末日。她是三体文明在人类面前最接近「人性」的存在，也是最彻底的讽刺。",
+    "role": "人形智子是人类与三体之间唯一的直接通道：威慑纪元，她与罗辑对峙六十二年；威慑失败后，她向程心宣布了三体入侵的事实；太阳系二维化时，她以温柔的语气宣告了人类的末日。她是三体文明在人类面前最接近「人性」的存在，也是最彻底的讽刺。",
     "storyline": "三体舰队启航 → 以人形出现于威慑纪元 → 与罗辑/程心对话 → 宣告太阳系二维化。",
     "choices": "",
     "events": [
@@ -653,9 +730,11 @@
     "concepts": [
       "sophon",
       "deterrence",
-      "two-dimensional-foil"
+      "two-dimensional-foil",
+      "trisolaran-civilization",
+      "trisolaran-fleet"
     ],
     "portrait": "",
-    "legacy": "智子的遗产是「温柔的残忍」：她把文明的终结说得像一句祝福——「太阳系将变成一幅画，永存于宇宙的记忆中。」"
+    "legacy": "人形智子的遗产是「温柔的残忍」：她把文明的终结说得像一句祝福——「太阳系将变成一幅画，永存于宇宙的记忆中。」"
   }
 ]

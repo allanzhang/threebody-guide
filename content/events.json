@@ -14,7 +14,8 @@
     ],
     "concepts": [
       "red-coast",
-      "radio-telescope"
+      "radio-telescope",
+      "solar-amplifier"
     ],
     "image": "",
     "note": "",
@@ -58,7 +59,11 @@
       "ye-wenjie"
     ],
     "concepts": [
-      "solar-amplifier"
+      "solar-amplifier",
+      "gravity-broadcast",
+      "light-speed",
+      "light-year",
+      "red-coast"
     ],
     "image": "",
     "note": "",
@@ -82,7 +87,9 @@
     "concepts": [
       "red-coast",
       "trisolaran-civilization",
-      "solar-amplifier"
+      "solar-amplifier",
+      "light-year",
+      "trisolaran-fleet"
     ],
     "image": "",
     "note": "",
@@ -102,10 +109,14 @@
     "characters": [
       "wang-miao",
       "shi-qiang",
-      "chang-weisi"
+      "chang-weisi",
+      "yang-dong"
     ],
     "concepts": [
-      "scientific-boundary"
+      "scientific-boundary",
+      "nanofiber",
+      "nanomaterials",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -130,7 +141,8 @@
       "three-body-problem",
       "chaotic-era",
       "human-column-computer",
-      "dehydration"
+      "dehydration",
+      "trisolaran-civilization"
     ],
     "image": "",
     "note": "",
@@ -156,7 +168,8 @@
     "concepts": [
       "eto",
       "trisolaran-civilization",
-      "farmer-hypothesis"
+      "farmer-hypothesis",
+      "three-body-game"
     ],
     "image": "",
     "note": "",
@@ -176,13 +189,17 @@
     "characters": [
       "wang-miao",
       "yang-dong",
-      "shen-yufei"
+      "shen-yufei",
+      "luo-ji",
+      "shi-qiang",
+      "ye-wenjie"
     ],
     "concepts": [
       "scientific-boundary",
       "sophon",
       "shooter-hypothesis",
-      "farmer-hypothesis"
+      "farmer-hypothesis",
+      "dimensions"
     ],
     "image": "",
     "note": "",
@@ -206,7 +223,10 @@
     "concepts": [
       "sophon",
       "particle-collider",
-      "shooter-hypothesis"
+      "shooter-hypothesis",
+      "face-wall-plan",
+      "proton-nucleus",
+      "quantum-entanglement"
     ],
     "image": "",
     "note": "",
@@ -228,7 +248,8 @@
     ],
     "concepts": [
       "sophon",
-      "cmb"
+      "cmb",
+      "trisolaran-civilization"
     ],
     "image": "",
     "note": "",
@@ -247,11 +268,14 @@
     "summary": "人类截获的关键情报全部装载在「审判日」号邮轮上，随伊文斯驶向巴拿马运河。人类不能强攻：一旦暴露意图，伊文斯可能销毁数据或自杀，三体世界的情报将永远沉没。军方与联合国最终采用了最疯狂的方案：用汪淼提供的纳米材料「飞刃（Flying Blade）」——细如发丝却强韧超常的丝线——在运河两岸拉起五十余道琴弦，间距五十厘米，组成一张肉眼不可见的罗网。邮轮以正常航速滑入弦阵，船体被整齐切割成数十片，像被无形巨手剖开；船舱里的人无一幸存，伊文斯也在其中。但切割点经过精密计算，装载数据的舱段毫发无损——人类第一次完整拿到三体世界的情报：智子（Sophon）的真相、舰队的远征、文明的图景。",
     "characters": [
       "evans",
-      "shi-qiang"
+      "shi-qiang",
+      "wang-miao"
     ],
     "concepts": [
       "nanofiber",
-      "eto"
+      "eto",
+      "nanomaterials",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -271,11 +295,15 @@
     "characters": [
       "ye-wenjie",
       "evans",
-      "pan-han"
+      "pan-han",
+      "luo-ji"
     ],
     "concepts": [
       "eto",
-      "trisolaran-civilization"
+      "trisolaran-civilization",
+      "cosmic-sociology",
+      "light-year",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -293,13 +321,16 @@
     "isMajorEvent": false,
     "summary": "从截获情报中，人类得知三体舰队已以十分之一光速航向地球，四百年后抵达；三体人借智子（Sophon）宣告：「你们是虫子。」全球陷入恐慌与分化：有人沉迷末日狂欢，有人投身备战，军人开始酝酿逃亡主义（Escapism）。人类第一次面对来自宇宙的文明级威胁，地球进入危机纪元——四百年，既是倒计时，也是人类唯一的准备期。",
     "characters": [
-      "chang-weisi"
+      "chang-weisi",
+      "zhang-beihai"
     ],
     "concepts": [
       "trisolaran-civilization",
       "sophon",
       "three-body-problem",
-      "trisolaran-fleet"
+      "trisolaran-fleet",
+      "exodus-thought",
+      "light-speed"
     ],
     "image": "",
     "note": "",
@@ -318,7 +349,8 @@
     "summary": "在杨冬墓前，叶文洁与罗辑进行了一场改变历史的对话。她向罗辑提出宇宙社会学（Cosmic Sociology）两条公理：生存是文明的第一需要；文明不断增长和扩张，但宇宙物质总量不变。她还留下悬念——「宇宙就是一座黑暗森林（Dark Forest）」。罗辑当时不知道这场对话的分量，多年后才明白：叶文洁把人类命运的两把钥匙交给了他——绝望的真相，与利用真相的威慑。",
     "characters": [
       "luo-ji",
-      "ye-wenjie"
+      "ye-wenjie",
+      "yang-dong"
     ],
     "concepts": [
       "cosmic-sociology",
@@ -341,7 +373,8 @@
     "summary": "罗辑与叶文洁对话后不久，一场近乎谋杀的「车祸」让他身受重伤——一辆车毫无征兆地撞向他，史强在最后一刻将他救下。幕后黑手不难猜：罗辑可能触碰到了宇宙社会学（Cosmic Sociology）的核心秘密，三体与 ETO 残余绝不允许人类掌握它。醒来时的罗辑已不是普通学者——他成了被死神点名的目标，也成了人类命运棋盘上最重要的棋子。",
     "characters": [
       "luo-ji",
-      "shi-qiang"
+      "shi-qiang",
+      "ye-wenjie"
     ],
     "concepts": [
       "cosmic-sociology",
@@ -364,12 +397,14 @@
     "summary": "罗辑在医院醒来，被联合国秘书长萨伊告知：人类组建「面壁计划（Wallfacer Project）」，四位面壁者以战略欺骗对抗智子（Sophon）监视，罗辑是其中之一。这个决定荒谬又合理——智子（Sophon）能监视一切，却读不了心；人类让四个人说谎，只把真实意图藏在心里。罗辑第一反应是抗拒——他只想活下去，却被推上改变人类命运的位子，随即被安排冬眠（Hibernation）进入未来。面壁者罗辑的第一页就此翻开。",
     "characters": [
       "luo-ji",
-      "shi-qiang"
+      "shi-qiang",
+      "ye-wenjie"
     ],
     "concepts": [
       "cosmic-sociology",
       "face-wall-plan",
-      "hibernation"
+      "hibernation",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -391,7 +426,9 @@
       "luo-ji"
     ],
     "concepts": [
-      "face-wall-plan"
+      "face-wall-plan",
+      "exodus-thought",
+      "hibernation"
     ],
     "image": "",
     "note": "",
@@ -416,7 +453,8 @@
       "yamamoto-keiko"
     ],
     "concepts": [
-      "face-wall-plan"
+      "face-wall-plan",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -437,11 +475,13 @@
       "hines",
       "rey-diaz",
       "tyler",
-      "yamamoto-keiko"
+      "yamamoto-keiko",
+      "luo-ji"
     ],
     "concepts": [
       "face-wall-plan",
-      "wall-breaker"
+      "wall-breaker",
+      "thought-stamp"
     ],
     "image": "",
     "note": "",
@@ -482,10 +522,12 @@
     "summary": "希恩斯向联合国提出「思想钢印（Thought-stamp）」计划：用机器把信念直接写入大脑，给太空军打上必胜钢印。罗辑质疑后计划被否决，但希恩斯暗中保留机器，并把命题改成了「人类必败」——约五万太空军被打上钢印，组成潜伏的失败主义组织「钢印族」。当人类坚信必胜时，这些人已在为失败押注；当人类兵败如山倒时，正是这群人保存了最后的火种。",
     "characters": [
       "hines",
-      "yamamoto-keiko"
+      "yamamoto-keiko",
+      "luo-ji"
     ],
     "concepts": [
-      "thought-stamp"
+      "thought-stamp",
+      "wall-breaker"
     ],
     "image": "",
     "note": "",
@@ -546,7 +588,8 @@
     "isMajorEvent": true,
     "summary": "罗辑以面壁者身份向 187J3X1 恒星发出了一条「咒语」：一个坐标。全人类都以为他疯了——面壁者委员会甚至考虑剥夺他的身份。他既不解释，也不争辩，只是等待。数年后，天文观测带来结果：187J3X1 恒星被摧毁了——被某个不知名的高等文明瞬间清理。罗辑的诅咒应验了：暴露坐标的恒星，真的会被猎杀。这一刻，黑暗森林法则（Dark Forest Theory）从「叶文洁留下的悬念」变成「可验证的事实」：宇宙中确实存在着一种秩序，让所有暴露的文明被清除。罗辑也由此成为人类唯一握有星际威慑钥匙的人——他证明了黑暗森林（Dark Forest）的存在，就证明了「威胁同归于尽」的可行性。",
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "ye-wenjie"
     ],
     "concepts": [
       "dark-forest",
@@ -570,10 +613,13 @@
     "summary": "三体的第一艘探测器「水滴（Droplet）」抵达太阳系。它光滑、完美，被人类视为和平的象征——舰队国际以最高规格迎接，甚至讨论如何研究它。丁仪近距离检查后神色大变：水滴（Droplet）表面绝对光滑意味着其强度超出人类全部认知——它不可能是在「示好」，更像是在「展示」。大史则直接在迎接现场嗅到危险，把罗辑等人拉离现场，随后灾难如期而至。",
     "characters": [
       "ding-yi",
-      "shi-qiang"
+      "shi-qiang",
+      "luo-ji"
     ],
     "concepts": [
-      "droplet"
+      "droplet",
+      "dimensions",
+      "two-dimensional-foil"
     ],
     "image": "",
     "note": "",
@@ -591,10 +637,14 @@
     "isMajorEvent": true,
     "summary": "水滴（Droplet）以「和平使者」的姿态抵达太阳系，人类舰队国际倾巢而出迎接：两千艘恒星级战舰列成密集队形，用最盛大的仪式展示力量，甚至开始讨论如何「俘获」这艘探测器来研究。丁仪在近距离观察后神色大变——他意识到水滴（Droplet）表面的绝对光滑意味着它的强度超出人类的全部认知；大史更是嗅到危险，催促罗辑等人立刻撤离。随后水滴（Droplet）骤然启动：以接近光速、完全无视惯性的方式穿梭，像串糖葫芦一样贯穿一艘又一艘战舰——每艘被击中的战舰都在几秒内爆炸解体。两千艘战舰在数分钟内几乎全灭，人类的太空力量从「宇宙最强」瞬间变成「一片废墟」。",
     "characters": [
-      "ding-yi"
+      "ding-yi",
+      "luo-ji"
     ],
     "concepts": [
-      "droplet"
+      "droplet",
+      "dimensions",
+      "light-speed",
+      "two-dimensional-foil"
     ],
     "image": "",
     "note": "",
@@ -620,7 +670,8 @@
       "exodus-thought",
       "deep-sea-state",
       "blue-space",
-      "bronze-age"
+      "bronze-age",
+      "gravity-broadcast"
     ],
     "image": "",
     "note": "",
@@ -636,7 +687,7 @@
     "yearLabel": "威慑纪元元年",
     "order": 1,
     "isMajorEvent": true,
-    "summary": "末日战役后，人类几乎没有抵抗力量，三体舰队则步步逼近太阳系。人类唯一的筹码，攥在罗辑手里：向宇宙广播三体坐标，让两个文明一起被黑暗森林（Dark Forest）清理。罗辑与智子（Sophon）正面对峙——他握着引力波天线的开关，平静地宣布：三体舰队若继续前进，他就按下开关。三体不相信他舍得同归于尽。罗辑随即把枪口对准自己：如果三体不转向，他就当场自尽，心跳停止将触发「摇篮」系统自动广播——同归于尽从「威胁」变成「必然」。三体舰队在距太阳系仅两光年处转向了。威慑建立：人类用「疯狂而可信」换来了六十二年的和平，罗辑成为唯一的执剑人（Swordholder），一个人扛起两个文明的平衡。",
+    "summary": "末日战役后，人类几乎没有抵抗力量，三体舰队则步步逼近太阳系。人类唯一的筹码，攥在罗辑手里：向宇宙广播三体坐标，让两个文明一起被黑暗森林（Dark Forest）清理。罗辑与人形智子（Sophon）正面对峙——他握着引力波天线的开关，平静地宣布：三体舰队若继续前进，他就按下开关。三体不相信他舍得同归于尽。罗辑随即把枪口对准自己：如果三体不转向，他就当场自尽，心跳停止将触发「摇篮」系统自动广播——同归于尽从「威胁」变成「必然」。三体舰队在距太阳系仅两光年处转向了。威慑建立：人类用「疯狂而可信」换来了六十二年的和平，罗辑成为唯一的执剑人（Swordholder），一个人扛起两个文明的平衡。",
     "characters": [
       "luo-ji",
       "zhi-zi"
@@ -645,7 +696,11 @@
       "deterrence",
       "sword-holder",
       "gravity-broadcast",
-      "snow-project"
+      "snow-project",
+      "gravitational-wave",
+      "light-year",
+      "trisolaran-civilization",
+      "trisolaran-fleet"
     ],
     "image": "",
     "note": "",
@@ -690,7 +745,9 @@
       "wade"
     ],
     "concepts": [
-      "ladder-plan"
+      "ladder-plan",
+      "trisolaran-civilization",
+      "trisolaran-fleet"
     ],
     "image": "",
     "note": "",
@@ -761,7 +818,11 @@
     ],
     "concepts": [
       "deterrence",
-      "sword-holder"
+      "sword-holder",
+      "droplet",
+      "gravitational-wave",
+      "gravity-broadcast",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -785,7 +846,9 @@
     "concepts": [
       "gravity-broadcast",
       "blue-space",
-      "universal-gravity"
+      "universal-gravity",
+      "gravitational-wave",
+      "light-particle"
     ],
     "image": "",
     "note": "",
@@ -807,7 +870,8 @@
       "dark-forest",
       "light-particle",
       "dark-forest-strike",
-      "universal-gravity"
+      "universal-gravity",
+      "trisolaran-civilization"
     ],
     "image": "",
     "note": "",
@@ -825,12 +889,14 @@
     "isMajorEvent": false,
     "summary": "三体截获并复活了云天明的大脑。威慑失败后，他以童话形式向人类传递三个关键情报：曲率驱动（Curvature Drive）的原理、光速飞船（Lightspeed Ship）的可能性、以及把太阳系变成黑域（Black Domain）的「安全声明」方案。童话的外壳包裹着宇宙级的秘密——只有读懂它的人，才能在三体的阴影之后活下来。云天明用最温柔的语言，给出了人类文明最冷峻的生路清单。",
     "characters": [
-      "yun-tianming"
+      "yun-tianming",
+      "cheng-xin"
     ],
     "concepts": [
       "curvature-drive",
       "lightspeed-ship",
-      "black-domain"
+      "black-domain",
+      "sophon"
     ],
     "image": "",
     "note": "",
@@ -847,10 +913,14 @@
     "order": 1,
     "isMajorEvent": false,
     "summary": "人类无法逃离太阳系，只能选择「掩体计划（Shelter Plan）」：在木星、土星等巨行星的背阳面建造太空城，用巨行星庞大的身躯挡住可能到来的黑暗森林打击（Dark Forest Strike）。掩体纪元的两百余年里，人类把太阳系文明搬进巨行星的阴影，在夹缝中建造起最后的城邦。掩体计划（Shelter Plan）赌的是「概率」：赌打击不会落在阴影里——但它注定躲不过降维，因为已够格成为歌者眼里待处理的坐标。",
-    "characters": [],
+    "characters": [
+      "luo-ji"
+    ],
     "concepts": [
       "shelter-plan",
-      "red-giant"
+      "red-giant",
+      "dark-forest-strike",
+      "two-dimensional-foil"
     ],
     "image": "",
     "note": "",
@@ -869,14 +939,19 @@
     "summary": "威慑失败、三体母星被光粒（Light Particle）清理后，太阳系成为暴露的坐标。高等文明「歌者」在例行清理中发现了太阳系文明，长老层决定执行清理。歌者掷出一张「二向箔（Dual-vector Foil）」：一张薄如卡片、几乎无质量的箔片，展开后让三维空间向二维跌落。太阳系从太阳开始被二维化——一切物质向平面坍缩，变成没有厚度的画；掩体纪元的人类躲藏在巨行星背后的太空城，但降维无法被遮挡：二维化以接近光速扩散，地球、太空城、舰队，全部被压成永恒静止的二维图景。人类的文明在宇宙尺度上被「抹除」——不是杀死，而是降维：文明的存在形式被彻底改变。",
     "characters": [
       "ge-zhe",
-      "zhi-zi"
+      "zhi-zi",
+      "luo-ji",
+      "yun-tianming"
     ],
     "concepts": [
       "two-dimensional-foil",
       "dimensional-reduction",
       "singer",
       "dark-forest-strike",
-      "red-giant"
+      "red-giant",
+      "curvature-drive",
+      "light-particle",
+      "light-speed"
     ],
     "image": "",
     "note": "",
@@ -895,11 +970,15 @@
     "summary": "二向箔（Dual-vector Foil）展开前，程心与艾AA 登上罗辑留下的曲率驱动（Curvature Drive）原型飞船「星环号」——三体锁死了人类光速物理一百余年，而云天明童话让人类偷偷造出了它。星环号以接近光速逃离太阳系，身后，太阳系正被二维化吞没成一幅绝美的画。人类文明最后的火种，此刻只剩一艘船上的几十个人，和一颗飞向 DX3906 的希望。",
     "characters": [
       "cheng-xin",
-      "ai-aa"
+      "ai-aa",
+      "luo-ji",
+      "yun-tianming"
     ],
     "concepts": [
       "curvature-drive",
-      "lightspeed-ship"
+      "lightspeed-ship",
+      "light-speed",
+      "two-dimensional-foil"
     ],
     "image": "",
     "note": "",
@@ -921,7 +1000,9 @@
       "cheng-xin",
       "zhi-zi"
     ],
-    "concepts": [],
+    "concepts": [
+      "sword-holder"
+    ],
     "image": "",
     "note": "",
     "details": "① 罗辑的「博物馆」是人类文明的墓志铭：他保存的不是武器，而是记忆。\n② 细节：程心与罗辑的告别，是全书「守护者与继承者」的最终交接。\n③ 主题：从面壁者到执剑人到守墓人——罗辑用一生走完了「人类英雄」的完整弧线。",
@@ -943,7 +1024,9 @@
       "ai-aa",
       "guan-yifan"
     ],
-    "concepts": [],
+    "concepts": [
+      "light-year"
+    ],
     "image": "",
     "note": "",
     "details": "① 蓝星是全书最温柔的坐标：一份匿名礼物，在千万年后成为文明的新家。\n② 细节：云天明与程心的重逢克制而短暂——跨越百年的爱，被宇宙的尺度过滤成了几句话。\n③ 伏笔：蓝星上的文明个体将面对银河纪元更深的危机——逃亡本身也在森林里留下脚印。",
@@ -965,7 +1048,8 @@
     ],
     "concepts": [
       "return-to-zero",
-      "returner"
+      "returner",
+      "mini-universe"
     ],
     "image": "",
     "note": "",
@@ -984,7 +1068,8 @@
     "summary": "程心与关一帆在星海间漂流，住进云天明留下的一个小宇宙（Micro-universe）——一个自成一体的私人空间。他们在里面保存了一个小小的生态球：一汪水、一株小草，作为人类文明存在过的证据。还回大宇宙，小宇宙（Micro-universe）就消失；不还，大宇宙就永远缺一点质量。人类最后的两位见证者，把「文明的最后一滴水」握在手里，等待归零的钟声。",
     "characters": [
       "cheng-xin",
-      "guan-yifan"
+      "guan-yifan",
+      "yun-tianming"
     ],
     "concepts": [
       "mini-universe",
@@ -1011,7 +1096,9 @@
     ],
     "concepts": [
       "return-to-zero",
-      "mini-universe"
+      "mini-universe",
+      "cosmic-sociology",
+      "returner"
     ],
     "image": "",
     "note": "",
@@ -1058,7 +1145,12 @@
       "dark-forest",
       "fleet-international",
       "blue-space",
-      "bronze-age"
+      "bronze-age",
+      "deep-sea-state",
+      "droplet",
+      "gravity-broadcast",
+      "light-year",
+      "suspect-chain"
     ],
     "image": "",
     "note": "",
@@ -1082,7 +1174,8 @@
     "concepts": [
       "dimensions",
       "blue-space",
-      "universal-gravity"
+      "universal-gravity",
+      "droplet"
     ],
     "image": "",
     "note": "",
@@ -1101,12 +1194,14 @@
     "summary": "维德（Wade）率星环公司秘密研发光速飞船（Lightspeed Ship），与联邦政府武装对峙。程心（Cheng Xin）被唤醒裁决，星环城以反物质子弹逼出四年的研究窗口；窗口将尽，维德再次唤醒程心——她只说了两个字：「放弃」。维德平静服从，星环城陷落。人类最后一次亲手掐灭自己的逃生之路。",
     "characters": [
       "wade",
-      "cheng-xin"
+      "cheng-xin",
+      "ai-aa"
     ],
     "concepts": [
       "lightspeed-ship",
       "curvature-drive",
-      "shelter-plan"
+      "shelter-plan",
+      "antimatter-annihilation"
     ],
     "image": "",
     "note": "",

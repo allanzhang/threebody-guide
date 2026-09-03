@@ -61,11 +61,14 @@
     "events": [
       "luo-ji-ye-wenjie",
       "luo-ji-car-crash",
-      "luo-ji-facewall"
+      "luo-ji-facewall",
+      "eto-fall",
+      "universe-restart"
     ],
     "characters": [
       "ye-wenjie",
-      "luo-ji"
+      "luo-ji",
+      "yang-dong"
     ],
     "related": [
       "dark-forest",
@@ -86,7 +89,8 @@
     "events": [
       "red-coast-foundation",
       "ye-wenjie-redcoast",
-      "trisolaran-reply"
+      "trisolaran-reply",
+      "solar-amplifier-launch"
     ],
     "characters": [
       "ye-wenjie",
@@ -109,7 +113,8 @@
     "events": [
       "ye-wenjie-redcoast",
       "solar-amplifier-launch",
-      "trisolaran-reply"
+      "trisolaran-reply",
+      "red-coast-foundation"
     ],
     "characters": [
       "ye-wenjie",
@@ -132,12 +137,24 @@
       "scientists-deaths",
       "sophon-blockade",
       "universe-flicker",
-      "trisolaran-fleet-launch"
+      "trisolaran-fleet-launch",
+      "wang-miao-countdown",
+      "gu-zheng-operation",
+      "eto-fall",
+      "luo-ji-facewall",
+      "face-wall-plan-launch",
+      "deterrence-failure",
+      "fairy-tales"
     ],
     "characters": [
       "ye-wenjie",
       "wang-miao",
-      "zhi-zi"
+      "zhi-zi",
+      "cheng-xin",
+      "luo-ji",
+      "chang-weisi",
+      "yang-dong",
+      "ding-yi"
     ],
     "related": [
       "scientific-boundary",
@@ -161,10 +178,12 @@
     "inBook": "ETO 开发的虚拟现实游戏：玩家在三体世界的历史中轮番扮演角色（周文王、秦始皇、爱因斯坦等），亲历文明在恒乱纪元（Chaotic Era）间的生死轮回，最终目标是破解三体问题（Three-Body Problem）。游戏让玩家「亲历」三体的苦难史——它既是 ETO 的招募工具，也是向人类展示三体文明（Trisolaran Civilization）处境的教材。游戏里的每一次文明毁灭，都是真实三体世界的一次死亡预演。",
     "science": "VR 游戏是现实技术方向；游戏内的「人列计算机（Human Computer）」「脱水（Dehydration）复活」则是纯文学设定。",
     "events": [
-      "three-body-game"
+      "three-body-game",
+      "eto-gathering"
     ],
     "characters": [
-      "wang-miao"
+      "wang-miao",
+      "shen-yufei"
     ],
     "related": [
       "human-column-computer",
@@ -200,7 +219,8 @@
     "inBook": "汪淼研制的纳米材料「飞刃（Flying Blade）」：肉眼不可见却极端坚韧锋利的细丝，可轻易切割金属与舰船。古筝行动（Guzheng Operation）中，五十余根飞刃（Flying Blade）横拉在巴拿马运河上，把「审判日」号邮轮切为数十片——人类技术史上极少数能对三体构成威胁的成果，也是人类第一次用科技「赢」了一次。飞刃（Flying Blade）切割的不只是邮轮，还有人类对自身实力的幻想。",
     "science": "碳纳米管等真实材料确实强度极高，但「细线切断邮轮」是文学夸张——现实中的纳米丝无法实现如此干净的切割。",
     "events": [
-      "gu-zheng-operation"
+      "gu-zheng-operation",
+      "wang-miao-countdown"
     ],
     "characters": [
       "wang-miao",
@@ -268,11 +288,19 @@
       "trisolaran-reply",
       "eto-gathering",
       "eto-fall",
-      "trisolaran-fleet-launch"
+      "trisolaran-fleet-launch",
+      "three-body-game",
+      "universe-flicker",
+      "luo-ji-deterrence",
+      "ladder-plan",
+      "trisolaris-destroyed"
     ],
     "characters": [
       "ye-wenjie",
-      "evans"
+      "evans",
+      "shen-yufei",
+      "yun-tianming",
+      "zhi-zi"
     ],
     "related": [
       "three-body-problem",
@@ -322,7 +350,9 @@
       "dark-battle"
     ],
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "ge-zhe",
+      "bai-rong"
     ],
     "related": [
       "cosmic-sociology",
@@ -349,10 +379,12 @@
     "inBook": "猜疑链（Chain of Suspicion）是黑暗森林法则（Dark Forest Theory）的推导前提：任意两个文明之间无法建立信任，因为「我不知道你会不会打我」「你也不知道我会不会打你」——而星际通信以光年和世纪为尺度，等你确认对方善意时，对方的舰队可能已经出发。猜疑并非源于恶意，而是源于「无法验证善意」：就算对方诚意满满，你也没有任何证据。因此在零和的宇宙里，「先下手」是唯一理性的选择。罗辑从叶文洁处学到的第一步，就是理解这条链——它把黑暗森林（Dark Forest）从「悲观的想象」变成「逻辑的必然」。",
     "science": "「猜疑链（Chain of Suspicion）」借用了博弈论中的信任困境与信息不对称思想，是科幻理论化表述。",
     "events": [
-      "dark-forest-confirmed"
+      "dark-forest-confirmed",
+      "dark-battle"
     ],
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "ye-wenjie"
     ],
     "related": [
       "cosmic-sociology",
@@ -388,7 +420,10 @@
     "science": "「强互作用力材料」为科幻设定：现实已知材料无法实现绝对光滑与近乎无限的强度，以强相互作用束缚物质属于文学想象。",
     "events": [
       "droplet-arrival",
-      "droplet-massacre"
+      "droplet-massacre",
+      "deterrence-failure",
+      "dark-battle",
+      "four-d-fragment"
     ],
     "characters": [
       "ding-yi"
@@ -409,11 +444,13 @@
     "inBook": "希恩斯发明的机器：能把一条信念直接蚀刻进大脑，让人坚信不疑。公开用途是给太空军打「人类必胜」钢印；希恩斯却暗中把命题改为「人类必败」，约五万太空军被打上钢印，组成潜伏的「钢印族」。当人类集体自信时，这些人已在为失败预演——而当人类兵败时，正是这群人保存了文明的火种。",
     "science": "以机器改写信念的设定是科幻；现实中不存在直接植入信念的技术路线。",
     "events": [
-      "thought-stamp"
+      "thought-stamp",
+      "wall-breakers"
     ],
     "characters": [
       "hines",
-      "yamamoto-keiko"
+      "yamamoto-keiko",
+      "zhang-beihai"
     ],
     "related": [
       "face-wall-plan"
@@ -430,10 +467,16 @@
     "science": "引力波真实存在（2015 年 LIGO 首次直接探测）；「用引力波天线向宇宙广播坐标」是科幻设想，现实中引力波无法定向携带如此信息。",
     "events": [
       "luo-ji-deterrence",
-      "broadcast-of-coordinates"
+      "broadcast-of-coordinates",
+      "solar-amplifier-launch",
+      "zhang-beihai-escape",
+      "deterrence-failure",
+      "dark-battle"
     ],
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "guan-yifan",
+      "chu-yan"
     ],
     "related": [
       "deterrence",
@@ -483,10 +526,14 @@
       "luo-ji-deterrence",
       "deterrence-era-peace",
       "cheng-xin-awake",
-      "deterrence-failure"
+      "deterrence-failure",
+      "roji-final-stand"
     ],
     "characters": [
-      "luo-ji"
+      "luo-ji",
+      "cheng-xin",
+      "ai-aa",
+      "wade"
     ],
     "related": [
       "deterrence"
@@ -505,7 +552,8 @@
       "luo-ji-facewall",
       "crisis-era-begins",
       "face-wall-plan-launch",
-      "wall-breakers"
+      "wall-breakers",
+      "sophon-blockade"
     ],
     "characters": [
       "luo-ji",
@@ -513,7 +561,8 @@
       "rey-diaz",
       "tyler",
       "yamamoto-keiko",
-      "bai-rong"
+      "bai-rong",
+      "chang-weisi"
     ],
     "related": [
       "thought-stamp",
@@ -553,10 +602,14 @@
     "events": [
       "fairy-tales",
       "cheng-xin-escape",
-      "star-ring-city"
+      "star-ring-city",
+      "singer-two-dimensional"
     ],
     "characters": [
-      "wade"
+      "wade",
+      "ai-aa",
+      "cheng-xin",
+      "yun-tianming"
     ],
     "related": [
       "lightspeed-ship",
@@ -580,7 +633,9 @@
     ],
     "characters": [
       "guan-yifan",
-      "wade"
+      "wade",
+      "cheng-xin",
+      "yun-tianming"
     ],
     "related": [
       "curvature-drive",
@@ -601,7 +656,11 @@
     "events": [
       "fairy-tales"
     ],
-    "characters": [],
+    "characters": [
+      "ge-zhe",
+      "luo-ji",
+      "yun-tianming"
+    ],
     "related": [
       "black-hole"
     ],
@@ -616,10 +675,17 @@
     "inBook": "高等文明的初级清理工具：一张薄如卡片、几乎无质量的「箔」，展开后把三维空间降为二维——空间中的一切物质在二维化过程中被「压平」，成为没有厚度的平面。不是毁灭，而是降维：文明的存在形式被彻底改变，但信息被完整保存在二维的图景里。歌者文明（Singer Civilization）向太阳系掷出二向箔（Dual-vector Foil）后，太阳系从太阳开始被二维化，速度接近光速，无法被任何掩体遮挡；除少数乘光速飞船（Lightspeed Ship）逃离者外，人类文明被永远保存在二维世界的「画」里。而二向箔（Dual-vector Foil）的成本在歌者文明（Singer Civilization）中低到属于「废物利用」级别——宇宙残酷的极致：清理一个文明，就像扔掉一张废纸。",
     "science": "「降维」借用几何学概念（二维没有高度），但物理上不存在把三维空间整体压成二维的机制，属于纯科幻设定。",
     "events": [
-      "singer-two-dimensional"
+      "singer-two-dimensional",
+      "droplet-arrival",
+      "droplet-massacre",
+      "shelter-era-begins",
+      "cheng-xin-escape"
     ],
     "characters": [
-      "zhi-zi"
+      "zhi-zi",
+      "luo-ji",
+      "yun-tianming",
+      "ge-zhe"
     ],
     "related": [
       "dimensional-reduction",
@@ -662,7 +728,9 @@
       "mini-universe",
       "universe-restart"
     ],
-    "characters": [],
+    "characters": [
+      "cheng-xin"
+    ],
     "related": [
       "returner",
       "mini-universe",
@@ -738,7 +806,8 @@
     "inBook": "发起「回归运动（Return Movement）」的神秘高级文明。他们宣告宇宙将归零重生，并呼吁所有文明交还藏进小宇宙（Micro-universe）的质量——不为任何具体文明的存亡，只为让大宇宙拥有重来一次的机会。归零者（Zero-Homers）的尺度是整个宇宙的重生：个体文明在它面前小到可以忽略，又大到无法置身事外。",
     "science": "「回归运动（Return Movement）」为科幻设定，其动机置于宇宙尺度的「文明共同体」想象之上。",
     "events": [
-      "returner-return"
+      "returner-return",
+      "universe-restart"
     ],
     "characters": [],
     "related": [
@@ -756,11 +825,13 @@
     "science": "「私人宇宙/口袋宇宙」是科幻中的常见设定，无现实对应。",
     "events": [
       "mini-universe",
-      "universe-restart"
+      "universe-restart",
+      "returner-return"
     ],
     "characters": [
       "cheng-xin",
-      "guan-yifan"
+      "guan-yifan",
+      "yun-tianming"
     ],
     "related": [
       "return-to-zero"
@@ -798,13 +869,15 @@
     "inBook": "三体为泰勒、雷迪亚兹、希恩斯三位面壁者分别指定的破解者——最了解他们本人的人。破壁人（Wallbreaker）的任务是识破并公布面壁者的真实意图，让计划失效。三位面壁者的计划先后被破壁人（Wallbreaker）揭穿；唯独罗辑没有破壁人（Wallbreaker）——三体读不懂他，也找不到能读懂他的人。破壁人（Wallbreaker）的存在证明：在理解力对等的情报战里，欺骗只能延缓失败。",
     "science": "破壁人（Wallbreaker）是纯文学设定，其逻辑基础是「面壁者以欺骗对抗透明监视」的思想实验：在一个能监视一切、却读不了心的宇宙里，欺骗成为最后的武器与最后的破绽。",
     "events": [
-      "wall-breakers"
+      "wall-breakers",
+      "thought-stamp"
     ],
     "characters": [
       "hines",
       "rey-diaz",
       "tyler",
-      "yamamoto-keiko"
+      "yamamoto-keiko",
+      "luo-ji"
     ],
     "related": [
       "face-wall-plan"
@@ -820,7 +893,9 @@
     "inBook": "高等文明清理暴露文明的一种武器：以接近光速飞行的微小物体，命中恒星核心后瞬间引爆恒星，摧毁整个行星系。三体母星正是被一颗光粒（Light Particle）摧毁的。它让黑暗森林打击（Dark Forest Strike）的「高效、廉价、几乎不可防御」暴露无遗——清理一个文明，只需要一颗小小的光粒（Light Particle）；猎手甚至不需要知道猎物有名字。",
     "science": "物体接近光速时动能急剧增大（相对论效应）是真实物理，「用高速物体摧毁恒星」是在此基础上的极端科幻放大。",
     "events": [
-      "trisolaris-destroyed"
+      "trisolaris-destroyed",
+      "broadcast-of-coordinates",
+      "singer-two-dimensional"
     ],
     "characters": [],
     "related": [
@@ -838,10 +913,13 @@
     "science": "「文明逃亡」是经典科幻母题；其争议核心（是否放弃母星、如何对待留下的人）在现实政治哲学中亦无标准答案。",
     "events": [
       "zhang-beihai-future",
-      "zhang-beihai-escape"
+      "zhang-beihai-escape",
+      "trisolaran-fleet-launch",
+      "crisis-era-begins"
     ],
     "characters": [
-      "zhang-beihai"
+      "zhang-beihai",
+      "hines"
     ],
     "related": [],
     "details": "① 逃亡主义的反对者情绪有两面：既有道德义愤，也有「被抛弃的恐惧」。\n② 细节：章北海以全员面（不敢）……他判断「必败」却以「必胜派」姿态执行逃亡——两条路线在他身上合流。\n③ 主题：逃亡是黑暗森林时代人类唯一离开棋盘的路——但它本身也在森林里留下坐标。",
@@ -859,13 +937,17 @@
       "luo-ji-idyll",
       "zhang-beihai-future",
       "cheng-xin-awake",
-      "great-ravine"
+      "great-ravine",
+      "crisis-era-begins"
     ],
     "characters": [
       "luo-ji",
       "cheng-xin",
       "zhang-beihai",
-      "hines"
+      "hines",
+      "shi-qiang",
+      "zhuang-yan",
+      "wade"
     ],
     "related": [],
     "details": "① 冬眠放大了「代际错位」：醒来者的观念、情感都停留在旧时代，而世界已推向未来。\n② 细节：罗辑醒来后「要求权力兑现」的对象早就换代——冬眠让承诺变成债务。\n③ 主题：冬眠是人类对时间的第一次殖民——但它偷走的是陪伴亲人的岁月。",
@@ -881,7 +963,8 @@
     "events": [
       "dark-forest-confirmed",
       "trisolaris-destroyed",
-      "singer-two-dimensional"
+      "singer-two-dimensional",
+      "shelter-era-begins"
     ],
     "characters": [
       "ge-zhe"
@@ -935,7 +1018,14 @@
     "group": "astro",
     "inBook": "太阳系与三体星系相距4.2光年——三体舰队以百分之十光速航行也要四百多年。这个单位撑起全书的时空尺度：人类与三体人的一切博弈，都是在光年尺度上进行的。",
     "science": "光年是距离单位，不是时间单位：光在真空中走一年的距离，约9.46万亿公里。宇宙尺度下恒星间距离动辄数十上百光年，因此人类看到的星光其实是几年前的光——看向宇宙就是看向过去。",
-    "events": [],
+    "events": [
+      "solar-amplifier-launch",
+      "trisolaran-reply",
+      "eto-fall",
+      "luo-ji-deterrence",
+      "galaxy-era-meeting",
+      "dark-battle"
+    ],
     "characters": [],
     "related": [
       "alpha-centauri",
@@ -1393,7 +1483,10 @@
     "events": [
       "luo-ji-ye-wenjie"
     ],
-    "characters": [],
+    "characters": [
+      "luo-ji",
+      "ye-wenjie"
+    ],
     "related": [
       "cosmic-sociology",
       "dark-forest"
@@ -1411,7 +1504,9 @@
     ],
     "inBook": "智子就是一颗被改造成超级计算机的质子。三体人把一个质子在二维上展开，蚀刻电路，再收回高维——人类科学从此在这个小小的粒子上被锁死。",
     "science": "原子由原子核与电子构成，原子核由质子和中子构成。质子直径约1.6×10⁻¹⁵米，原子却约10⁻¹⁰米——原子内部绝大部分是空的。粒子物理学的任务，就是弄清这么小的粒子里还藏着什么。",
-    "events": [],
+    "events": [
+      "sophon-blockade"
+    ],
     "characters": [],
     "related": [
       "sophon",
@@ -1517,7 +1612,9 @@
     "group": "physics",
     "inBook": "智子舰队间实时通信的想象基础：相隔光年的两颗智子状态瞬间关联，三体司令部因此能对四光年外的地球如臂使指——星际间「超距通信」的科幻支点。",
     "science": "两颗粒子发生纠缠后，测量其一瞬间决定另一的状态，无论相距多远。爱因斯坦称之为「幽灵般的超距作用」。关键限制：纠缠不能用来超光速传信息——测量结果是随机的，需要经典信道对照。书中的即时通信是科幻加工。",
-    "events": [],
+    "events": [
+      "sophon-blockade"
+    ],
     "characters": [],
     "related": [
       "sophon",
@@ -1538,7 +1635,9 @@
     "events": [
       "sophon-blockade"
     ],
-    "characters": [],
+    "characters": [
+      "yang-dong"
+    ],
     "related": [
       "sophon",
       "proton-nucleus",
@@ -1556,8 +1655,13 @@
     ],
     "inBook": "飞刃的本体：汪淼研究的纳米丝，强度是钢的百倍、细到肉眼不可见——古筝行动里，它在审判日号邮轮上切出五十片薄纸般的船体。纳米，是危机纪元人类拿得出手的第一件武器。",
     "science": "纳米材料在1–100纳米尺度（头发丝的十万分之一）上表现出异于宏观材料的强度、导电性与化学活性。碳纳米管理论强度约为钢的百倍而密度只有其六分之一——「太空电梯缆绳」的候选材料。",
-    "events": [],
-    "characters": [],
+    "events": [
+      "wang-miao-countdown",
+      "gu-zheng-operation"
+    ],
+    "characters": [
+      "wang-miao"
+    ],
     "related": [
       "nanofiber"
     ],
@@ -1573,8 +1677,16 @@
     ],
     "inBook": "宇宙的极限速度：每秒约30万公里，不可超越、不可到达。全书最重要的物理常数——三体舰队的四百年航程、智子的两粒锁死、黑暗森林的打击时间表、人类的全部战略，都是围绕这个铁底做文章；而结局里「改变光速」，正是对它本身的背刺。",
     "science": "真空光速c≈299792458 m/s，是自然界信息与能量传播的极限，一切有质量的物体只能无限接近、无法达到（需要无穷能量）。相对论的全部时空观（时间膨胀、长度收缩）都建立在它的不变性之上。",
-    "events": [],
-    "characters": [],
+    "events": [
+      "solar-amplifier-launch",
+      "trisolaran-fleet-launch",
+      "droplet-massacre",
+      "singer-two-dimensional",
+      "cheng-xin-escape"
+    ],
+    "characters": [
+      "yun-tianming"
+    ],
     "related": [
       "lightspeed-ship",
       "curvature-drive",
@@ -1599,7 +1711,10 @@
     "inBook": "光速飞船上的人一天，地球上已过一年——书中星际旅行者的时间账本。章北海「增援未来」、程心跨越纪元的苏醒，都建立在这个效应的人文版本上：用冬眠硬蹭，用光速真蹭。",
     "science": "狭义相对论：运动速度越接近光速，时间流逝越慢。宇航员在近光速飞船上度过一年，地球可能已过数十年——这不是错觉而是可测量的物理效应（飞行原子钟实验已验证）。星际往返的船员回到的是「未来」。",
     "events": [],
-    "characters": [],
+    "characters": [
+      "cheng-xin",
+      "zhang-beihai"
+    ],
     "related": [
       "light-speed",
       "lightspeed-ship"
@@ -1614,7 +1729,9 @@
     "inBook": "书中的名句意象：一个事件的影响范围，是以光速画出的「光锥」——光锥之内是你能触达的命运，光锥之外与你无关。黑暗森林打击的不可逃离，正因为打击物就在你的光锥之内。",
     "science": "相对论时空中，以某事件为顶点、以光速向外扩张的时空区域就是光锥：锥内的一切可以与此事件发生因果联系，锥外永远不能。它给因果律画出了几何边界——「影响」不可能快过光。",
     "events": [],
-    "characters": [],
+    "characters": [
+      "guan-yifan"
+    ],
     "related": [
       "dark-forest",
       "light-speed"
@@ -1629,7 +1746,9 @@
     "inBook": "曲率驱动的物理根源：质量使时空弯曲，弯曲的「程度」就是曲率。书人类后来学会的，不是在空间里跑得更快，而是驾驭空间本身的曲率——把船后方的空间拉平、前方压弯，让空间推着船走。",
     "science": "广义相对论把引力解释为时空的弯曲：质量越大，时空弯曲越厉害，弯曲的几何量就是曲率。地球绕太阳不是被「拉住」，而是沿弯曲时空里的「直线」运动。",
     "events": [],
-    "characters": [],
+    "characters": [
+      "guan-yifan"
+    ],
     "related": [
       "curvature-drive"
     ],
@@ -1647,7 +1766,10 @@
     "inBook": "书中最宏伟的设定：更高维度的空间真实存在，蓝色空间号误入的四维碎块里，人类第一次「看见」三维世界的内部；而二向箔的打击，就是把三维空间跌落到二维——维度，是高等文明战争的大杀器。",
     "science": "三维空间有三个独立方向（长宽高），四维空间是再叠加一个方向的数学空间，三维生物无法直观想象，但可以数学描述。弦理论假设宇宙有十维以上，多余的维度「蜷缩」在极小尺度——高维空间是严肃的物理假说，而非纯幻想。",
     "events": [
-      "four-d-fragment"
+      "four-d-fragment",
+      "scientists-deaths",
+      "droplet-arrival",
+      "droplet-massacre"
     ],
     "characters": [
       "chu-yan"
@@ -1669,8 +1791,12 @@
     ],
     "inBook": "星际能量的终极形式：物质与反物质相遇，质量100%化为光与能量。书中星际战争的能量想象、以及宇宙宏大尺度上的「打击」，底色都是这种最高效的转化。",
     "science": "反物质与正物质质量相同、电荷等性质相反，相遇即「湮灭」，全部质量按E=mc²转化为光子。宇宙大爆炸应产生等量正反物质，为何今天只剩正物质（对称性破缺）是物理学悬案。反物质已有实验室制备，但造价是史上最贵的物质。",
-    "events": [],
-    "characters": [],
+    "events": [
+      "star-ring-city"
+    ],
+    "characters": [
+      "wade"
+    ],
     "related": [
       "mass-energy",
       "light-speed"
@@ -1699,7 +1825,11 @@
     "group": "physics",
     "inBook": "引力波广播的物理基础：大质量天体剧变时激起的时空涟漪，能不被遮挡地传遍宇宙——人类把引力波发射台当作黑暗森林里的「同归于尽扳机」，一按，全宇宙都听得见。",
     "science": "爱因斯坦广义相对论的预言：加速的大质量天体会使时空泛起涟漪，以光速传播。2015年LIGO首次直接探测到双黑洞并合的引力波，验证了百年预言——它让人类多了一扇「听」宇宙的窗，几乎不衰减、不遮挡。",
-    "events": [],
+    "events": [
+      "luo-ji-deterrence",
+      "deterrence-failure",
+      "broadcast-of-coordinates"
+    ],
     "characters": [
       "chu-yan"
     ],
@@ -1736,9 +1866,15 @@
     "inBook": "三体文明为逃离母星派出的远征军：一千余艘恒星际战舰，以十分之一光速航行四百余年抵达太阳系。三体人先遣的智子两粒先行锁死人类科学，舰队未至，胜负已定——直到人类有了面壁者。",
     "science": "书中设定千舰规模，航行速度约光速的十分之一（后期第二舰队达光速）。以现实标准看，十分之一光速的恒星际航行需要的能量与工程能力远超人类现有水平——这正是三体与人类技术代差的体现。",
     "events": [
-      "trisolaran-fleet-launch"
+      "trisolaran-fleet-launch",
+      "trisolaran-reply",
+      "luo-ji-deterrence",
+      "ladder-plan"
     ],
-    "characters": [],
+    "characters": [
+      "wade",
+      "zhi-zi"
+    ],
     "related": [
       "trisolaran-civilization",
       "three-body-problem",
@@ -1758,10 +1894,12 @@
     "inBook": "战舰过载加速时，乘员浸入「深海加速液」中呼吸——液体包裹全身，把加速度的碾压均匀分摊，人才能在舰上存活。自然选择号叛逃时的极限加速、章北海的「前进四」，背后都是这套系统。",
     "science": "高加速度下血液无法供压到大脑，人会黑视昏迷（飞行员承受约9G为极限）。浸入与人体密度接近的液体中，压强各向均匀传递，可大幅提高承受上限——现实中「液体呼吸」已有动物实验，远未到书中的程度。",
     "events": [
-      "zhang-beihai-escape"
+      "zhang-beihai-escape",
+      "dark-battle"
     ],
     "characters": [
-      "dongfang-yanxu"
+      "dongfang-yanxu",
+      "zhang-beihai"
     ],
     "related": [
       "fleet-international"
@@ -1798,7 +1936,9 @@
     "events": [
       "luo-ji-car-crash"
     ],
-    "characters": [],
+    "characters": [
+      "luo-ji"
+    ],
     "related": [
       "eto"
     ],
@@ -1916,7 +2056,8 @@
     ],
     "characters": [
       "chu-yan",
-      "cheng-xin"
+      "cheng-xin",
+      "guan-yifan"
     ],
     "related": [
       "blue-space",
