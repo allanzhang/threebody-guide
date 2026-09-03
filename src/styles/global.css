@@ -87,13 +87,6 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
   background: var(--accent); margin-top: 3px; border-radius: 1px;
 }
 
-/* ===== 页脚 ===== */
-.site-footer {
-  border-top: 1px solid var(--line);
-  padding: 28px 24px 40px; text-align: center;
-  color: var(--ink-dim); font-size: 13px; line-height: 1.8;
-}
-
 /* ===== 首页（v2 电影化） ===== */
 .hero-full {
   position: relative; min-height: 92vh;

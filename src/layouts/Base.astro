@@ -43,9 +43,6 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : As
       </nav>
     </header>
     <main><slot /></main>
-    <footer class="site-footer">
-      <p>《三体》三部曲 · 刘慈欣著。本站为个人非商用科普项目，全站剧透。图片素材来自腾讯剧版宣传物料与 The Movie Database（TMDB）API——本产品使用 TMDB API，但未获得 TMDB 认可或认证；占位图自绘，侵权请联系删除。</p>
-    </footer>
     <script is:inline>
       // 滚动渐显：JS 注入初始类（无 JS 无影响），reduced-motion 用户直接跳过
       (function () {
