@@ -10,7 +10,6 @@ export const eras = load('eras');
 export const events = load('events');
 export const concepts = load('concepts');
 export const characters = load('characters');
-export const scenes = load('scenes');
 
 const index = (list) => new Map(list.map((x) => [x.id, x]));
 export const bookById = index(books);
@@ -18,12 +17,6 @@ export const eraById = index(eras);
 export const eventById = index(events);
 export const conceptById = index(concepts);
 export const characterById = index(characters);
-export const sceneById = index(scenes);
-
-/** 大事件 → 绑定的场景页（无则为 undefined） */
-export function sceneForEvent(eventId) {
-  return scenes.find((s) => s.eventIds.includes(eventId));
-}
 
 const BASE = () => (import.meta.env?.BASE_URL || '/').replace(/\/+$/, '');
 

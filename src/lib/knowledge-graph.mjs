@@ -1,5 +1,5 @@
-// 知识图谱数据派生：从 6 套 JSON 建节点/边 + 骨架分层（纯函数，服务端与测试共用）
-import { books as dbBooks, eras as dbEras, events as dbEvents, concepts as dbConcepts, characters as dbCharacters, scenes as dbScenes } from './data.mjs';
+// 知识图谱数据派生：从 5 套 JSON 建节点/边 + 骨架分层（纯函数，服务端与测试共用）
+import { books as dbBooks, eras as dbEras, events as dbEvents, concepts as dbConcepts, characters as dbCharacters } from './data.mjs';
 
 const CONCEPT_COLOR = { law: '#d8c48a', tech: '#5b8db8', org: '#3fa39c', astro: '#9a7ab8', physics: '#b8836a' };
 const CHAR_COLOR = { origin: '#d8c48a', face: '#5b8db8', eto: '#8a6a92', support: '#56616e' };
@@ -14,7 +14,6 @@ export function buildGraph(data = null) {
   const events = data ? data.events : dbEvents;
   const concepts = data ? data.concepts : dbConcepts;
   const characters = data ? data.characters : dbCharacters;
-  const scenes = data ? data.scenes : dbScenes;
 
   const eraColor = new Map(eras.map((e) => [e.id, e.color]));
   const bookOrder = new Map(books.map((b) => [b.id, b.order]));
@@ -42,7 +41,6 @@ export function buildGraph(data = null) {
   for (const ev of events) add({ id: nodeKey('event', ev.id), type: 'event', label: ev.title, color: eraColor.get(ev.eraId), ref: ev.id, eraId: ev.eraId, bookId: ev.bookId, isMajorEvent: Boolean(ev.isMajorEvent) });
   for (const c of concepts) add({ id: nodeKey('concept', c.id), type: 'concept', label: c.name, color: CONCEPT_COLOR[c.group] || '#9aa0a8', ref: c.id, group: c.group, bookRef: conceptBook.get(c.id) });
   for (const ch of characters) add({ id: nodeKey('character', ch.id), type: 'character', label: ch.name, color: CHAR_COLOR[ch.group] || '#9aa0a8', ref: ch.id, group: ch.group, isCore: Boolean(ch.isCore) });
-  for (const s of scenes) add({ id: nodeKey('scene', s.id), type: 'scene', label: s.title, color: eraColor.get(s.eraId), ref: s.id, eraId: s.eraId, bookId: s.bookId });
 
   const edges = [];
   const seen = new Set();
@@ -73,11 +71,6 @@ export function buildGraph(data = null) {
     for (const cid of list(c.characters)) push(nodeKey('concept', c.id), nodeKey('character', cid), 'concept-char');
     for (const rid of list(c.related)) { pushDir(nodeKey('concept', c.id), nodeKey('concept', rid), 'concept-related'); pushDir(nodeKey('concept', rid), nodeKey('concept', c.id), 'concept-related'); }
   }
-  for (const s of scenes) {
-    for (const eid of list(s.eventIds)) push(nodeKey('scene', s.id), nodeKey('event', eid), 'scene-event');
-    for (const cid of list(s.conceptIds)) push(nodeKey('scene', s.id), nodeKey('concept', cid), 'scene-concept');
-    for (const cid of list(s.characterIds)) push(nodeKey('scene', s.id), nodeKey('character', cid), 'scene-char');
-  }
 
   const degree = new Map();
   for (const e of edges) {
@@ -86,7 +79,7 @@ export function buildGraph(data = null) {
   }
   for (const n of nodes) n.degree = degree.get(n.id) || 0;
 
-  return { nodes, edges, nodeById, books, eras, events, concepts, characters, scenes };
+  return { nodes, edges, nodeById, books, eras, events, concepts, characters };
 }
 
 export function topConceptIds(graph, k = 10) {
@@ -154,10 +147,6 @@ export function layout(graph) {
       ? { x: avg(pts.map((p) => p.x)), y: avg(pts.map((p) => p.y)) }
       : { x: W / 2, y: H - 46 };
     pos.set(nodeKey('character', ch.id), { x: clamp(base.x, PAD, W - PAD), y: clamp(base.y, PAD, H - PAD) });
-  }
-  for (const s of graph.scenes) {
-    const base = pos.get(nodeKey('event', s.eventIds?.[0])) || { x: W / 2, y: H / 2 };
-    pos.set(nodeKey('scene', s.id), { x: clamp(base.x + 44, PAD, W - PAD), y: clamp(base.y - 44, PAD, H - PAD) });
   }
   for (const e of erasSorted) pos.set(nodeKey('era', e.id), { x: eraX(e.id), y: PAD - 42 });
   for (const b of graph.books) {

@@ -7,7 +7,7 @@ const ROOT = process.cwd();
 const load = (name) => JSON.parse(readFileSync(join(ROOT, 'content', `${name}.json`), 'utf8'));
 
 function validate(data) {
-  const { books, eras, events, concepts, characters, scenes } = data;
+  const { books, eras, events, concepts, characters } = data;
   const errors = [];
 
   const checkUnique = (list, label) => {
@@ -82,22 +82,6 @@ function validate(data) {
   checkSym(characters, 'concepts', concepts, 'characters', conceptIds, charIds, '人物↔概念');
   checkSym(concepts, 'related', concepts, 'related', conceptIds, conceptIds, '概念↔概念');
 
-  // ---- 大场面场景（scenes） ----
-  const sceneTypes = new Set(['droplet']); // P1 扩展：红岸/三日/古筝/智子/冰湖/光速/二向箔/威慑/归零
-  const sceneIds = new Set(scenes.map((s) => s.id));
-  for (const s of scenes) {
-    required(s, ['id', 'title', 'tagline', 'bookId', 'eraId', 'eventIds', 'conceptIds', 'characterIds', 'sceneType', 'moment', 'shock', 'science', 'echo'], 'scene');
-    if (!bookIds.has(s.bookId)) errors.push(`scene ${s.id} 引用了不存在的 book ${s.bookId}`);
-    if (!eraIds.has(s.eraId)) errors.push(`scene ${s.id} 引用了不存在的 era ${s.eraId}`);
-    if (!sceneTypes.has(s.sceneType)) errors.push(`scene ${s.id} sceneType 非法: ${s.sceneType}`);
-    for (const eid of s.eventIds) if (!eventIds.has(eid)) errors.push(`scene ${s.id} 引用了不存在的事件 ${eid}`);
-    for (const cid of s.conceptIds) if (!conceptIds.has(cid)) errors.push(`scene ${s.id} 引用了不存在的概念 ${cid}`);
-    for (const cid of s.characterIds) if (!charIds.has(cid)) errors.push(`scene ${s.id} 引用了不存在的人物 ${cid}`);
-  }
-  // scene 关联的事件/概念/人物 单向（场景持有指向，不强制反向）
-  checkSym(scenes, 'eventIds', events, null, eventIds, sceneIds, '场景↔事件');
-  checkSym(scenes, 'conceptIds', concepts, null, conceptIds, sceneIds, '场景↔概念');
-  checkSym(scenes, 'characterIds', characters, null, charIds, sceneIds, '场景↔人物');
   // 解读块字段：存在即须为非空字符串
   for (const ev of events) if (ev.turning !== undefined && (typeof ev.turning !== 'string' || ev.turning === '')) errors.push(`event ${ev.id} turning 必须为非空字符串`);
   for (const c of concepts) if (c.chilling !== undefined && (typeof c.chilling !== 'string' || c.chilling === '')) errors.push(`concept ${c.id} chilling 必须为非空字符串`);
@@ -118,7 +102,7 @@ function validate(data) {
 
 const data = {
   books: load('books'), eras: load('eras'), events: load('events'),
-  concepts: load('concepts'), characters: load('characters'), scenes: load('scenes'),
+  concepts: load('concepts'), characters: load('characters'),
 };
 
 if (process.argv.includes('--self-test')) {
@@ -129,7 +113,6 @@ if (process.argv.includes('--self-test')) {
     events: [{ id: 'ev1', title: 'T', subtitle: '', bookId: 'b1', eraId: 'e1', yearLabel: '1', order: 1, isMajorEvent: false, summary: 'S', characters: ['c1'], concepts: [], image: '', note: '' }],
     concepts: [],
     characters: [{ id: 'c1', name: 'N', alias: '', tagline: 'T', group: 'origin', isCore: false, who: 'W', role: 'R', storyline: 'S', choices: '', events: ['ev1'], concepts: [], portrait: '' }],
-    scenes: [],
   });
   // 用例1：非法引用必须被捕获
   const broken1 = makeData();
@@ -144,19 +127,11 @@ if (process.argv.includes('--self-test')) {
   broken3.characters[0].portrait = '/images/does-not-exist.svg';
   broken3.events[0].image = '/images/does-not-exist.svg';
   if (validate(broken3).length < 2) { console.error('✗ self-test 失败：图片文件缺失未被捕获'); process.exit(1); }
-  // 用例4：scene 引用不存在的事件必须被捕获
-  const broken4 = makeData();
-  broken4.scenes = [{ id: 's1', title: 'T', tagline: 'T', bookId: 'b1', eraId: 'e1', eventIds: ['ghost'], conceptIds: [], characterIds: [], sceneType: 'droplet', moment: 'M', shock: 'S', science: 'Sci', echo: 'E' }];
-  if (validate(broken4).length === 0) { console.error('✗ self-test 失败：scene 非法引用未被捕获'); process.exit(1); }
-  // 用例5：scene sceneType 非法必须被捕获
-  const broken5 = makeData();
-  broken5.scenes = [{ id: 's1', title: 'T', tagline: 'T', bookId: 'b1', eraId: 'e1', eventIds: [], conceptIds: [], characterIds: [], sceneType: 'space-odyssey', moment: 'M', shock: 'S', science: 'Sci', echo: 'E' }];
-  if (validate(broken5).length === 0) { console.error('✗ self-test 失败：scene sceneType 非法未被捕获'); process.exit(1); }
-  // 用例6：解读字段存在但为空必须被捕获
+  // 用例4：解读字段存在但为空必须被捕获
   const broken6 = makeData();
   broken6.events[0].turning = '';
   if (validate(broken6).length === 0) { console.error('✗ self-test 失败：空 turning 未被捕获'); process.exit(1); }
-  // 用例7：概念分组非法 / alias 冲突必须被捕获
+  // 用例5：概念分组非法 / alias 冲突必须被捕获
   const broken7 = makeData();
   broken7.concepts = [{ id: 'cp1', name: 'N', tagline: 'T', group: 'bogus', inBook: 'B', science: 'S', events: [], characters: [], related: [] }];
   if (validate(broken7).length === 0) { console.error('✗ self-test 失败：非法分组未被捕获'); process.exit(1); }

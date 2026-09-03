@@ -91,7 +91,7 @@ export function createGraph(root, data) {
     nodeEls.set(n.id, g);
   }
 
-  const state = { layer: 'skeleton', types: new Set(['character', 'concept', 'event', 'scene']), x: 24, y: 40, k: 0.82 };
+  const state = { layer: 'skeleton', types: new Set(['character', 'concept', 'event']), x: 24, y: 40, k: 0.82 };
   const applyView = () => {
     world.setAttribute('style', `transform: translate(${state.x}px, ${state.y}px) scale(${state.k});`);
   };

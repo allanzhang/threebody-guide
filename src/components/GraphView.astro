@@ -17,7 +17,7 @@ const payload = {
   edges: graph.edges,
 };
 
-const TYPE_LABEL = { book: '书', era: '纪元', event: '事件', concept: '概念', character: '人物', scene: '场景' };
+const TYPE_LABEL = { book: '书', era: '纪元', event: '事件', concept: '概念', character: '人物' };
 const FIELD_LABEL = { role: '他的角色', storyline: '故事线', legacy: '他的遗产', details: '深读', turning: '关键转折', chilling: '细思极恐', moment: '那一刻', shock: '为什么震撼', science: '科学底子', echo: '伏笔与呼应', note: '备注', who: '他是谁', summary: '概要', intro: '来龙去脉', tagline: '一句话' };
 
 // 每类实体：科普段 + 考据段（有字段才渲染）
@@ -26,14 +26,12 @@ const desc = (type) => {
     case 'concept': return ['tagline', 'details', 'chilling'];
     case 'character': return ['who', 'role', 'storyline', 'legacy'];
     case 'event': return ['summary', 'details', 'turning', 'note'];
-    case 'scene': return ['tagline', 'moment', 'shock', 'science', 'echo'];
     default: return ['intro'];
   }
 };
 const detailHref = (n) => {
   if (n.type === 'concept') return pageUrl(`/concepts/${n.ref}/`);
   if (n.type === 'character') return pageUrl(`/characters/${n.ref}/`);
-  if (n.type === 'scene') return pageUrl(`/scenes/${n.ref}/`);
   if (n.type === 'event') return pageUrl('/timeline/');
   return '';
 };
@@ -43,7 +41,6 @@ const byId = (kind, id) => {
   if (kind === 'event') return graph.events.find((x) => x.id === id);
   if (kind === 'concept') return graph.concepts.find((x) => x.id === id);
   if (kind === 'character') return graph.characters.find((x) => x.id === id);
-  if (kind === 'scene') return graph.scenes.find((x) => x.id === id);
   return null;
 };
 // 悬浮卡单行简介：事件用 summary，书/纪元用 intro，其余用 tagline；无字段则空
@@ -60,7 +57,7 @@ const cardLine = (n) => {
       <button type="button" data-layer="full">全部</button>
     </div>
     <div class="kg-types">
-      {['character', 'concept', 'event', 'scene'].map((t) => (
+      {['character', 'concept', 'event'].map((t) => (
         <label><input type="checkbox" data-type={t} checked /> <Linkify text={TYPE_LABEL[t]} /></label>
       ))}
     </div>
