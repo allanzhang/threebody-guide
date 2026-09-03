@@ -77,34 +77,49 @@ test('最小数据不崩', () => {
   assert.equal(skeletonIds(g).size, 0);
 });
 
-test('布局：事件 x 对齐所属纪元列；列内 y 不重叠', () => {
+test('布局：事件按纪元分区（x 在分区内），同分区坐标不重叠', () => {
   const g = buildGraph();
   const { pos } = layout(g);
-  const eraX = new Map(g.eras.map((e) => [e.id, pos.get(nodeKey('era', e.id)).x]));
-  for (const ev of g.events) assert.equal(pos.get(nodeKey('event', ev.id)).x, eraX.get(ev.eraId), `${ev.id} 列位错误`);
-  const cols = new Map();
+  const { PAD, COL_W } = LAYOUT;
+  const eraIdx = new Map([...g.eras].sort((a, b) => a.order - b.order).map((e, i) => [e.id, i]));
+  const seen = new Map();
   for (const ev of g.events) {
-    const ys = cols.get(ev.eraId) || [];
-    ys.push(pos.get(nodeKey('event', ev.id)).y);
-    cols.set(ev.eraId, ys);
+    const p = pos.get(nodeKey('event', ev.id));
+    const cx = PAD + COL_W / 2 + eraIdx.get(ev.eraId) * COL_W;
+    assert.ok(Math.abs(p.x - cx) < COL_W / 2, `${ev.id} 超出纪元分区`);
+    const key = `${ev.eraId}:${p.x}:${p.y}`;
+    assert.ok(!seen.has(key), `${ev.id} 与 ${seen.get(key) || ''} 重叠`);
+    seen.set(key, ev.id);
   }
-  for (const [era, ys] of cols) assert.equal(new Set(ys).size, ys.length, `${era} 列事件 y 重叠`);
 });
 
-test('布局：概念按派生的 bookRef 收敛轨道', () => {
+test('布局：概念/人物按 group 分区收敛（位置=颜色=分类）', () => {
   const g = buildGraph();
   const { pos } = layout(g);
-  const byBook = new Map();
+  const { PAD, COL_W } = LAYOUT;
+  const CONCEPT_ORDER = ['law', 'tech', 'org', 'astro', 'physics'];
+  const gi = new Map(CONCEPT_ORDER.map((x, i) => [x, i]));
+  const byGroup = new Map();
   for (const c of g.concepts) {
-    const bk = g.nodeById.get(nodeKey('concept', c.id)).bookRef;
-    if (!bk) continue; // 无事件引用的概念落入松散区（真实数据当前无此情况）
-    const l = byBook.get(bk) || [];
+    const l = byGroup.get(c.group) || [];
     l.push(nodeKey('concept', c.id));
-    byBook.set(bk, l);
+    byGroup.set(c.group, l);
   }
-  assert.ok(byBook.size >= 1, '至少一卷有概念挂靠');
-  for (const [book, ids] of byBook) {
-    assert.equal(new Set(ids.map((i) => pos.get(i).x)).size, 1, `${book} 概念应收敛一列`);
+  for (const [group, ids] of byGroup) {
+    const cx = PAD + COL_W / 2 + gi.get(group) * COL_W;
+    for (const id of ids) assert.ok(Math.abs(pos.get(id).x - cx) < COL_W / 2, `${id} 超出 ${group} 分区`);
+  }
+  const CHAR_ORDER = ['origin', 'face', 'eto', 'support'];
+  const ci = new Map(CHAR_ORDER.map((x, i) => [x, i]));
+  const chg = new Map();
+  for (const c of g.characters) {
+    const l = chg.get(c.group) || [];
+    l.push(nodeKey('character', c.id));
+    chg.set(c.group, l);
+  }
+  for (const [group, ids] of chg) {
+    const cx = PAD + COL_W / 2 + ci.get(group) * COL_W;
+    for (const id of ids) assert.ok(Math.abs(pos.get(id).x - cx) < COL_W / 2, `${id} 超出 ${group} 分区`);
   }
 });
 

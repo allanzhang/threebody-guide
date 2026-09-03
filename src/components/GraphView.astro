@@ -1,18 +1,20 @@
 ---
-import { buildGraph, skeletonIds, layout } from '../lib/knowledge-graph.mjs';
+import { buildGraph, skeletonIds, layout, nodeSize } from '../lib/knowledge-graph.mjs';
 import { pageUrl } from '../lib/data.mjs';
 import Linkify from './Linkify.astro';
 
 const graph = buildGraph();
 const skeleton = skeletonIds(graph);
-const { pos, W, H } = layout(graph);
+const { pos, W, H, zones } = layout(graph);
+const size = nodeSize(graph);
 
 const payload = {
   W, H,
+  zones,
   skeleton: [...skeleton],
   nodeById: Object.fromEntries(graph.nodes.map((n) => {
     const p = pos.get(n.id);
-    return [n.id, { id: n.id, type: n.type, label: n.label, color: n.color, x: p.x, y: p.y }];
+    return [n.id, { id: n.id, type: n.type, label: n.label, color: n.color, x: p.x, y: p.y, r: size.get(n.id) }];
   })),
   edges: graph.edges,
 };
@@ -63,8 +65,23 @@ const cardLine = (n) => {
     </div>
   </div>
 
+  <div class="kg-legend">
+    <span class="kg-legend-title">图例</span>
+    <span class="kg-legend-item" style="--sw:#d8c48a"><i></i>法则</span>
+    <span class="kg-legend-item" style="--sw:#5b8db8"><i></i>科技</span>
+    <span class="kg-legend-item" style="--sw:#3fa39c"><i></i>组织</span>
+    <span class="kg-legend-item" style="--sw:#9a7ab8"><i></i>天文</span>
+    <span class="kg-legend-item" style="--sw:#b8836a"><i></i>物理</span>
+    <span class="kg-legend-sep"></span>
+    <span class="kg-legend-item" style="--sw:#d8c48a"><i></i>红岸</span>
+    <span class="kg-legend-item" style="--sw:#5b8db8"><i></i>面壁</span>
+    <span class="kg-legend-item" style="--sw:#8a6a92"><i></i>ETO</span>
+    <span class="kg-legend-item" style="--sw:#56616e"><i></i>配角</span>
+  </div>
+
   <div class="kg-stage" id="kg-graph">
     <div class="kg-hovercard" id="kg-hovercard" hidden></div>
+    <button type="button" class="kg-fullscreen" id="kg-fullscreen" aria-label="全屏" title="全屏 / 退出全屏">⛶</button>
   </div>
 </div>
 
@@ -133,5 +150,31 @@ const cardLine = (n) => {
   });
   document.querySelectorAll('[data-type]').forEach((cb) => {
     cb.addEventListener('change', () => api.setType(cb.dataset.type, cb.checked));
+  });
+
+  // 全屏：对图谱容器 requestFullscreen；进出全屏都回到全景视图
+  const appEl = document.querySelector('.kg-app');
+  const fsBtn = document.getElementById('kg-fullscreen');
+  const resetView = () => api.setView({ x: 0, y: 0, k: 1 });
+  fsBtn.addEventListener('click', async () => {
+    try {
+      if (document.fullscreenElement) { await document.exitFullscreen(); }
+      else if (appEl.requestFullscreen) { await appEl.requestFullscreen(); }
+      else { appEl.classList.add('kg-fake-fullscreen'); resetView(); } // 兜底：不支持 API 时用 fixed 全屏
+    } catch (e) { /* ignore */ }
+  });
+  const onFs = () => {
+    const isFs = !!document.fullscreenElement;
+    fsBtn.classList.toggle('kg-fullscreen-on', isFs);
+    fsBtn.setAttribute('aria-label', isFs ? '退出全屏' : '全屏');
+    if (!isFs) appEl.classList.remove('kg-fake-fullscreen');
+    resetView();
+  };
+  document.addEventListener('fullscreenchange', onFs);
+  // 兜底 fixed 全屏的关闭
+  appEl.addEventListener('click', (e) => {
+    if (appEl.classList.contains('kg-fake-fullscreen') && e.target === appEl) {
+      appEl.classList.remove('kg-fake-fullscreen');
+    }
   });
 </script>

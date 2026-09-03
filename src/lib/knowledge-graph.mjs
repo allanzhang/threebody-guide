@@ -101,58 +101,115 @@ export function skeletonIds(graph) {
   return ids;
 }
 
-export const LAYOUT = { PAD: 90, COL_W: 260, ROW_H: 56, RAIL_GAP: 130, RAIL_OFF: 70, ANCHOR_R: 14, NODE_R: 9 };
+export const LAYOUT = { PAD: 110, COL_W: 400, ROW_H: 38, COL_OFF: 76, MAX_ROWS: 9, ROW_H_CON: 52, COL_OFF_CON: 100, MAX_ROWS_CON: 8, BOOK_Y: 88, ERA_Y: 192, EVENT_Y: 268, BAND_GAP: 48, LABEL_H: 44 };
 
+// 概念/人物分区顺序与标题（与 buildGraph 的 group 颜色表一致）
+const CONCEPT_ORDER = ['law', 'tech', 'org', 'astro', 'physics'];
+const CONCEPT_GROUP_TITLE = { law: '法则与理论', tech: '科技与器物', org: '组织与文明', astro: '天文与宇宙', physics: '物理与时空' };
+const CHAR_ORDER = ['origin', 'face', 'eto', 'support'];
+const CHAR_GROUP_TITLE = { origin: '红岸与源头', face: '面壁与执剑', eto: 'ETO 与三体侧', support: '重要配角' };
+
+/**
+ * 分区化布局（方案 A）：
+ * 顶部 = 书锚点；中部 = 时间线（5 纪元分区 + 各纪元事件网格）；
+ * 下部 = 概念体系（5 group 分区）+ 人物（4 group 分区）。
+ * 每个实体「位置维度 = 颜色维度 = 自身分类」：事件按纪元、概念按 group、人物按 group，
+ * 组内多列网格 + 垂直居中，消除单列撑高与大片空白。
+ * 返回 { pos, r, W, H, zones }，zones 供前端绘制分区背景与分组标题。
+ */
 export function layout(graph) {
-  const { PAD, COL_W, ROW_H, RAIL_GAP, RAIL_OFF } = LAYOUT;
-  const erasSorted = [...graph.eras].sort((a, b) => a.order - b.order);
-  const eraOrder = new Map(erasSorted.map((e, i) => [e.id, i]));
-  const eraX = (id) => PAD + eraOrder.get(id) * COL_W;
-  const railX = (bId) => PAD + 5 * COL_W + RAIL_OFF + (Math.max(0, (graph.books.find((b) => b.id === bId)?.order || 1) - 1)) * RAIL_GAP;
-
+  const { PAD, COL_W, ROW_H, COL_OFF, MAX_ROWS, ROW_H_CON, COL_OFF_CON, MAX_ROWS_CON, BOOK_Y, ERA_Y, EVENT_Y, BAND_GAP, LABEL_H } = LAYOUT;
   const pos = new Map();
-  const eraCount = new Map();
+  const zones = [];
+  const xi = (i) => PAD + COL_W / 2 + i * COL_W;
+  const node = (type, id) => nodeKey(type, id);
+
+  /** 网格放置：bandRows 为带内统一行数（跨列），列内垂直居中避免「上满下空」 */
+  const placeGrid = (ids, cx, bandTop, bandRows, opt = {}) => {
+    const { rowH = ROW_H, colOff = COL_OFF, maxRows = MAX_ROWS } = opt;
+    const n = ids.length;
+    if (n === 0) return;
+    const rows = Math.max(1, Math.min(maxRows, n));
+    const cols = Math.ceil(n / rows);
+    const top = bandTop + ((bandRows - rows) / 2) * rowH;
+    ids.forEach((id, idx) => {
+      const col = Math.floor(idx / rows);
+      const row = idx % rows;
+      pos.set(id, { x: cx + (col - (cols - 1) / 2) * colOff, y: top + row * rowH });
+    });
+  };
+  const bandRowsOf = (counts, maxRows = MAX_ROWS) => Math.max(1, ...[...counts].map((n) => Math.min(maxRows, Math.max(1, n))));
+
+  // ---- 时间线 band：5 纪元分区 + 事件网格 ----
+  const erasSorted = [...graph.eras].sort((a, b) => a.order - b.order);
+  const eraIdx = new Map(erasSorted.map((e, i) => [e.id, i]));
+  const eventsByEra = new Map();
   for (const ev of [...graph.events].sort((a, b) => a.order - b.order)) {
-    const k = eraCount.get(ev.eraId) || 0;
-    pos.set(nodeKey('event', ev.id), { x: eraX(ev.eraId), y: PAD + k * ROW_H });
-    eraCount.set(ev.eraId, k + 1);
+    if (!eventsByEra.has(ev.eraId)) eventsByEra.set(ev.eraId, []);
+    eventsByEra.get(ev.eraId).push(ev);
   }
-  const bookCount = new Map();
-  const looseConcepts = [];
-  for (const c of [...graph.concepts].sort((a, b) => a.id.localeCompare(b.id))) {
-    // 卷归属用 buildGraph 派生的 bookRef（inBook 是散文，不可用）
-    const bk = graph.nodeById.get(nodeKey('concept', c.id)).bookRef;
-    if (!bk) { looseConcepts.push(c); continue; }
-    const k = bookCount.get(bk) || 0;
-    pos.set(nodeKey('concept', c.id), { x: railX(bk), y: PAD + k * ROW_H });
-    bookCount.set(bk, k + 1);
+  const eraRows = bandRowsOf(erasSorted.map((e) => (eventsByEra.get(e.id) || []).length));
+  for (const e of erasSorted) {
+    const list = eventsByEra.get(e.id) || [];
+    placeGrid(list.map((ev) => node('event', ev.id)), xi(eraIdx.get(e.id)), EVENT_Y, eraRows);
+    pos.set(node('era', e.id), { x: xi(eraIdx.get(e.id)), y: ERA_Y });
   }
+  const eventBottom = EVENT_Y + eraRows * ROW_H;
+  zones.push({ kind: 'band', x: xi(0) - COL_W / 2, y: EVENT_Y - 12, w: 5 * COL_W, label: '时间线' });
 
-  const maxRows = Math.max(1, ...[...eraCount.values(), ...bookCount.values()]);
-  const W = PAD * 2 + 5 * COL_W + RAIL_OFF + 3 * RAIL_GAP;
-  const H = PAD * 2 + maxRows * ROW_H;
+  // ---- 概念体系 band：5 group 分区 ----
+  const conByGroup = new Map(CONCEPT_ORDER.map((g) => [g, []]));
+  for (const c of graph.concepts) if (conByGroup.has(c.group)) conByGroup.get(c.group).push(c);
+  const conTop = eventBottom + BAND_GAP;
+  const conCounts = CONCEPT_ORDER.map((g) => conByGroup.get(g).length);
+  const conRows = bandRowsOf(conCounts, MAX_ROWS_CON);
+  for (let i = 0; i < CONCEPT_ORDER.length; i++) {
+    const g = CONCEPT_ORDER[i];
+    placeGrid(conByGroup.get(g).sort((a, b) => a.id.localeCompare(b.id)).map((c) => node('concept', c.id)), xi(i), conTop + LABEL_H, conRows, { rowH: ROW_H_CON, colOff: COL_OFF_CON, maxRows: MAX_ROWS_CON });
+    zones.push({ kind: 'group', x: xi(i), y: conTop, label: CONCEPT_GROUP_TITLE[g], color: CONCEPT_COLOR[g] });
+  }
+  const conBottom = conTop + LABEL_H + conRows * ROW_H_CON;
+  zones.push({ kind: 'band', x: xi(0) - COL_W / 2, y: conTop - 10, w: 5 * COL_W, label: '概念体系' });
 
-  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
-  const avg = (arr) => arr.reduce((s, v) => s + v, 0) / arr.length;
-  const neighbors = (id) => graph.edges.filter((e) => e.source === id || e.target === id)
-    .map((e) => (e.source === id ? e.target : e.source));
+  // ---- 人物 band：4 group 分区（复用前 4 个分区位）----
+  const chByGroup = new Map(CHAR_ORDER.map((g) => [g, []]));
+  for (const c of graph.characters) if (chByGroup.has(c.group)) chByGroup.get(c.group).push(c);
+  const charTop = conBottom + BAND_GAP;
+  const charCounts = CHAR_ORDER.map((g) => chByGroup.get(g).length);
+  const charRows = bandRowsOf(charCounts);
+  for (let i = 0; i < CHAR_ORDER.length; i++) {
+    const g = CHAR_ORDER[i];
+    placeGrid(chByGroup.get(g).sort((a, b) => a.id.localeCompare(b.id)).map((c) => node('character', c.id)), xi(i), charTop + LABEL_H, charRows);
+    zones.push({ kind: 'group', x: xi(i), y: charTop, label: CHAR_GROUP_TITLE[g], color: CHAR_COLOR[g] });
+  }
+  const charBottom = charTop + LABEL_H + charRows * ROW_H;
+  zones.push({ kind: 'band', x: xi(0) - COL_W / 2, y: charTop - 10, w: 5 * COL_W, label: '人物' });
 
-  // 无卷归属概念（无事件引用）→ 底部松散区横排
-  for (let i = 0; i < looseConcepts.length; i++) {
-    pos.set(nodeKey('concept', looseConcepts[i].id), { x: PAD + (i % 5) * 130, y: H - 46 - Math.floor(i / 5) * 44 });
+  // ---- 顶部：书锚点（横向贯穿，作为作品维度背景）----
+  const W = PAD * 2 + 5 * COL_W;
+  const H = charBottom + PAD;
+  const nBooks = Math.max(1, graph.books.length);
+  const xFirst = xi(0), xLast = xi(Math.max(0, CONCEPT_ORDER.length - 1));
+  for (const b of [...graph.books].sort((a, b) => a.order - b.order)) {
+    const bx = xFirst + ((b.order - 0.5) / nBooks) * (xLast - xFirst);
+    pos.set(node('book', b.id), { x: bx, y: BOOK_Y });
   }
-  for (const ch of graph.characters) {
-    const pts = neighbors(nodeKey('character', ch.id)).map((i) => pos.get(i)).filter(Boolean);
-    const base = pts.length
-      ? { x: avg(pts.map((p) => p.x)), y: avg(pts.map((p) => p.y)) }
-      : { x: W / 2, y: H - 46 };
-    pos.set(nodeKey('character', ch.id), { x: clamp(base.x, PAD, W - PAD), y: clamp(base.y, PAD, H - PAD) });
+  return { pos, W, H, zones };
+}
+
+/** 节点大小（按关联度分级，供前端渲染）：锚点 > 核心事件/人物/高关联概念 > 普通 */
+export function nodeSize(graph) {
+  const top = topConceptIds(graph);
+  const r = new Map();
+  for (const n of graph.nodes) {
+    let v;
+    if (n.type === 'book') v = 22;
+    else if (n.type === 'era') v = 15;
+    else if (n.type === 'event') v = n.isMajorEvent ? 11 : 7.5;
+    else if (n.type === 'concept') v = top.has(n.id) ? 12 : n.degree >= 6 ? 10 : n.degree >= 3 ? 8.5 : 7;
+    else if (n.type === 'character') v = n.isCore ? 11 : 8.5;
+    else v = 8;
+    r.set(n.id, v);
   }
-  for (const e of erasSorted) pos.set(nodeKey('era', e.id), { x: eraX(e.id), y: PAD - 42 });
-  for (const b of graph.books) {
-    const k = Math.max(0, (b.order || 1) - 1);
-    pos.set(nodeKey('book', b.id), { x: railX(b.id), y: PAD - 42 });
-    if (k > 0) pos.get(nodeKey('book', b.id)).x += (k % 2 ? 1 : -1) * 14; // 三本轨道同名轴微错位，避免标签叠压
-  }
-  return { pos, W, H };
+  return r;
 }

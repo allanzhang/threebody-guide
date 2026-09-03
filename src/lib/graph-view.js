@@ -34,23 +34,30 @@ export function createGraph(root, data) {
     return { s, ox: (r.width - data.W * s) / 2, oy: (r.height - data.H * s) / 2 };
   };
 
-  // 卷轨道（背景色带 + 卷名）
-  const railsG = el('g', 'kg-rails');
-  world.appendChild(railsG);
-  const railInfo = [];
-  for (const n of Object.values(data.nodeById)) {
-    if (n.type !== 'book') continue;
-    const band = el('rect', 'kg-rail', { x: n.x - 42, y: 40, width: 84, height: Math.max(120, data.H - 110), rx: 8 });
-    band.setAttribute('fill', n.color);
-    band.setAttribute('fill-opacity', '0.055');
-    railsG.appendChild(band);
-    railInfo.push({ id: n.id, x: n.x, y: 22 });
-  }
-  for (const r of railInfo) {
-    const t = el('text', 'kg-rail-label', { x: r.x, y: r.y, 'text-anchor': 'middle' });
-    t.textContent = data.nodeById[r.id].label;
-    t.setAttribute('fill', data.nodeById[r.id].color);
-    world.appendChild(t);
+  // 分区背景 + 分组标题（layout 计算的 zones，服务端渲染坐标、客户端画图形）
+  const zonesG = el('g', 'kg-zones');
+  world.appendChild(zonesG);
+  for (const z of data.zones || []) {
+    if (z.kind === 'band') {
+      // 大区名标签（不画横虚线，避免视觉割裂）
+      const t = el('text', 'kg-band-label', { x: z.x + 6, y: z.y - 7 });
+      t.textContent = z.label;
+      zonesG.appendChild(t);
+    } else if (z.kind === 'group') {
+      // 圆角药丸背景：分组标题带底色/描边，避免与节点文字互相干扰
+      const w = z.label.length * 13 + 28;
+      const pill = el('rect', 'kg-group-pill', { x: z.x - w / 2, y: z.y, width: w, height: 26, rx: 13 });
+      pill.setAttribute('fill', z.color);
+      pill.setAttribute('fill-opacity', '0.16');
+      pill.setAttribute('stroke', z.color);
+      pill.setAttribute('stroke-opacity', '0.55');
+      pill.setAttribute('stroke-width', '1');
+      zonesG.appendChild(pill);
+      const t = el('text', 'kg-group-label', { x: z.x, y: z.y + 18, 'text-anchor': 'middle' });
+      t.textContent = z.label;
+      t.setAttribute('fill', z.color);
+      zonesG.appendChild(t);
+    }
   }
 
   // 边：曲线，data-a/data-b 记录端点
@@ -73,17 +80,23 @@ export function createGraph(root, data) {
     const g = el('g', `kg-node kg-node-${n.type}`);
     g.setAttribute('data-id', n.id);
     const anchor = n.type === 'book' || n.type === 'era';
-    const c = el('circle', anchor ? 'kg-anchor' : 'kg-circle',
-      { r: anchor ? 16 : 9, cx: n.x, cy: n.y, fill: anchor ? 'none' : n.color });
-    if (anchor) c.setAttribute('stroke', n.color);
-    c.setAttribute('stroke-width', anchor ? 1.5 : 0);
+    const c = el('circle', anchor ? (n.type === 'book' ? 'kg-anchor kg-anchor-book' : 'kg-anchor') : 'kg-circle',
+      { r: n.r || (anchor ? 15 : 8), cx: n.x, cy: n.y, fill: anchor ? 'none' : n.color });
+    if (anchor) {
+      c.setAttribute('stroke', n.color);
+      c.setAttribute('stroke-width', n.type === 'book' ? 2.2 : 1.5);
+    } else {
+      c.setAttribute('stroke-width', 0);
+    }
     g.appendChild(c);
     if (!anchor) {
       const t = el('text', 'kg-node-label', { x: n.x + 16, y: n.y + 4 });
       t.textContent = n.label;
       g.appendChild(t);
     } else {
-      const t = el('text', 'kg-anchor-label', { x: n.x, y: n.y + 34, 'text-anchor': 'middle' });
+      const isBook = n.type === 'book';
+      const t = el('text', isBook ? 'kg-anchor-label kg-book-label' : 'kg-anchor-label',
+        { x: n.x, y: n.y + (isBook ? 40 : 34), 'text-anchor': 'middle' });
       t.textContent = n.label;
       g.appendChild(t);
     }
@@ -91,7 +104,7 @@ export function createGraph(root, data) {
     nodeEls.set(n.id, g);
   }
 
-  const state = { layer: 'skeleton', types: new Set(['character', 'concept', 'event']), x: 24, y: 40, k: 0.82 };
+  const state = { layer: 'skeleton', types: new Set(['character', 'concept', 'event']), x: 0, y: 0, k: 1 };
   const applyView = () => {
     world.setAttribute('style', `transform: translate(${state.x}px, ${state.y}px) scale(${state.k});`);
   };
@@ -275,5 +288,9 @@ export function createGraph(root, data) {
 
   applyView();
   render();
-  return { setLayer: (l) => { state.layer = l; render(); }, setType: (t, on) => { on ? state.types.add(t) : state.types.delete(t); render(); } };
+  return {
+    setLayer: (l) => { state.layer = l; render(); },
+    setType: (t, on) => { on ? state.types.add(t) : state.types.delete(t); render(); },
+    setView: (v) => { state.x = v.x; state.y = v.y; state.k = v.k; applyView(); },
+  };
 }

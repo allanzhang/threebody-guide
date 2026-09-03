@@ -352,12 +352,28 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
 }
 
 /* ===== 全景图谱 ===== */
-.graph-hero { position: relative; padding: 72px 0 28px; text-align: center; }
+.graph-hero { position: relative; padding: 44px 0 18px; text-align: center; }
 .graph-hero-canvas { position: absolute; inset: 0; z-index: 0; opacity: 0.6; pointer-events: none; }
 .graph-hero .page-title, .graph-hero .page-lead { position: relative; z-index: 1; }
 .graph-body { margin-top: 8px; }
 
-.kg-app { position: relative; }
+/* 全屏按钮 + 全屏布局 */
+.kg-fullscreen {
+  position: absolute; top: 10px; right: 12px; z-index: 20;
+  background: rgba(15, 18, 20, 0.62); border: 1px solid var(--line); color: var(--ink-dim);
+  width: 34px; height: 34px; border-radius: 8px; font-size: 16px; line-height: 1;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+.kg-fullscreen:hover { color: var(--accent-strong); border-color: var(--accent); }
+.kg-fullscreen-on { color: var(--accent); border-color: var(--accent); }
+.kg-app:fullscreen { height: 100vh; width: 100vw; background: var(--bg); display: flex; flex-direction: column; }
+.kg-app:fullscreen .kg-stage { min-height: 0; flex: 1 1 auto; }
+.kg-app:fullscreen .kg-svg { height: 100%; min-height: 0; }
+.kg-app.kg-fake-fullscreen { position: fixed; inset: 0; z-index: 9999; height: 100vh; width: 100vw; background: var(--bg); overflow: hidden; }
+.kg-app.kg-fake-fullscreen .kg-stage { min-height: 0; }
+.kg-app.kg-fake-fullscreen .kg-svg { height: calc(100vh - 150px); min-height: 0; }
+
 .kg-controls {
   display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 20px;
   padding: 14px 8px 18px;
@@ -378,10 +394,10 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
   border: 1px solid var(--line); border-radius: var(--radius);
   background: radial-gradient(ellipse at 30% 20%, rgba(59, 111, 158, 0.08), transparent 60%),
               radial-gradient(ellipse at 80% 80%, rgba(138, 106, 146, 0.06), transparent 55%);
-  min-height: 66vh; overflow: hidden; position: relative;
+  overflow: hidden; position: relative;
   user-select: none; -webkit-user-select: none; cursor: default;
 }
-.kg-svg { width: 100%; height: 72vh; min-height: 420px; display: block; touch-action: none; cursor: grab; }
+.kg-svg { width: 100%; height: calc(100vh - 238px); min-height: 440px; display: block; touch-action: none; cursor: grab; }
 .kg-svg:active { cursor: grabbing; }
 .kg-world { transition: none; }
 .kg-edge { fill: none; stroke: rgba(232, 230, 225, 0.14); stroke-width: 1; }
@@ -393,9 +409,28 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
 .kg-node.kg-hot circle { stroke: var(--accent-strong); stroke-width: 2; }
 .kg-circle { transition: opacity 0.2s; }
 .kg-anchor { filter: drop-shadow(0 0 10px rgba(232, 230, 225, 0.35)); }
+.kg-anchor-book { filter: drop-shadow(0 0 16px rgba(216, 196, 138, 0.4)); }
 .kg-node-label { fill: var(--ink-dim); font-size: 12px; font-family: var(--sans); pointer-events: none; }
 .kg-anchor-label { fill: var(--ink); font-size: 15px; font-family: var(--serif); letter-spacing: 0.1em; pointer-events: none; }
+.kg-book-label { fill: var(--accent-strong); font-size: 17px; letter-spacing: 0.16em; }
 .kg-rail-label { font-family: var(--serif); font-size: 14px; letter-spacing: 0.3em; }
+
+/* 分区：细线分隔 + 分组标题（方案 A：位置=颜色=分类） */
+.kg-band-label { fill: var(--ink-dim); font-size: 11px; font-family: var(--serif); letter-spacing: 0.3em; opacity: 0.65; }
+.kg-group-pill { pointer-events: none; }
+.kg-group-label { font-size: 13px; font-family: var(--serif); letter-spacing: 0.18em; opacity: 0.95; pointer-events: none; }
+
+/* 图例：颜色=分组、大小=关联度 */
+.kg-legend {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 16px;
+  margin: 12px auto 16px; padding: 0 8px; color: var(--ink-dim); font-size: 12px;
+}
+.kg-legend-title { color: var(--accent); font-family: var(--serif); letter-spacing: 0.25em; margin-right: 4px; }
+.kg-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.kg-legend-item i { width: 9px; height: 9px; border-radius: 50%; background: var(--sw); display: inline-block; }
+.kg-legend-sep { width: 1px; height: 14px; background: var(--line); margin: 0 4px; }
+.kg-legend-note { opacity: 0.85; }
+.kg-legend-note b { color: var(--ink); font-weight: 600; }
 
 /* 详情浮层 */
 .kg-panel {
