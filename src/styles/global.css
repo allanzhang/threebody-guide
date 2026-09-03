@@ -474,7 +474,8 @@ main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px 120px; position: 
 
 /* 悬停悬浮卡 */
 .kg-hovercard {
-  position: absolute; z-index: 5; pointer-events: none;
+  pointer-events: auto;
+  position: absolute; z-index: 5;
   width: 260px; padding: 14px 16px;
   background: rgba(14, 20, 30, 0.92); border: 1px solid var(--line); border-radius: 6px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45); backdrop-filter: blur(6px);

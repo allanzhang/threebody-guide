@@ -94,7 +94,6 @@ export function createGraph(root, data) {
   const state = { layer: 'skeleton', types: new Set(['character', 'concept', 'event', 'scene']), x: 24, y: 40, k: 0.82 };
   const applyView = () => {
     world.setAttribute('style', `transform: translate(${state.x}px, ${state.y}px) scale(${state.k});`);
-    if (focusNode) positionCardAtNode(focusNode); // 平移/缩放后卡片跟随节点
   };
   const visible = (id) => {
     const n = data.nodeById[id];
@@ -109,12 +108,11 @@ export function createGraph(root, data) {
     if (focusNode && !visible(focusNode)) unfocus(); // 锁定节点被筛选隐藏时同步清除
   };
 
-  // 悬停悬浮卡 + 锁定高亮：悬停节点即锁定状态（高亮 + 卡常驻，可从容移向卡片点击），
-  // 直到悬停另一节点（切换）或点击空白处（清除）才改变
+  // 悬浮详情卡：只在鼠标停留在「已高亮节点」时出现；卡片出现后可移入卡片点击打开详情页；
+  // 缩放/平移/点击等其他操作一律移除卡片
   const card = document.getElementById('kg-hovercard');
-  let focusNode = null;
-  // 卡片位置锚定节点（世界坐标 → 屏幕），不跟随鼠标——锁定后鼠标可移开去点击
   const positionCardAtNode = (id) => {
+    if (!card) return;
     const n = data.nodeById[id];
     const f = fit();
     const r = root.getBoundingClientRect();
@@ -127,6 +125,7 @@ export function createGraph(root, data) {
     card.style.top = `${top}px`;
   };
   const showCard = (id) => {
+    if (!card) return;
     const tpl = document.getElementById(`kg-card-${id}`);
     if (!tpl) return;
     card.innerHTML = '';
@@ -134,30 +133,43 @@ export function createGraph(root, data) {
     card.hidden = false;
     positionCardAtNode(id);
   };
+  const hideCard = () => { if (card) card.hidden = true; };
+
+  // 点击高亮 + 锁定：点击节点即锁定状态（高亮，无弹窗），
+  // 移动与拖动图谱都不改变高亮，直到再次点击另一节点（切换）或点击空白处（清除）
+  let focusNode = null;
+  // 联动集合 = 高亮节点 + 其关联节点；它们停留时都可显示各自详情卡
+  let focusSet = null;
   const focus = (id) => {
     if (focusNode === id) return; // 已锁定该节点，状态保持
     focusNode = id;
+    focusSet = new Set([id, ...neighbors(id)]);
     clearHot();
     const nb = neighbors(id);
     nodeEls.get(id).classList.add('kg-hot');
     nodeEls.forEach((ng, nid) => { if (nid !== id && !nb.has(nid)) ng.classList.add('kg-dim'); });
     edgeEls.forEach((p) => { if (p.dataset.a === id || p.dataset.b === id) p.classList.add('kg-hot'); });
-    showCard(id);
   };
   const unfocus = () => {
     if (focusNode === null) return;
     focusNode = null;
+    focusSet = null;
     clearHot();
-    card.hidden = true;
+    hideCard();
   };
 
   // 平移 / 缩放（Pointer Events 统一鼠标触屏）
   const pointers = new Map();
-  let dragId = null, moved = false, pinchDist = 0;
+  let dragId = null, moved = false, pinchDist = 0, downNode = null;
   svg.addEventListener('pointerdown', (e) => {
     // 先记录是否首指针再写入 map——写后判断 has(pointerId) 恒真，会吞掉 dragId 赋值（拖拽失灵的真凶）
     const firstPointer = pointers.size === 0;
-    if (!e.target.closest('.kg-node')) unfocus(); // 点击空白处清除锁定状态
+    // 点击命中须在 pointerdown 记录：svg 对 pointerdown 调用了 setPointerCapture，
+    // 后续 click 会被重定向到 svg（捕获元素），nodesG 上的 click 永远收不到（点击失灵根因）
+    const hitNode = e.target.closest('.kg-node');
+    // 不在 pointerdown 立即清除：按住空白拖动（平移）必须保留高亮，
+    // "点击空白清除"推迟到 click 时用 moved 区分（点击 vs 拖动）
+    downNode = (hitNode && !hitNode.classList.contains('kg-hidden')) ? hitNode.dataset.id : null;
     svg.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, [e.clientX, e.clientY]);
     if (e.button === 0 && firstPointer) dragId = e.pointerId;
@@ -186,7 +198,7 @@ export function createGraph(root, data) {
       const f = fit();
       state.x += dx / f.s;
       state.y += dy / f.s;
-      if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
+      if (Math.abs(dx) + Math.abs(dy) > 4) { moved = true; hideCard(); } // 拖动平移移除悬浮卡
       applyView();
     }
   });
@@ -200,6 +212,7 @@ export function createGraph(root, data) {
 
   svg.addEventListener('wheel', (e) => {
     e.preventDefault();
+    hideCard(); // 缩放/平移移除悬浮卡
     const f = fit();
     // 滚动 = 缩放（双指滚动即缩放）；Shift+滚动 = 平移（显式通道）——
     // macOS 双指滚动与三指拖移在浏览器层同属 wheel 事件、无法互相区分，故三指平移以 Shift+滚动或左键拖拽实现
@@ -225,33 +238,40 @@ export function createGraph(root, data) {
       .map((e) => (e.source === id ? e.target : e.source))
   );
   const clearHot = () => { nodeEls.forEach((g) => g.classList.remove('kg-dim', 'kg-hot')); edgeEls.forEach((p) => p.classList.remove('kg-hot')); };
-  nodesG.addEventListener('pointerover', (e) => {
-    const g = e.target.closest('.kg-node');
-    if (!g || g.classList.contains('kg-hidden')) return;
-    focus(g.dataset.id);
-  });
-  // 移出节点不解除状态（锁定高亮），切到另一节点或点击空白处时才变化
 
-  // 点击 → 详情浮层（模板由 Astro 服务端预渲染）
-  const panel = document.getElementById('kg-panel');
-  const panelBody = document.getElementById('kg-panel-body');
-  const backdrop = document.getElementById('kg-backdrop');
-  const openPanel = (id) => {
-    const tpl = document.getElementById(`kg-panel-${id}`);
-    if (!tpl) return;
-    panelBody.innerHTML = '';
-    panelBody.appendChild(tpl.content.cloneNode(true));
-    panel.classList.add('kg-open');
-    backdrop.classList.add('kg-show');
-  };
-  const closePanel = () => { panel.classList.remove('kg-open'); backdrop.classList.remove('kg-show'); };
-  nodesG.addEventListener('click', (e) => {
-    const g = e.target.closest('.kg-node');
-    if (g && !g.classList.contains('kg-hidden') && !moved) openPanel(g.dataset.id);
+  // 点击处理挂到 svg（pointer capture 后 click 目标是 svg）；命中节点用 pointerdown 记录的 downNode
+  svg.addEventListener('click', () => {
+    if (moved) return; // 拖动不算点击（平移后保留高亮）
+    if (downNode) { focus(downNode); showCard(downNode); } // 点击高亮后鼠标即在节点上 → 显示卡片
+    else unfocus(); // 点击空白（未拖动）→ 清除高亮与卡片
+    downNode = null;
   });
-  backdrop.addEventListener('click', () => { closePanel(); unfocus(); });
-  document.getElementById('kg-close').addEventListener('click', closePanel);
-  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePanel(); });
+
+  // 悬浮卡显示/隐藏：鼠标停留在「高亮节点或其关联节点」（或已移入卡片）时，
+  // 显示该节点对应的详情卡（联动查看）；移开后延迟一段时间再消失（不立即消失）
+  let mouseX = 0, mouseY = 0, hideTimer = null;
+  root.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+  const cardHoverTarget = () => {
+    const el = document.elementFromPoint(mouseX, mouseY);
+    if (el?.closest?.('.kg-hovercard')) return true; // 鼠标在卡片上（可点击详情链接）
+    const g = el?.closest?.('.kg-node');
+    return !!(g && focusSet && focusSet.has(g.dataset.id) && !g.classList.contains('kg-hidden'));
+  };
+  root.addEventListener('mouseover', (e) => {
+    if (focusNode === null) return;
+    const g = e.target.closest?.('.kg-node');
+    if (g && !g.classList.contains('kg-hidden') && focusSet && focusSet.has(g.dataset.id)) {
+      clearTimeout(hideTimer);
+      showCard(g.dataset.id); // 高亮节点及其关联节点停留 → 显示对应卡片
+    } else if (e.target.closest?.('.kg-hovercard')) {
+      clearTimeout(hideTimer); // 鼠标进入卡片 → 取消隐藏，允许点击详情链接
+    }
+  });
+  root.addEventListener('mouseout', () => {
+    if (focusNode === null) return;
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => { if (!cardHoverTarget()) hideCard(); }, 500); // 延迟消失
+  });
 
   applyView();
   render();
