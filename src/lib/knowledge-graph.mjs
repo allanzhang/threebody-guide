@@ -101,7 +101,7 @@ export function skeletonIds(graph) {
   return ids;
 }
 
-export const LAYOUT = { PAD: 110, COL_W: 400, ROW_H: 38, COL_OFF: 76, MAX_ROWS: 9, ROW_H_CON: 52, COL_OFF_CON: 100, MAX_ROWS_CON: 8, BOOK_Y: 88, ERA_Y: 192, EVENT_Y: 268, BAND_GAP: 48, LABEL_H: 44 };
+export const LAYOUT = { PAD: 110, COL_W: 400, ROW_H: 38, COL_OFF: 76, MAX_ROWS: 9, ROW_H_CON: 52, COL_OFF_CON: 100, MAX_ROWS_CON: 10, BOOK_Y: 88, ERA_Y: 192, EVENT_Y: 268, BAND_GAP: 48, LABEL_H: 44 };
 
 // 概念/人物分区顺序与标题（与 buildGraph 的 group 颜色表一致）
 const CONCEPT_ORDER = ['law', 'tech', 'org', 'astro', 'physics'];
